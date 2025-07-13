@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import treesBackground from "@/assets/trees-background.jpg";
+// import treesBackground from "@/assets/trees-background.jpg";
 
 export default function ImageWithCardSection() {
   return (
@@ -8,7 +8,7 @@ export default function ImageWithCardSection() {
       {/* Background Image */}
       <div className="relative h-[600px] overflow-hidden">
         <img
-          src={treesBackground}
+          src="/lovable-uploads/70705004-8cef-46fe-9378-b9ad705aaf93.png"
           alt="Professional forest background"
           className="w-full h-full object-cover"
         />

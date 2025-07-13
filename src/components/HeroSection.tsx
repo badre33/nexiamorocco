@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import heroBackground from "@/assets/hero-background.jpg";
+// import heroBackground from "@/assets/hero-background.jpg";
 
 export default function HeroSection() {
   return (
@@ -7,7 +7,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src={heroBackground}
+          src="/lovable-uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png"
           alt="Professional office building"
           className="w-full h-full object-cover"
         />

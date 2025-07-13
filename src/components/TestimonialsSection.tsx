@@ -1,5 +1,5 @@
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import testimonialAvatar from "@/assets/testimonial-avatar.jpg";
+// import testimonialAvatar from "@/assets/testimonial-avatar.jpg";
 
 export default function TestimonialsSection() {
   return (
@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="flex items-center gap-6">
             <img
-              src={testimonialAvatar}
+              src="/lovable-uploads/4884c761-427d-4a89-af8c-99f6ba0325aa.png"
               alt="Testimonial author"
               className="w-24 h-24 rounded-full object-cover"
             />

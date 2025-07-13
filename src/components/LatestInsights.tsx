@@ -1,23 +1,23 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import service1 from "@/assets/service-1.jpg";
-import service2 from "@/assets/service-2.jpg";
-import service3 from "@/assets/service-3.jpg";
+// import service1 from "@/assets/service-1.jpg";
+// import service2 from "@/assets/service-2.jpg";
+// import service3 from "@/assets/service-3.jpg";
 
 const insights = [
   {
-    image: service1,
+    image: "/lovable-uploads/39143591-1dc1-4223-a2f1-480dd592d440.png",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "17 January"
   },
   {
-    image: service2,
+    image: "/lovable-uploads/683558d0-ea3d-4016-81a3-c31382efa76b.png",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "17 January"
   },
   {
-    image: service3,
+    image: "/lovable-uploads/36d7db3b-24d7-4f04-aaed-d9f2509146f0.png",
     title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     date: "17 January"
   }

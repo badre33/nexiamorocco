@@ -1,22 +1,22 @@
 import { ExternalLink } from "lucide-react";
-import auditService from "@/assets/audit-service.jpg";
-import taxService from "@/assets/tax-service.jpg";
-import advisoryService from "@/assets/advisory-service.jpg";
+// import auditService from "@/assets/audit-service.jpg";
+// import taxService from "@/assets/tax-service.jpg";
+// import advisoryService from "@/assets/advisory-service.jpg";
 
 const services = [
   {
     title: "Audit",
-    image: auditService,
+    image: "/lovable-uploads/70705004-8cef-46fe-9378-b9ad705aaf93.png",
     href: "/services#audit"
   },
   {
     title: "Tax",
-    image: taxService,
+    image: "/lovable-uploads/cd1d5d63-1fdb-4d40-9016-a19aaeb69709.png",
     href: "/services#tax"
   },
   {
     title: "Advisory",
-    image: advisoryService,
+    image: "/lovable-uploads/647024ca-f003-489a-ac52-215419944dc7.png",
     href: "/services#advisory"
   }
 ];

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import caseStudyImage from "@/assets/case-study-image.jpg";
+// import caseStudyImage from "@/assets/case-study-image.jpg";
 
 export default function CaseStudySection() {
   return (
@@ -23,7 +23,7 @@ export default function CaseStudySection() {
           {/* Image */}
           <div className="relative">
             <img
-              src={caseStudyImage}
+              src="/lovable-uploads/205e24d0-c46d-47e0-95e8-f94cd3c806a7.png"
               alt="Case Study"
               className="w-full h-auto rounded-lg shadow-lg"
             />

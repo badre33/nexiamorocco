@@ -11,7 +11,7 @@ const expertiseDomains = [
   },
   {
     title: "Conseil financier & optimisation",
-    image: "/lovable-uploads/8c894aa9-9338-4bb3-bea0-2df5eee6fcee.png",
+    image: "/lovable-uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
     href: "/services#conseil-financier"
   },
   {
@@ -21,7 +21,7 @@ const expertiseDomains = [
   },
   {
     title: "Fiscalité & Tax Management",
-    image: "/lovable-uploads/4c28863e-d429-476b-ab43-4c6a6e22bdf9.png",
+    image: "/lovable-uploads/53f46a0f-ef88-4282-bd21-b005312754ce.png",
     href: "/services#fiscalite"
   },
   {

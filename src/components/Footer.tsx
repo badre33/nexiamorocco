@@ -14,8 +14,13 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Logo */}
         <div className="mb-12">
-          <div className="text-2xl font-bold">
-            <span className="text-nexia-secondary">NEXIA</span> Templates
+          <div className="text-center md:text-left">
+            <div className="text-sm font-medium text-nexia-secondary mb-1">
+              Fiducia Maroc
+            </div>
+            <div className="text-2xl font-bold text-white">
+              NEXIA
+            </div>
           </div>
         </div>
 

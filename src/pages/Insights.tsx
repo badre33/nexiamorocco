@@ -8,6 +8,9 @@ import { useState } from "react";
 
 const insightCategories = [
   "Tous",
+  "Réseau international",
+  "Commerce international", 
+  "Investissement international",
   "Fiscalité internationale",
   "Audit & conformité", 
   "Stratégie d'entreprise",
@@ -16,8 +19,57 @@ const insightCategories = [
 ];
 
 const globalInsights = [
+  // Articles récupérés du site Nexia International
   {
     id: 1,
+    title: "Nexia welcomes a new member firm in Uzbekistan",
+    description: "Nexia International continue son expansion avec l'arrivée d'un nouveau membre en Ouzbékistan, renforçant notre présence en Asie centrale.",
+    category: "Réseau international",
+    author: "Nexia International",
+    date: "Juillet 2025",
+    readTime: "5 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/07/shutterstock_2341786405.jpg",
+    featured: true,
+    source: "https://nexia.com/insights/nexia-welcomes-a-new-member-firm-in-uzbekistan/"
+  },
+  {
+    id: 2,
+    title: "Nexia welcomes a new member firm in Mexico",
+    description: "Le réseau Nexia accueille un nouveau cabinet membre au Mexique, élargissant notre couverture en Amérique latine pour mieux servir nos clients internationaux.",
+    category: "Réseau international",
+    author: "Nexia International",
+    date: "Juillet 2025",
+    readTime: "5 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/07/shutterstock_188040947.jpg",
+    featured: false,
+    source: "https://nexia.com/insights/nexia-welcomes-a-new-member-firm-in-mexico/"
+  },
+  {
+    id: 3,
+    title: "Nexia Experts discuss the current Global Tariffs from the USA",
+    description: "Analyse approfondie des experts Nexia sur l'impact des tarifs douaniers américains sur le commerce international et les stratégies d'adaptation pour les entreprises.",
+    category: "Commerce international",
+    author: "Experts Nexia",
+    date: "Février 2025",
+    readTime: "8 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/02/shutterstock_2145128675.jpg",
+    featured: false,
+    source: "https://nexia.com/insights/nexia-experts-discuss-the-current-global-tariffs-from-the-usa/"
+  },
+  {
+    id: 4,
+    title: "Switzerland – Commercial investment trading",
+    description: "Guide complet sur les investissements commerciaux en Suisse, incluant les réglementations, avantages fiscaux et meilleures pratiques pour les investisseurs internationaux.",
+    category: "Investissement international",
+    author: "Nexia Suisse",
+    date: "2025",
+    readTime: "10 min",
+    image: "/lovable-uploads/8c894aa9-9338-4bb3-bea0-2df5eee6fcee.png",
+    featured: false,
+    source: "https://nexia.com/insights/switzerland-commercial-investment-trading/"
+  },
+  {
+    id: 5,
     title: "Nouvelles réglementations fiscales internationales 2024",
     description: "Analyse des dernières évolutions fiscales mondiales et leur impact sur les entreprises marocaines opérant à l'international.",
     category: "Fiscalité internationale",
@@ -25,10 +77,10 @@ const globalInsights = [
     date: "15 Mars 2024",
     readTime: "8 min",
     image: "/lovable-uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
-    featured: true
+    featured: false
   },
   {
-    id: 2,
+    id: 6,
     title: "Transformation digitale de l'audit : enjeux et opportunités",
     description: "Comment les nouvelles technologies transforment les pratiques d'audit et améliorent la qualité des missions.",
     category: "Audit & conformité",
@@ -39,7 +91,7 @@ const globalInsights = [
     featured: false
   },
   {
-    id: 3,
+    id: 7,
     title: "Stratégies de financement pour les PME marocaines",
     description: "Guide complet des options de financement disponibles pour accompagner la croissance des entreprises marocaines.",
     category: "Corporate Finance",
@@ -50,7 +102,7 @@ const globalInsights = [
     featured: false
   },
   {
-    id: 4,
+    id: 8,
     title: "ESG et reporting durable : nouvelles exigences",
     description: "Les nouvelles obligations en matière de reporting ESG et leur impact sur les entreprises marocaines.",
     category: "Réglementation",
@@ -61,7 +113,7 @@ const globalInsights = [
     featured: false
   },
   {
-    id: 5,
+    id: 9,
     title: "Intelligence artificielle dans les services financiers",
     description: "L'impact de l'IA sur les métiers de l'audit, du conseil et de la finance, et les opportunités d'innovation.",
     category: "Stratégie d'entreprise",
@@ -72,7 +124,7 @@ const globalInsights = [
     featured: true
   },
   {
-    id: 6,
+    id: 10,
     title: "Optimisation fiscale internationale post-BEPS",
     description: "Stratégies d'optimisation fiscale conformes aux nouvelles règles BEPS de l'OCDE.",
     category: "Fiscalité internationale",

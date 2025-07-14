@@ -17,7 +17,7 @@ export default function ServicesHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="bg-white p-8 lg:p-12 max-w-3xl">
           <p className="text-nexia-secondary font-bold text-lg mb-4">
-            Nos domaines d'expertise
+            Nos Domaines d'Expertise
           </p>
           <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-nexia-primary leading-tight mb-6">
             Un accompagnement global, une expertise locale et internationale

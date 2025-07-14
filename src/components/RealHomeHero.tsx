@@ -1,9 +1,42 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// import heroBackground from "@/assets/hero-background.jpg";
+
+const slides = [
+  {
+    id: 1,
+    title: "Excellence in Accounting Services",
+    subtitle: "Home",
+    link: "/about"
+  },
+  {
+    id: 2,
+    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+    subtitle: "Home",
+    link: "/about"
+  },
+  {
+    id: 3,
+    title: "Professional Consulting Solutions",
+    subtitle: "Home", 
+    link: "/services"
+  }
+];
 
 export default function RealHomeHero() {
+  const [currentSlide, setCurrentSlide] = useState(1); // Start at slide 2 (index 1)
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === slides.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? slides.length - 1 : prev - 1));
+  };
+
+  const current = slides[currentSlide];
+
   return (
     <section className="nexia-hero relative w-full flex">
       {/* Background Image */}
@@ -18,27 +51,28 @@ export default function RealHomeHero() {
       {/* Content Container */}
       <div className="relative z-10 w-full max-w-[1350px] mx-auto flex items-end lg:ml-auto lg:mr-0 lg:pl-0">
         <div className="nexia-hero-content">
-          <p className="bolder text-nexia-primary mb-4 font-poppins">Home</p>
+          <p className="bolder text-nexia-primary mb-4 font-poppins">{current.subtitle}</p>
           
           <h1 className="nexia-hero-title font-poppins font-bold leading-tight mb-6">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
+            {current.title}
           </h1>
           
           <Button 
             asChild 
             className="nexia-button-secondary font-poppins font-medium px-10 py-3 mb-12"
           >
-            <Link to="/about">Discover more</Link>
+            <Link to={current.link}>Discover more</Link>
           </Button>
 
           {/* Navigation Controls */}
           <div className="flex items-center justify-center gap-5 mt-12">
-            <span className="text-nexia-primary font-poppins font-medium">2/3</span>
+            <span className="text-nexia-primary font-poppins font-medium">{currentSlide + 1}/{slides.length}</span>
             
             <div className="flex items-center gap-2">
               <Button 
                 variant="ghost" 
                 size="icon" 
+                onClick={prevSlide}
                 className="text-nexia-primary hover:text-nexia-secondary p-0 h-auto w-auto hover:bg-transparent"
               >
                 <ChevronLeft className="h-11 w-11" />
@@ -46,6 +80,7 @@ export default function RealHomeHero() {
               <Button 
                 variant="ghost" 
                 size="icon" 
+                onClick={nextSlide}
                 className="text-nexia-primary hover:text-nexia-secondary p-0 h-auto w-auto hover:bg-transparent"
               >
                 <ChevronRight className="h-11 w-11" />

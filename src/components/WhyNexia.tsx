@@ -9,20 +9,20 @@ export default function WhyNexia() {
           {/* Title */}
           <div>
             <h3 className="text-3xl font-bold text-nexia-primary">
-              Why Nexia
+              Pourquoi Nexia Fiducia Maroc
             </h3>
           </div>
 
           {/* Content */}
           <div className="space-y-6">
             <p className="text-nexia-primary text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Fort de notre appartenance au réseau international Nexia, nous combinons l'expertise locale approfondie du marché marocain avec les standards internationaux les plus exigeants.
             </p>
             <p className="text-nexia-primary text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.
+              Notre approche personnalisée et notre engagement envers l'excellence nous permettent d'accompagner efficacement nos clients dans leurs défis financiers et stratégiques.
             </p>
             <Button asChild variant="professional" size="lg">
-              <Link to="/about">Discover more</Link>
+              <Link to="/about">En savoir plus</Link>
             </Button>
           </div>
         </div>

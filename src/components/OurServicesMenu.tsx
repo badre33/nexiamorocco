@@ -150,11 +150,18 @@ export default function OurServicesMenu() {
     const hash = location.hash.replace('#', '');
     if (hash && expertiseDomains.some(domain => domain.id === hash)) {
       setActiveTab(hash);
+      // Scroll vers la section après un petit délai pour permettre le rendu
+      setTimeout(() => {
+        const element = document.getElementById('our-services-menu');
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
     }
   }, [location.hash]);
 
   return (
-    <section className="nexia-section-padding bg-nexia-light">
+    <section id="our-services-menu" className="nexia-section-padding bg-nexia-light">
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 gap-2 h-auto p-2 bg-white rounded-xl shadow-sm">
           {expertiseDomains.map((domain) => {

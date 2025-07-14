@@ -5,39 +5,49 @@ import { ExternalLink } from "lucide-react";
 
 const expertiseDomains = [
   {
-    title: "Audit et Commissariat aux Comptes",
+    title: "Audit & Commissariat aux comptes",
     image: "/lovable-uploads/01471ff8-a45a-4917-9e88-21cc4de0456d.png",
     href: "/services#audit"
   },
   {
-    title: "Conseil financier & optimisation",
+    title: "Expertise comptable & Conseil",
     image: "/lovable-uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
-    href: "/services#conseil-financier"
+    href: "/services#expertise-comptable"
   },
   {
-    title: "Inspection, Investigation & Fraude",
-    image: "/lovable-uploads/a7f22a1b-43e9-4c44-a47d-df43bbab5901.png",
-    href: "/services#investigation"
-  },
-  {
-    title: "Fiscalité & Tax Management",
+    title: "Fiscalité & Optimisation fiscale",
     image: "/lovable-uploads/53f46a0f-ef88-4282-bd21-b005312754ce.png",
     href: "/services#fiscalite"
   },
   {
-    title: "Analyses financières et évaluation d'entreprises",
+    title: "Corporate Finance & M&A",
     image: "/lovable-uploads/4bed1dd7-b5f8-4423-abf2-a25ceac03f9d.png",
-    href: "/services#analyses-financieres"
+    href: "/services#corporate-finance"
   },
   {
-    title: "Consolidation selon les normes Marocaines & IFRS",
+    title: "Accompagnement juridique & social",
+    image: "/lovable-uploads/a7f22a1b-43e9-4c44-a47d-df43bbab5901.png",
+    href: "/services#juridique-social"
+  },
+  {
+    title: "Outsourcing & Externalisation",
     image: "/lovable-uploads/0506b088-dd85-416f-a9a3-bc15fac33d20.png",
-    href: "/services#consolidation"
+    href: "/services#outsourcing"
   },
   {
-    title: "Conseils et accompagnement stratégique",
+    title: "Digitalisation et systèmes d'information",
     image: "/lovable-uploads/c77098e9-3f18-4389-b9e1-012be59e78dd.png",
-    href: "/services#conseil-strategique"
+    href: "/services#digitalisation"
+  },
+  {
+    title: "Support aux investisseurs étrangers",
+    image: "/lovable-uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png",
+    href: "/services#investisseurs-etrangers"
+  },
+  {
+    title: "Conseil en stratégie & développement",
+    image: "/lovable-uploads/4c28863e-d429-476b-ab43-4c6a6e22bdf9.png",
+    href: "/services#conseil-strategie"
   }
 ];
 

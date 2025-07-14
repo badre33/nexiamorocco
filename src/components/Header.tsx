@@ -5,7 +5,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
   { name: "Home", href: "/" },
-  { name: "Nos domaines d'expertise", href: "/services" },
+  { name: "Nos domaines d'expertise", href: "/domaines-expertise" },
   { name: "Équipe dirigeante", href: "/equipe-dirigeante" },
   { name: "Perspectives mondiales", href: "/perspectives-mondiales" },
   { name: "About", href: "/about" },

@@ -16,7 +16,7 @@ export default function CaseStudySection() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse ex sem, dictum vitae imperdiet ac, finibus quis libero. Phasellus imperdiet nec sem et facilisis. Morbi in pellentesque mauris, quis hendrerit tortor.
             </p>
             <Button asChild variant="professional" size="lg">
-              <Link to="/services">Read more</Link>
+              <Link to="/domaines-expertise">Read more</Link>
             </Button>
           </div>
 

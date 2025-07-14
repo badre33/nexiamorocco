@@ -5,10 +5,10 @@ export default function HomeAboutUs() {
         {/* About Us Text - Left Column */}
         <div className="flex flex-col justify-center pr-0 lg:pr-[15%] pt-10 pb-10">
           <p className="bolder text-nexia-primary font-poppins text-lg mb-6">
-            About Us
+            À propos de nous
           </p>
           <p className="text-nexia-primary font-poppins text-[28px] leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Chez Nexia Fiducia Maroc, notre mission est d'accompagner les entreprises marocaines et internationales dans toutes les étapes de leur croissance, de leur structuration et de leur mise en conformité. Grâce à notre ancrage local fort, allié à la puissance du réseau Nexia International, nous offrons des expertises pluridisciplinaires, rigoureuses et adaptées à vos enjeux réels.
           </p>
         </div>
 
@@ -18,10 +18,10 @@ export default function HomeAboutUs() {
             Audit.
           </h2>
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight mb-2">
-            Tax.
+            Fiscalité.
           </h2>
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight mb-2">
-            Advisory.
+            Conseil.
           </h2>
         </div>
       </div>

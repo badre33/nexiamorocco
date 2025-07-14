@@ -4,7 +4,7 @@ export default function HomeAboutUs() {
   return (
     <section className="nexia-section-padding bg-white max-w-[1050px] mx-auto relative overflow-hidden rounded-2xl">
       {/* Background Image pour toute la section */}
-      <div className="absolute inset-0 opacity-20">
+      <div className="absolute inset-0 opacity-30">
         <img 
           src="/lovable-uploads/c6eaa709-a9e2-42bc-8d20-36f8616c4e6e.png" 
           alt="Chefchaouen, Morocco" 
@@ -19,12 +19,12 @@ export default function HomeAboutUs() {
           <p className="bolder text-nexia-primary font-poppins text-lg mb-6 drop-shadow-sm">
             À propos de nous
           </p>
-          <p className="text-nexia-primary font-poppins text-[28px] leading-relaxed mb-8 drop-shadow-sm bg-white/80 p-4 rounded-lg">
+          <p className="text-nexia-primary font-poppins text-[28px] leading-relaxed mb-8 drop-shadow-sm">
             Chez Nexia Fiducia Maroc, notre mission est d'accompagner les entreprises marocaines et internationales dans toutes les étapes de leur croissance, de leur structuration et de leur mise en conformité. Grâce à notre ancrage local fort, allié à la puissance du réseau Nexia International, nous offrons des expertises pluridisciplinaires, rigoureuses et adaptées à vos enjeux réels.
           </p>
           <Link
             to="/a-propos"
-            className="inline-flex items-center text-nexia-primary font-poppins font-medium text-lg hover:text-nexia-secondary transition-colors duration-300 group drop-shadow-sm bg-white/80 p-2 rounded-lg w-fit"
+            className="inline-flex items-center text-nexia-primary font-poppins font-medium text-lg hover:text-nexia-secondary transition-colors duration-300 group drop-shadow-sm"
           >
             En savoir plus sur nous
             <svg 

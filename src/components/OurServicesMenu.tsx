@@ -154,7 +154,15 @@ export default function OurServicesMenu() {
       setTimeout(() => {
         const element = document.getElementById('our-services-menu');
         if (element) {
-          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Calculer la position exacte
+          const elementPosition = element.offsetTop;
+          const offsetPosition = elementPosition - 100; // Ajuster selon la hauteur du header
+          
+          // Scroll smooth depuis la position actuelle
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
         }
       }, 100);
     }

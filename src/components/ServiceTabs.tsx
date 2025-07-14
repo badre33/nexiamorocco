@@ -1,4 +1,5 @@
 import { ExternalLink } from "lucide-react";
+import { Link } from "react-router-dom";
 // import auditService from "@/assets/audit-service.jpg";
 // import taxService from "@/assets/tax-service.jpg";
 // import advisoryService from "@/assets/advisory-service.jpg";
@@ -12,7 +13,7 @@ const expertiseDomains = [
   {
     title: "Expertise comptable & Conseil",
     image: "/lovable-uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
-    href: "/domaines-expertise#expertise-comptable"
+    href: "/domaines-expertise#comptable"
   },
   {
     title: "Fiscalité & Optimisation fiscale",
@@ -22,12 +23,12 @@ const expertiseDomains = [
   {
     title: "Corporate Finance & M&A",
     image: "/lovable-uploads/4bed1dd7-b5f8-4423-abf2-a25ceac03f9d.png",
-    href: "/domaines-expertise#corporate-finance"
+    href: "/domaines-expertise#corporate"
   },
   {
     title: "Accompagnement juridique & social",
     image: "/lovable-uploads/a7f22a1b-43e9-4c44-a47d-df43bbab5901.png",
-    href: "/domaines-expertise#juridique-social"
+    href: "/domaines-expertise#juridique"
   },
   {
     title: "Outsourcing & Externalisation",
@@ -37,17 +38,17 @@ const expertiseDomains = [
   {
     title: "Digitalisation et systèmes d'information",
     image: "/lovable-uploads/c77098e9-3f18-4389-b9e1-012be59e78dd.png",
-    href: "/domaines-expertise#digitalisation"
+    href: "/domaines-expertise#digital"
   },
   {
     title: "Support aux investisseurs étrangers",
     image: "/lovable-uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png",
-    href: "/domaines-expertise#investisseurs-etrangers"
+    href: "/domaines-expertise#international"
   },
   {
     title: "Conseil en stratégie & développement",
     image: "/lovable-uploads/4c28863e-d429-476b-ab43-4c6a6e22bdf9.png",
-    href: "/domaines-expertise#conseil-strategie"
+    href: "/domaines-expertise#strategie"
   }
 ];
 
@@ -67,9 +68,10 @@ export default function ServiceTabs() {
       {/* Expertise Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {expertiseDomains.map((domain, index) => (
-          <div
+          <Link
             key={index}
-            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2"
+            to={domain.href}
+            className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 block"
           >
             <div className="relative h-80">
               <img
@@ -97,7 +99,7 @@ export default function ServiceTabs() {
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
     </section>

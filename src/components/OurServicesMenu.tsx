@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { 
   FileCheck, 
@@ -12,8 +13,7 @@ import {
   Target 
 } from "lucide-react";
 
-export default function OurServicesMenu() {
-  const expertiseDomains = [
+const expertiseDomains = [
     {
       id: "audit",
       title: "Audit & Commissariat aux comptes",
@@ -142,9 +142,20 @@ export default function OurServicesMenu() {
     }
   ];
 
+export default function OurServicesMenu() {
+  const location = useLocation();
+  const [activeTab, setActiveTab] = useState(expertiseDomains[0]?.id || "audit");
+
+  useEffect(() => {
+    const hash = location.hash.replace('#', '');
+    if (hash && expertiseDomains.some(domain => domain.id === hash)) {
+      setActiveTab(hash);
+    }
+  }, [location.hash]);
+
   return (
     <section className="nexia-section-padding bg-nexia-light">
-      <Tabs defaultValue={expertiseDomains[0].id} className="w-full">
+      <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 gap-2 h-auto p-2 bg-white rounded-xl shadow-sm">
           {expertiseDomains.map((domain) => {
             const IconComponent = domain.icon;

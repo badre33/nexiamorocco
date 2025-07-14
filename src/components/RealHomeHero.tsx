@@ -6,21 +6,24 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 const slides = [
   {
     id: 1,
-    title: "Excellence in Accounting Services",
-    subtitle: "Home",
-    link: "/about"
+    title: "L'expertise de confiance, au service de votre performance",
+    subtitle: "Audit, fiscalité, stratégie, conformité, corporate finance… Nos domaines d'expertise s'adaptent à vos enjeux au Maroc et à l'international.",
+    buttonText: "Découvrir nos domaines d'expertise",
+    link: "/domaines-expertise"
   },
   {
     id: 2,
-    title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-    subtitle: "Home",
-    link: "/about"
+    title: "Une signature locale, un réseau mondial",
+    subtitle: "Nexia Fiducia Maroc, membre du réseau Nexia International, accompagne les entreprises marocaines et étrangères avec un engagement d'excellence, d'éthique et de proximité.",
+    buttonText: "En savoir plus sur Nexia Fiducia Maroc",
+    link: "/a-propos"
   },
   {
     id: 3,
-    title: "Professional Consulting Solutions",
-    subtitle: "Home", 
-    link: "/services"
+    title: "Une équipe dirigeante engagée à vos côtés",
+    subtitle: "Découvrez les profils et expertises des associés qui portent la vision de Nexia Fiducia Maroc et accompagnent nos clients au quotidien.",
+    buttonText: "Rencontrer notre équipe",
+    link: "/equipe-dirigeante"
   }
 ];
 
@@ -61,7 +64,7 @@ export default function RealHomeHero() {
             asChild 
             className="nexia-button-secondary font-poppins font-medium px-10 py-3 mb-12"
           >
-            <Link to={current.link}>Discover more</Link>
+            <Link to={current.link}>{current.buttonText}</Link>
           </Button>
 
           {/* Navigation Controls */}

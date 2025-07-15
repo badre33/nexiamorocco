@@ -15,30 +15,57 @@ export default function ContactHero() {
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="max-w-4xl bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-professional">
+        <div className="max-w-6xl bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-professional">
           <h1 className="text-4xl lg:text-5xl font-bold text-nexia-primary mb-8">
-            Contact Us
+            Contactez-nous
           </h1>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Address Column */}
-            <div className="space-y-2">
-              <p className="text-nexia-primary">Address 1</p>
-              <p className="text-nexia-primary">Address 2</p>
-              <p className="text-nexia-primary">City, State ZIP</p>
-              <p className="text-nexia-primary">Country</p>
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-nexia-primary mb-6">Nos Bureaux</h2>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            {/* Bureau Principal */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-nexia-primary mb-4">Bureau Principal</h3>
+              <div className="space-y-2">
+                <p className="text-nexia-primary">3, Rue Bab El Mansour</p>
+                <p className="text-nexia-primary">Résidence Imrane - RDC Bureau n°15</p>
+                <p className="text-nexia-primary">Espace Porte d'Anfa</p>
+                <p className="text-nexia-primary">Casablanca - Maroc</p>
+                <p className="text-nexia-primary font-medium mt-3">
+                  Tél: <a href="tel:+212522364588" className="text-nexia-secondary hover:underline">+(212) 05 22 36 45 88/89</a>
+                </p>
+              </div>
             </div>
 
-            {/* Contact Details Column */}
-            <div className="space-y-2">
-              <p className="text-nexia-primary">Tel: +00 (0)55 5555 5555</p>
-              <p className="text-nexia-primary mb-4">Fax: +00 (0)55 5555 5555</p>
-              <p className="text-nexia-primary">
-                Email: <a href="mailto:info@nexiamemberfirm.com" className="text-nexia-secondary hover:underline">info@nexiamemberfirm.com</a>
-              </p>
-              <p className="text-nexia-primary">
-                Web: <a href="https://www.nexiamemberfirm.com" className="text-nexia-secondary hover:underline">www.nexiamemberfirm.com</a>
-              </p>
+            {/* Bureau Secondaire */}
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <h3 className="text-xl font-bold text-nexia-primary mb-4">Bureau Secondaire</h3>
+              <div className="space-y-2">
+                <p className="text-nexia-primary">Rue des Pléaides</p>
+                <p className="text-nexia-primary">Quartier des Hôpitaux</p>
+                <p className="text-nexia-primary">Casablanca - Maroc</p>
+                <p className="text-nexia-primary font-medium mt-3">
+                  Tél: <a href="tel:+212522863715" className="text-nexia-secondary hover:underline">+(212) 522 863 715</a>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Contact supplémentaire */}
+          <div className="mt-8 pt-6 border-t border-gray-200">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <p className="text-nexia-primary">
+                  Email: <a href="mailto:contact@nexiafiduciamaroc.ma" className="text-nexia-secondary hover:underline">contact@nexiafiduciamaroc.ma</a>
+                </p>
+              </div>
+              <div>
+                <p className="text-nexia-primary">
+                  Web: <a href="https://www.nexiafiduciamaroc.ma" className="text-nexia-secondary hover:underline">www.nexiafiduciamaroc.ma</a>
+                </p>
+              </div>
             </div>
           </div>
         </div>

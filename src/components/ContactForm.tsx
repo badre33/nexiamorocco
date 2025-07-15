@@ -383,7 +383,7 @@ export default function ContactForm() {
                         onClick={() => setShowCountryDropdown(!showCountryDropdown)}
                         className="flex items-center justify-center h-full px-3 bg-gray-50 border-r border-gray-300 rounded-l-md hover:bg-gray-100 transition-colors focus:outline-none focus:bg-gray-100 min-w-[100px]"
                       >
-                        <div className="flex items-center justify-center gap-2">
+                        <div className="flex items-center justify-center gap-2" style={{ paddingTop: '2px' }}>
                           <span className="text-lg leading-none">{selectedCountry?.flag}</span>
                           <span className="text-sm font-medium text-gray-700 leading-none">{formData.countryCode}</span>
                           <ChevronDown className="w-3 h-3 text-gray-500" />

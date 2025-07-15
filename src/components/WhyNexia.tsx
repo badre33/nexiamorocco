@@ -22,9 +22,13 @@ export default function WhyNexia() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           {/* Title Section */}
           <div className="text-center lg:text-left">
-            <div className="inline-block p-1 bg-white/10 rounded-full mb-6">
-              <div className="flex items-center justify-center w-16 h-16 bg-nexia-accent rounded-full">
-                <span className="text-2xl font-bold text-white">N</span>
+            <div className="inline-block p-3 bg-white/10 rounded-full mb-6 backdrop-blur-sm">
+              <div className="flex items-center justify-center w-20 h-20 bg-white rounded-full shadow-xl">
+                <img 
+                  src="/lovable-uploads/b69b11f7-b22d-4f2a-960a-c7c614e1eb3b.png" 
+                  alt="Nexia Logo" 
+                  className="w-16 h-auto object-contain"
+                />
               </div>
             </div>
             <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">

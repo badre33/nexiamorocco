@@ -52,15 +52,17 @@ const EquipeDirecteante = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
             {teamMembers.map((member) => (
               <Card key={member.id} className="nexia-card-rounded overflow-hidden hover:shadow-xl transition-all duration-300 bg-card border-border">
-                <CardContent className="p-0">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img 
-                      src={member.image} 
-                      alt={member.name}
-                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
-                    />
+                <CardContent className="p-8">
+                  <div className="flex flex-col items-center mb-6">
+                    <div className="w-32 h-32 rounded-full overflow-hidden mb-4 ring-4 ring-primary/20 shadow-lg">
+                      <img 
+                        src={member.image} 
+                        alt={member.name}
+                        className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+                      />
+                    </div>
                   </div>
-                  <div className="p-8">
+                  <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold text-foreground mb-2">
                       {member.name}
                     </h3>
@@ -68,34 +70,34 @@ const EquipeDirecteante = () => {
                       {member.title}
                     </p>
                     
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-2">Domaines d'expertise :</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {member.specialties.map((specialty, index) => (
-                          <span 
-                            key={index}
-                            className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
-                          >
-                            {specialty}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    
-                    <p className="text-muted-foreground mb-6 leading-relaxed">
-                      {member.description}
-                    </p>
-                    
-                    <div className="flex flex-col space-y-3 pt-4 border-t border-border">
-                      <div className="flex items-center space-x-3 text-muted-foreground">
-                        <Mail className="h-4 w-4 text-primary" />
-                        <span className="text-sm">{member.email}</span>
-                      </div>
-                      <div className="flex items-center space-x-3 text-muted-foreground">
-                        <Phone className="h-4 w-4 text-primary" />
-                        <span className="text-sm">{member.phone}</span>
-                      </div>
-                    </div>
+                     <div className="mb-6">
+                       <h4 className="font-semibold text-foreground mb-3">Domaines d'expertise :</h4>
+                       <div className="flex flex-wrap justify-center gap-2">
+                         {member.specialties.map((specialty, index) => (
+                           <span 
+                             key={index}
+                             className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium"
+                           >
+                             {specialty}
+                           </span>
+                         ))}
+                       </div>
+                     </div>
+                     
+                     <p className="text-muted-foreground mb-6 leading-relaxed text-justify">
+                       {member.description}
+                     </p>
+                     
+                     <div className="flex flex-col space-y-3 pt-4 border-t border-border">
+                       <div className="flex items-center justify-center space-x-3 text-muted-foreground">
+                         <Mail className="h-4 w-4 text-primary" />
+                         <span className="text-sm">{member.email}</span>
+                       </div>
+                       <div className="flex items-center justify-center space-x-3 text-muted-foreground">
+                         <Phone className="h-4 w-4 text-primary" />
+                         <span className="text-sm">{member.phone}</span>
+                       </div>
+                     </div>
                   </div>
                 </CardContent>
               </Card>

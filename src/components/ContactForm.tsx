@@ -15,6 +15,7 @@ export default function ContactForm() {
     lastName: "",
     email: "",
     company: "",
+    countryCode: "+212",
     phone: "",
     service: "",
     message: ""
@@ -56,6 +57,60 @@ export default function ContactForm() {
     }
   };
 
+  const handleCountryCodeChange = (value: string) => {
+    setFormData(prev => ({ ...prev, countryCode: value }));
+  };
+
+  // Liste des indicatifs de pays
+  const countryCodes = [
+    { code: "+212", country: "Maroc", flag: "🇲🇦" },
+    { code: "+33", country: "France", flag: "🇫🇷" },
+    { code: "+1", country: "États-Unis", flag: "🇺🇸" },
+    { code: "+44", country: "Royaume-Uni", flag: "🇬🇧" },
+    { code: "+49", country: "Allemagne", flag: "🇩🇪" },
+    { code: "+39", country: "Italie", flag: "🇮🇹" },
+    { code: "+34", country: "Espagne", flag: "🇪🇸" },
+    { code: "+41", country: "Suisse", flag: "🇨🇭" },
+    { code: "+32", country: "Belgique", flag: "🇧🇪" },
+    { code: "+31", country: "Pays-Bas", flag: "🇳🇱" },
+    { code: "+216", country: "Tunisie", flag: "🇹🇳" },
+    { code: "+213", country: "Algérie", flag: "🇩🇿" },
+    { code: "+20", country: "Égypte", flag: "🇪🇬" },
+    { code: "+966", country: "Arabie Saoudite", flag: "🇸🇦" },
+    { code: "+971", country: "Émirats Arabes Unis", flag: "🇦🇪" },
+    { code: "+974", country: "Qatar", flag: "🇶🇦" },
+    { code: "+965", country: "Koweït", flag: "🇰🇼" },
+    { code: "+961", country: "Liban", flag: "🇱🇧" },
+    { code: "+962", country: "Jordanie", flag: "🇯🇴" },
+    { code: "+90", country: "Turquie", flag: "🇹🇷" },
+    { code: "+7", country: "Russie", flag: "🇷🇺" },
+    { code: "+86", country: "Chine", flag: "🇨🇳" },
+    { code: "+81", country: "Japon", flag: "🇯🇵" },
+    { code: "+82", country: "Corée du Sud", flag: "🇰🇷" },
+    { code: "+91", country: "Inde", flag: "🇮🇳" },
+    { code: "+92", country: "Pakistan", flag: "🇵🇰" },
+    { code: "+93", country: "Afghanistan", flag: "🇦🇫" },
+    { code: "+880", country: "Bangladesh", flag: "🇧🇩" },
+    { code: "+66", country: "Thaïlande", flag: "🇹🇭" },
+    { code: "+65", country: "Singapour", flag: "🇸🇬" },
+    { code: "+60", country: "Malaisie", flag: "🇲🇾" },
+    { code: "+62", country: "Indonésie", flag: "🇮🇩" },
+    { code: "+63", country: "Philippines", flag: "🇵🇭" },
+    { code: "+84", country: "Vietnam", flag: "🇻🇳" },
+    { code: "+61", country: "Australie", flag: "🇦🇺" },
+    { code: "+64", country: "Nouvelle-Zélande", flag: "🇳🇿" },
+    { code: "+27", country: "Afrique du Sud", flag: "🇿🇦" },
+    { code: "+234", country: "Nigeria", flag: "🇳🇬" },
+    { code: "+254", country: "Kenya", flag: "🇰🇪" },
+    { code: "+233", country: "Ghana", flag: "🇬🇭" },
+    { code: "+55", country: "Brésil", flag: "🇧🇷" },
+    { code: "+54", country: "Argentine", flag: "🇦🇷" },
+    { code: "+56", country: "Chili", flag: "🇨🇱" },
+    { code: "+57", country: "Colombie", flag: "🇨🇴" },
+    { code: "+52", country: "Mexique", flag: "🇲🇽" },
+    { code: "+51", country: "Pérou", flag: "🇵🇪" },
+  ];
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
@@ -77,6 +132,7 @@ export default function ContactForm() {
       lastName: "",
       email: "",
       company: "",
+      countryCode: "+212",
       phone: "",
       service: "",
       message: ""
@@ -161,15 +217,37 @@ export default function ContactForm() {
                   <Phone className="w-4 h-4" />
                   Téléphone *
                 </Label>
-                <Input
-                  id="phone"
-                  type="tel"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className={`h-12 ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-nexia-secondary`}
-                  placeholder="+212 5XX XX XX XX"
-                />
+                <div className="flex gap-2">
+                  <Select onValueChange={handleCountryCodeChange} value={formData.countryCode}>
+                    <SelectTrigger className="w-[140px] h-12 border-gray-300 focus:border-nexia-secondary bg-white z-50">
+                      <SelectValue />
+                    </SelectTrigger>
+                    <SelectContent className="bg-white border border-gray-200 shadow-lg z-[100] max-h-[300px] overflow-y-auto">
+                      {countryCodes.map((country) => (
+                        <SelectItem 
+                          key={country.code} 
+                          value={country.code}
+                          className="hover:bg-gray-100 cursor-pointer"
+                        >
+                          <div className="flex items-center gap-2">
+                            <span className="text-lg">{country.flag}</span>
+                            <span className="font-medium">{country.code}</span>
+                            <span className="text-sm text-gray-500 hidden sm:inline">{country.country}</span>
+                          </div>
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+                  <Input
+                    id="phone"
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className={`flex-1 h-12 ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-nexia-secondary`}
+                    placeholder="XX XX XX XX"
+                  />
+                </div>
                 {errors.phone && <p className="text-red-500 text-sm">{errors.phone}</p>}
               </div>
             </div>

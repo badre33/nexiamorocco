@@ -218,14 +218,19 @@ export default function ContactForm() {
                   Téléphone *
                 </Label>
                 <div className="flex h-10 md:h-12 border border-gray-300 rounded-md focus-within:border-nexia-secondary focus-within:ring-1 focus-within:ring-nexia-secondary">
-                  <div className="flex items-center justify-center w-[80px] md:w-[100px] bg-gray-50 border-r border-gray-300" style={{ alignItems: 'center', justifyContent: 'center' }}>
+                  <div className="w-[80px] md:w-[100px] bg-gray-50 border-r border-gray-300">
                     <Select onValueChange={handleCountryCodeChange} value={formData.countryCode}>
-                      <SelectTrigger className="w-full h-full border-0 focus:ring-0 bg-transparent shadow-none" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100%' }}>
+                      <SelectTrigger className="w-full h-full border-0 focus:ring-0 bg-transparent shadow-none flex items-center justify-center">
                         <SelectValue>
-                          <div className="flex items-center gap-1" style={{ alignItems: 'center' }}>
-                            <span className="text-lg">🇲🇦</span>
-                            <span className="font-medium text-sm">{formData.countryCode}</span>
-                          </div>
+                          {(() => {
+                            const selectedCountry = countryCodes.find(c => c.code === formData.countryCode);
+                            return (
+                              <div className="flex items-center gap-1">
+                                <span className="text-lg">{selectedCountry?.flag || "🇲🇦"}</span>
+                                <span className="font-medium text-sm">{formData.countryCode}</span>
+                              </div>
+                            );
+                          })()}
                         </SelectValue>
                       </SelectTrigger>
                       <SelectContent className="bg-white border border-gray-200 shadow-lg z-[100] max-h-[300px] overflow-y-auto">

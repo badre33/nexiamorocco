@@ -381,7 +381,7 @@ export default function ContactForm() {
                       <button
                         type="button"
                         onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-                        className="h-12 px-3 bg-gray-50 border-r border-gray-300 rounded-l-md hover:bg-gray-100 transition-colors focus:outline-none focus:bg-gray-100 min-w-[100px] flex items-center justify-center"
+                        className="h-12 px-3 bg-gray-50 border-r border-gray-300 rounded-l-md hover:bg-gray-100 transition-colors focus:outline-none focus:bg-gray-100 min-w-[130px] flex items-center justify-center"
                       >
                         <div className="flex items-center justify-center gap-2">
                           <span className="text-lg">{selectedCountry?.flag}</span>

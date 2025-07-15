@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="mb-12">
           <div className="text-center md:text-left">
             <img 
-              src="/lovable-uploads/f24a309f-ad74-4831-ae0b-1f4a66a6bb58.png" 
+              src="/images/nexia-fiducia-maroc-logo.svg" 
               alt="Nexia Fiducia Maroc" 
               className="h-[50px] w-auto mx-auto md:mx-0"
             />

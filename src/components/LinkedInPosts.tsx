@@ -85,7 +85,7 @@ export default function LinkedInPosts() {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-nexia-secondary text-white px-8 py-3 rounded-lg font-medium hover:bg-nexia-primary transition-colors duration-200"
           >
-            Voir toutes les publications Nexia International
+            Suivez-nous sur LinkedIn
             <svg
               className="w-4 h-4"
               fill="none"

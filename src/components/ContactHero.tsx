@@ -52,22 +52,6 @@ export default function ContactHero() {
               </div>
             </div>
           </div>
-
-          {/* Contact supplémentaire */}
-          <div className="mt-8 pt-6 border-t border-gray-200">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div>
-                <p className="text-nexia-primary">
-                  Email: <a href="mailto:contact@nexiafiduciamaroc.ma" className="text-nexia-secondary hover:underline">contact@nexiafiduciamaroc.ma</a>
-                </p>
-              </div>
-              <div>
-                <p className="text-nexia-primary">
-                  Web: <a href="https://www.nexiafiduciamaroc.ma" className="text-nexia-secondary hover:underline">www.nexiafiduciamaroc.ma</a>
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </section>

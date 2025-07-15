@@ -10,7 +10,10 @@ import {
   Laptop, 
   Globe, 
   Scale, 
-  Target 
+  Target,
+  Award,
+  Clock,
+  CheckCircle
 } from "lucide-react";
 
 const expertiseDomains = [
@@ -18,8 +21,9 @@ const expertiseDomains = [
       id: "audit",
       title: "Audit & Commissariat aux comptes",
       icon: ShieldCheck,
-      color: "text-blue-600 bg-blue-50",
-      gradient: "from-blue-500 to-blue-600",
+      color: "text-nexia-blue bg-blue-50",
+      stats: { years: "25+", clients: "200+", certification: "IFRS" },
+      badge: "Certification ISA",
       description: "Parce que la transparence financière est aujourd'hui un levier stratégique de confiance, nous réalisons vos audits avec une rigueur absolue et une méthodologie conforme aux normes internationales (IFRS, ISA). Notre approche combine exigence technique, indépendance professionnelle et compréhension sectorielle, pour garantir la fiabilité de vos états financiers et renforcer votre crédibilité auprès des investisseurs, partenaires et régulateurs.",
       services: [
         "Audit légal et contractuel",
@@ -33,8 +37,9 @@ const expertiseDomains = [
       id: "comptable",
       title: "Expertise comptable & Conseil opérationnel",
       icon: BookOpen,
-      color: "text-yellow-600 bg-yellow-50",
-      gradient: "from-yellow-500 to-orange-500",
+      color: "text-nexia-yellow bg-yellow-50",
+      stats: { years: "20+", clients: "300+", certification: "Expert" },
+      badge: "Expertise Certifiée",
       description: "Une comptabilité bien tenue est plus qu'une obligation : c'est un outil de pilotage. Nos experts-comptables vous accompagnent dans la structuration, la supervision et l'optimisation de vos processus comptables, tout en vous apportant un éclairage stratégique sur vos performances et marges. Nous intervenons à la fois en mode externalisé ou collaboratif, selon vos besoins.",
       services: [
         "Tenue comptable, supervision & reporting",
@@ -49,7 +54,8 @@ const expertiseDomains = [
       title: "Fiscalité & Optimisation fiscale",
       icon: PiggyBank,
       color: "text-orange-600 bg-orange-50",
-      gradient: "from-orange-500 to-red-500",
+      stats: { years: "15+", clients: "150+", certification: "Fiscal" },
+      badge: "Expertise Fiscale",
       description: "Dans un environnement fiscal en constante évolution, nous vous aidons à anticiper, sécuriser et optimiser vos obligations fiscales, tout en veillant à la conformité réglementaire. Notre approche personnalisée prend en compte la structure de votre entreprise, vos flux internationaux et vos enjeux de croissance.",
       services: [
         "Fiscalité marocaine & internationale",
@@ -63,8 +69,9 @@ const expertiseDomains = [
       id: "corporate",
       title: "Corporate Finance & Transactions",
       icon: TrendingUp,
-      color: "text-purple-600 bg-purple-50",
-      gradient: "from-purple-500 to-indigo-600",
+      color: "text-nexia-pink bg-pink-50",
+      stats: { years: "10+", clients: "100+", certification: "M&A" },
+      badge: "Spécialiste M&A",
       description: "Que ce soit pour céder, acquérir, fusionner ou lever des fonds, Nexia Fiducia Maroc vous accompagne dans vos opérations stratégiques avec discrétion, rigueur et méthode. Nos équipes expertes en finance d'entreprise vous apportent une vision claire, chiffrée et orientée résultats.",
       services: [
         "Fusions & acquisitions",
@@ -79,7 +86,8 @@ const expertiseDomains = [
       title: "Externalisation & gestion déléguée (Outsourcing)",
       icon: Users,
       color: "text-green-600 bg-green-50",
-      gradient: "from-green-500 to-emerald-600",
+      stats: { years: "12+", clients: "250+", certification: "BPO" },
+      badge: "Expert BPO",
       description: "Gagnez en productivité et recentrez-vous sur votre cœur de métier en nous confiant la gestion de vos fonctions support. Nos solutions d'externalisation sont flexibles, sécurisées et adaptées à votre secteur d'activité.",
       services: [
         "Externalisation comptable",
@@ -93,8 +101,9 @@ const expertiseDomains = [
       id: "digital",
       title: "Digitalisation & systèmes d'information",
       icon: Laptop,
-      color: "text-indigo-600 bg-indigo-50",
-      gradient: "from-indigo-500 to-blue-600",
+      color: "text-nexia-blue bg-indigo-50",
+      stats: { years: "8+", clients: "80+", certification: "Digital" },
+      badge: "Innovation Tech",
       description: "Le digital transforme en profondeur les métiers du chiffre, de la conformité et du conseil. Nous vous accompagnons dans la mise en place d'outils performants, la sécurisation de vos systèmes, la conformité RGPD et la transition vers des modèles agiles et connectés.",
       services: [
         "Audit des systèmes d'information",
@@ -109,7 +118,8 @@ const expertiseDomains = [
       title: "Support aux investisseurs étrangers",
       icon: Globe,
       color: "text-red-600 bg-red-50",
-      gradient: "from-red-500 to-pink-600",
+      stats: { years: "18+", clients: "120+", certification: "Global" },
+      badge: "Expertise Internationale",
       description: "Vous souhaitez vous implanter, investir ou développer vos activités au Maroc ? Nous mettons à votre service notre connaissance des règles locales et notre capacité d'interface avec l'écosystème institutionnel et financier pour vous garantir un atterrissage fluide et sécurisé.",
       services: [
         "Création d'entreprise & choix de structure",
@@ -124,7 +134,8 @@ const expertiseDomains = [
       title: "Accompagnement juridique & social",
       icon: Scale,
       color: "text-gray-600 bg-gray-50",
-      gradient: "from-gray-500 to-slate-600",
+      stats: { years: "22+", clients: "180+", certification: "Juridique" },
+      badge: "Conseil Juridique",
       description: "La conformité juridique est au cœur de votre pérennité. Notre équipe vous assiste sur toutes les problématiques de droit des affaires, droit social et conformité, en lien direct avec vos enjeux opérationnels.",
       services: [
         "Création & suivi juridique des sociétés",
@@ -138,8 +149,9 @@ const expertiseDomains = [
       id: "strategie",
       title: "Conseil en stratégie & développement",
       icon: Target,
-      color: "text-blue-800 bg-blue-100",
-      gradient: "from-blue-600 to-cyan-600",
+      color: "text-nexia-primary bg-blue-100",
+      stats: { years: "15+", clients: "90+", certification: "Strategy" },
+      badge: "Conseil Stratégique",
       description: "Nous vous aidons à construire une vision claire et ambitieuse, puis à la transformer en résultats concrets. Nos consultants vous accompagnent dans les grands virages stratégiques, le développement de votre activité et la structuration de votre croissance.",
       services: [
         "Élaboration de plans stratégiques",
@@ -211,30 +223,43 @@ export default function OurServicesMenu() {
   const progressPercentage = ((activeIndex + 1) / expertiseDomains.length) * 100;
 
   return (
-    <section id="our-services-menu" className="nexia-section-padding bg-nexia-light">
+    <section id="our-services-menu" className="nexia-section-padding bg-gradient-to-br from-background to-muted/20">
       <div className="max-w-7xl mx-auto">
-        {/* Progress indicator */}
-        <div className="mb-8">
-          <div className="flex items-center justify-between mb-4">
-            <h2 className="text-3xl font-bold text-nexia-primary font-poppins">
-              Nos Domaines d'Expertise
-            </h2>
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-nexia-primary font-medium">
-                {activeIndex + 1} / {expertiseDomains.length}
+        {/* Header avec impact visuel */}
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexia-secondary/10 rounded-full mb-6">
+            <Award className="h-5 w-5 text-nexia-secondary" />
+            <span className="text-nexia-secondary font-semibold">Excellence & Expertise</span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-bold text-nexia-primary mb-6 font-poppins">
+            Nos Domaines d'<span className="text-nexia-secondary">Expertise</span>
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            Plus de 25 ans d'expérience au service de votre croissance. 
+            <strong className="text-nexia-primary"> 9 domaines d'expertise</strong> pour accompagner tous vos projets.
+          </p>
+          
+          {/* Progress indicator amélioré */}
+          <div className="mt-8 max-w-md mx-auto">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-sm font-medium text-nexia-primary">
+                Domaine {activeIndex + 1} sur {expertiseDomains.length}
+              </span>
+              <span className="text-sm text-muted-foreground">
+                {Math.round(progressPercentage)}%
               </span>
             </div>
-          </div>
-          <div className="w-full bg-gray-200 rounded-full h-1.5 overflow-hidden">
-            <div 
-              className="h-full bg-gradient-to-r from-nexia-primary to-nexia-secondary rounded-full transition-all duration-500 ease-out"
-              style={{ width: `${progressPercentage}%` }}
-            />
+            <div className="w-full bg-muted rounded-full h-2 overflow-hidden shadow-inner">
+              <div 
+                className="h-full bg-gradient-to-r from-nexia-primary to-nexia-secondary rounded-full transition-all duration-700 ease-out shadow-sm"
+                style={{ width: `${progressPercentage}%` }}
+              />
+            </div>
           </div>
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 gap-2 h-auto p-2 bg-white rounded-xl shadow-lg border-0">
+          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-9 gap-3 h-auto p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-professional border border-border/50">
             {expertiseDomains.map((domain, index) => {
               const IconComponent = domain.icon;
               const isActive = activeTab === domain.id;
@@ -243,32 +268,35 @@ export default function OurServicesMenu() {
                   key={domain.id} 
                   value={domain.id}
                   className={`
-                    group relative flex flex-col items-center p-4 min-h-[100px] 
-                    transition-all duration-300 ease-out rounded-lg border-0
-                    hover:scale-105 hover:shadow-lg hover:-translate-y-1
+                    group relative flex flex-col items-center p-4 min-h-[110px] 
+                    transition-all duration-300 ease-out rounded-xl border-0
+                    hover:scale-105 hover:shadow-hover hover:-translate-y-2
                     ${isActive 
-                      ? 'bg-gradient-to-br from-nexia-primary to-nexia-secondary text-white shadow-lg transform scale-105 -translate-y-1' 
-                      : 'bg-white text-nexia-primary hover:bg-gradient-to-br hover:from-gray-50 hover:to-white'
+                      ? 'bg-gradient-to-br from-nexia-primary to-nexia-blue text-white shadow-hover transform scale-105 -translate-y-2' 
+                      : 'bg-white text-nexia-primary hover:bg-gradient-to-br hover:from-gray-50 hover:to-white hover:text-nexia-secondary'
                     }
                   `}
                 >
                   <div className={`
                     relative p-3 rounded-xl mb-2 transition-all duration-300
                     ${isActive 
-                      ? 'bg-white/20 text-white' 
-                      : `${domain.color} group-hover:scale-110`
+                      ? 'bg-white/20 text-white backdrop-blur-sm' 
+                      : `${domain.color} group-hover:scale-110 group-hover:rotate-3`
                     }
                   `}>
-                    <IconComponent className="h-7 w-7 transition-transform duration-300 group-hover:scale-110" />
+                    <IconComponent className="h-7 w-7 transition-all duration-300 group-hover:scale-110" />
                     {isActive && (
-                      <div className="absolute inset-0 rounded-xl bg-white/20 animate-pulse" />
+                      <div className="absolute inset-0 rounded-xl bg-white/10 animate-pulse" />
                     )}
                   </div>
-                  <span className="text-xs font-semibold text-center leading-tight transition-all duration-300">
+                  <span className="text-xs font-bold text-center leading-tight transition-all duration-300 group-hover:scale-105">
                     {domain.title.split(' ')[0]}
                   </span>
                   {isActive && (
-                    <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-white rounded-full" />
+                    <>
+                      <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-8 h-1 bg-white rounded-full shadow-sm" />
+                      <div className="absolute top-2 right-2 w-2 h-2 bg-nexia-yellow rounded-full animate-pulse" />
+                    </>
                   )}
                 </TabsTrigger>
               );
@@ -283,36 +311,72 @@ export default function OurServicesMenu() {
                 value={domain.id} 
                 className="mt-8 animate-fade-in"
               >
-                <div className="bg-white rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1 border border-gray-100">
-                  <div className="flex items-start gap-6">
-                    <div className={`
-                      relative p-6 rounded-2xl transition-all duration-300 hover:scale-105
-                      bg-gradient-to-br ${domain.gradient} text-white shadow-lg
-                    `}>
-                      <IconComponent className="h-10 w-10" />
-                      <div className="absolute inset-0 rounded-2xl bg-white/10 opacity-0 hover:opacity-100 transition-opacity duration-300" />
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-3xl font-bold text-nexia-primary mb-4 font-poppins hover:text-nexia-secondary transition-colors duration-300">
-                        {domain.title}
-                      </h3>
-                      <p className="text-lg text-nexia-primary mb-6 leading-relaxed font-poppins opacity-90">
-                        {domain.description}
-                      </p>
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {domain.services.map((service, serviceIndex) => (
-                          <div 
-                            key={serviceIndex} 
-                            className="group flex items-center gap-3 p-3 rounded-lg hover:bg-gradient-to-r hover:from-gray-50 hover:to-white transition-all duration-300 hover:shadow-sm"
-                            style={{ animationDelay: `${serviceIndex * 100}ms` }}
-                          >
-                            <div className="w-3 h-3 bg-gradient-to-r from-nexia-secondary to-nexia-primary rounded-full transition-transform duration-300 group-hover:scale-125"></div>
-                            <span className="text-nexia-primary font-poppins font-medium group-hover:text-nexia-secondary transition-colors duration-300">
-                              {service}
-                            </span>
-                          </div>
-                        ))}
+                <div className="bg-white rounded-2xl p-8 shadow-professional hover:shadow-hover transition-all duration-500 transform hover:-translate-y-1 border border-border/20 nexia-card-rounded">
+                  {/* Header avec badge et stats */}
+                  <div className="flex items-start justify-between mb-6">
+                    <div className="flex items-start gap-6">
+                      <div className={`
+                        relative p-6 rounded-2xl transition-all duration-300 hover:scale-105
+                        bg-gradient-to-br from-nexia-primary to-nexia-blue text-white shadow-professional
+                      `}>
+                        <IconComponent className="h-12 w-12" />
+                        <div className="absolute -top-1 -right-1 w-6 h-6 bg-nexia-yellow rounded-full flex items-center justify-center">
+                          <CheckCircle className="h-3 w-3 text-nexia-primary" />
+                        </div>
                       </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-3 mb-2">
+                          <h3 className="text-3xl font-bold text-nexia-primary font-poppins hover:text-nexia-secondary transition-colors duration-300">
+                            {domain.title}
+                          </h3>
+                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-nexia-secondary/10 text-nexia-secondary rounded-full text-sm font-semibold">
+                            <Award className="h-3 w-3" />
+                            {domain.badge}
+                          </span>
+                        </div>
+                        
+                        {/* Statistiques percutantes */}
+                        <div className="flex gap-6 mb-4">
+                          <div className="flex items-center gap-2">
+                            <Clock className="h-4 w-4 text-nexia-secondary" />
+                            <span className="text-sm font-semibold text-nexia-primary">{domain.stats.years} ans d'expérience</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <Users className="h-4 w-4 text-nexia-secondary" />
+                            <span className="text-sm font-semibold text-nexia-primary">{domain.stats.clients} clients accompagnés</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <CheckCircle className="h-4 w-4 text-nexia-secondary" />
+                            <span className="text-sm font-semibold text-nexia-primary">Certification {domain.stats.certification}</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="text-lg text-nexia-primary/80 mb-8 leading-relaxed font-poppins">
+                    {domain.description}
+                  </p>
+                  
+                  {/* Services avec design amélioré */}
+                  <div className="bg-gradient-to-br from-muted/30 to-transparent rounded-xl p-6">
+                    <h4 className="text-xl font-bold text-nexia-primary mb-4 flex items-center gap-2">
+                      <Target className="h-5 w-5 text-nexia-secondary" />
+                      Nos Services
+                    </h4>
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                      {domain.services.map((service, serviceIndex) => (
+                        <div 
+                          key={serviceIndex} 
+                          className="group flex items-center gap-3 p-4 rounded-lg bg-white hover:bg-gradient-to-r hover:from-nexia-secondary/5 hover:to-nexia-primary/5 transition-all duration-300 hover:shadow-sm hover:scale-[1.02] border border-transparent hover:border-nexia-secondary/20"
+                          style={{ animationDelay: `${serviceIndex * 100}ms` }}
+                        >
+                          <div className="w-3 h-3 bg-gradient-to-r from-nexia-secondary to-nexia-primary rounded-full transition-transform duration-300 group-hover:scale-125 flex-shrink-0"></div>
+                          <span className="text-nexia-primary font-poppins font-medium group-hover:text-nexia-secondary transition-colors duration-300 group-hover:font-semibold">
+                            {service}
+                          </span>
+                        </div>
+                      ))}
                     </div>
                   </div>
                 </div>

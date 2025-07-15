@@ -1,8 +1,43 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-// import treesBackground from "@/assets/trees-background.jpg";
+import { ChevronLeft, ChevronRight, Download } from "lucide-react";
+
+const documents = [
+  {
+    id: 1,
+    category: "TRANSPARENCE",
+    title: "Rapport de Transparence Nexia SA 2024",
+    description: "Découvrez notre rapport de transparence annuel présentant nos engagements et nos performances en matière de qualité d'audit.",
+    downloadUrl: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//rapport-de-transparence-nexia-sa-2024.pdf",
+    buttonText: "Télécharger le rapport"
+  },
+  {
+    id: 2,
+    category: "PRÉSENTATION",
+    title: "Présentation Nexia 2025",
+    description: "Notre présentation institutionnelle détaillant nos services, notre expertise et notre vision pour accompagner votre croissance.",
+    downloadUrl: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//Presentation%20Nexia%202025.pdf",
+    buttonText: "Télécharger la présentation"
+  }
+];
 
 export default function ImageWithCardSection() {
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  const nextSlide = () => {
+    setCurrentSlide((prev) => (prev === documents.length - 1 ? 0 : prev + 1));
+  };
+
+  const prevSlide = () => {
+    setCurrentSlide((prev) => (prev === 0 ? documents.length - 1 : prev - 1));
+  };
+
+  const currentDocument = documents[currentSlide];
+
+  const handleDownload = (url: string) => {
+    window.open(url, '_blank');
+  };
+
   return (
     <section className="relative py-0">
       {/* Background Image */}
@@ -22,16 +57,22 @@ export default function ImageWithCardSection() {
             {/* Card Content */}
             <div className="bg-nexia-primary p-8 rounded-lg shadow-professional max-w-lg">
               <p className="text-nexia-secondary text-sm uppercase tracking-wide mb-4">
-                Our people
+                {currentDocument.category}
               </p>
               <h4 className="text-3xl font-bold text-white mb-6">
-                Promoting a Report
+                {currentDocument.title}
               </h4>
               <p className="text-white/90 mb-8 leading-relaxed">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {currentDocument.description}
               </p>
-              <Button variant="nexia" size="lg">
-                Download
+              <Button 
+                variant="nexia" 
+                size="lg"
+                onClick={() => handleDownload(currentDocument.downloadUrl)}
+                className="flex items-center gap-2"
+              >
+                <Download className="h-4 w-4" />
+                {currentDocument.buttonText}
               </Button>
             </div>
 
@@ -40,6 +81,7 @@ export default function ImageWithCardSection() {
               <Button
                 variant="ghost"
                 size="icon"
+                onClick={prevSlide}
                 className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm rounded-full w-12 h-12"
               >
                 <ChevronLeft className="h-6 w-6" />
@@ -47,11 +89,14 @@ export default function ImageWithCardSection() {
               <Button
                 variant="ghost"
                 size="icon"
+                onClick={nextSlide}
                 className="bg-white/20 hover:bg-white/30 text-white backdrop-blur-sm rounded-full w-12 h-12"
               >
                 <ChevronRight className="h-6 w-6" />
               </Button>
-              <span className="text-white font-medium ml-4">2/3</span>
+              <span className="text-white font-medium ml-4">
+                {currentSlide + 1}/{documents.length}
+              </span>
             </div>
           </div>
         </div>

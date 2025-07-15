@@ -5,11 +5,11 @@ import { ChevronLeft, ChevronRight, Download } from "lucide-react";
 const documents = [
   {
     id: 1,
-    category: "TRANSPARENCE",
-    title: "Rapport de Transparence Nexia SA 2024",
-    description: "Découvrez notre rapport de transparence annuel présentant nos engagements et nos performances en matière de qualité d'audit.",
-    downloadUrl: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//rapport-de-transparence-nexia-sa-2024.pdf",
-    buttonText: "Télécharger le rapport"
+    category: "ADHÉSION",
+    title: "Brochure d'Adhésion Nexia 2025",
+    description: "Découvrez les avantages de rejoindre le réseau international Nexia et comment notre adhésion peut bénéficier à votre organisation.",
+    downloadUrl: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//Nexia-Membership-Brochure-2025.pdf",
+    buttonText: "Télécharger la brochure"
   },
   {
     id: 2,

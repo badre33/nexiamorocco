@@ -38,8 +38,15 @@ export default function Header() {
         <div className="flex items-end justify-between py-[30px] border-none">
           {/* Logo */}
           <div className="flex items-center">
-            <Link to="/" className="text-white text-2xl font-bold">
-              Nexia Fiducia Maroc
+            <Link to="/" className="block">
+              <div className="flex flex-col items-center">
+                <img 
+                  src="/lovable-uploads/9dfb6dc5-f2c8-4956-b9b0-439c0a49d44b.png" 
+                  alt="Nexia" 
+                  className="h-8 w-auto"
+                />
+                <span className="text-white text-sm font-bold mt-1">Fiducia Maroc</span>
+              </div>
             </Link>
           </div>
 

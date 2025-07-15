@@ -1,24 +1,25 @@
-<svg width="300" height="80" viewBox="0 0 300 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<svg width="280" height="100" viewBox="0 0 280 100" fill="none" xmlns="http://www.w3.org/2000/svg">
   <!-- Nexia circular logo -->
-  <g transform="translate(10, 20)">
-    <!-- Outer ring -->
-    <path d="M20 0C31.046 0 40 8.954 40 20C40 31.046 31.046 40 20 40C8.954 40 0 31.046 0 20C0 8.954 8.954 0 20 0Z" fill="#00B9B9"/>
-    <!-- Inner design -->
-    <path d="M12 8C18 8 24 10 28 15C26 12 22 10 18 10C14 10 10 12 8 16C10 12 12 8 12 8Z" fill="#FFFFFF" opacity="0.3"/>
-    <path d="M8 24C8 30 10 34 15 36C12 34 10 30 10 26C10 22 12 18 16 16C12 18 8 21 8 24Z" fill="#FFFFFF" opacity="0.3"/>
-    <path d="M28 16C32 18 34 22 34 26C34 30 32 34 28 36C30 34 32 30 32 26C32 22 30 18 28 16Z" fill="#FFFFFF" opacity="0.6"/>
-    <!-- Central interlinked elements -->
-    <ellipse cx="15" cy="15" rx="8" ry="6" fill="#FFFFFF" opacity="0.2" transform="rotate(30 15 15)"/>
-    <ellipse cx="25" cy="25" rx="8" ry="6" fill="#FFFFFF" opacity="0.2" transform="rotate(-30 25 25)"/>
+  <g transform="translate(10, 15)">
+    <!-- Outer ring with gradient effect -->
+    <circle cx="25" cy="25" r="25" fill="#00B9B9"/>
+    <!-- Inner interlinked design -->
+    <path d="M15 10 C25 8, 35 12, 40 20 C38 15, 32 12, 25 12 C20 12, 15 15, 12 20 C14 15, 15 10, 15 10 Z" fill="#2DD4BF" opacity="0.8"/>
+    <path d="M10 30 C10 38, 15 42, 22 45 C18 42, 15 38, 15 32 C15 28, 18 24, 22 22 C18 24, 10 27, 10 30 Z" fill="#2DD4BF" opacity="0.8"/>
+    <path d="M38 22 C42 24, 45 28, 45 32 C45 38, 42 42, 38 45 C40 42, 42 38, 42 32 C42 28, 40 24, 38 22 Z" fill="#2DD4BF" opacity="0.6"/>
+    <!-- Central connecting elements -->
+    <ellipse cx="20" cy="20" rx="6" ry="4" fill="#FFFFFF" opacity="0.3" transform="rotate(45 20 20)"/>
+    <ellipse cx="30" cy="30" rx="6" ry="4" fill="#FFFFFF" opacity="0.3" transform="rotate(-45 30 30)"/>
+    <path d="M18 18 Q25 25, 32 32" stroke="#FFFFFF" stroke-width="2" fill="none" opacity="0.4"/>
   </g>
   
-  <!-- Main NEXIA text -->
-  <text x="70" y="35" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="700" fill="#FFFFFF">
+  <!-- Main Nexia text -->
+  <text x="75" y="45" font-family="Poppins, Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">
     Nexia
   </text>
   
-  <!-- Fiducia Maroc text -->
-  <text x="70" y="55" font-family="Poppins, Arial, sans-serif" font-size="16" font-weight="400" fill="#FFFFFF">
+  <!-- Fiducia Maroc text below -->
+  <text x="75" y="70" font-family="Poppins, Arial, sans-serif" font-size="16" font-weight="400" fill="#FFFFFF">
     Fiducia Maroc
   </text>
 </svg>

@@ -48,12 +48,12 @@ const globalInsights = [
   {
     id: 3,
     title: "Nexia Experts discuss the current Global Tariffs from the USA",
-    description: "Analyse approfondie des experts Nexia sur l'impact des tarifs douaniers américains sur le commerce international et les stratégies d'adaptation pour les entreprises.",
+    description: "Dans ce podcast, nous abordons l'importance pour les entreprises de se tenir au courant des changements fréquents de tarifs dans le monde. Nous examinons les récents changements tarifaires américains et leur impact sur différentes industries, ainsi que les tactiques que les entreprises peuvent utiliser pour réduire le fardeau tarifaire.",
     category: "Commerce international",
-    author: "Experts Nexia",
-    date: "Février 2025",
+    author: "Christina Lee, Nick Carofano, Harold Grunfeld",
+    date: "Juillet 2025",
     readTime: "8 min",
-    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/02/shutterstock_2145128675.jpg",
+    image: "/src/assets/tariffs-global-usa.jpg",
     featured: false,
     source: "https://nexia.com/insights/nexia-experts-discuss-the-current-global-tariffs-from-the-usa/"
   },
@@ -453,7 +453,10 @@ export default function Insights() {
                         {featuredInsight.readTime}
                       </div>
                     </div>
-                    <Button className="bg-nexia-primary hover:bg-nexia-primary/90">
+                    <Button 
+                      className="bg-nexia-primary hover:bg-nexia-primary/90"
+                      onClick={() => window.open(featuredInsight.source, '_blank')}
+                    >
                       Lire l'article
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -513,7 +516,11 @@ export default function Insights() {
                     {insight.date}
                   </div>
 
-                  <Button variant="outline" className="w-full group">
+                  <Button 
+                    variant="outline" 
+                    className="w-full group"
+                    onClick={() => insight.source && window.open(insight.source, '_blank')}
+                  >
                     Lire l'article
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>

@@ -43,7 +43,7 @@ export default function Header() {
                 <img 
                   src="/lovable-uploads/a0ccc744-ddac-47fb-b5e6-9c9de7196981.png" 
                   alt="Nexia" 
-                  className="h-10 w-auto"
+                  className="h-10 w-auto opacity-50"
                 />
                 <span className="text-white text-sm font-medium mt-1">Fiducia Maroc</span>
               </div>

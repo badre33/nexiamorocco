@@ -9,7 +9,7 @@ export default function ContactMap() {
         
         <div className="rounded-lg overflow-hidden shadow-professional">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4148.3!2d-7.6298!3d33.5890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0x8f5b0e85b6a9b9a9!2s3%20Rue%20Bab%20El%20Mansour%2C%20Casablanca%2C%20Morocco!5e0!3m2!1sfr!2sma!4v1642765432198!5m2!1sfr!2sma"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6595.947!2d-7.6298!3d33.5890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0x8f5b0e85b6a9b9a9!2sCasablanca%2C%20Morocco!5e0!3m2!1sfr!2sma!4v1642765432198!5m2!1sfr!2sma&z=14"
             width="100%"
             height="450"
             style={{ border: 0 }}
@@ -18,6 +18,13 @@ export default function ContactMap() {
             referrerPolicy="no-referrer-when-downgrade"
             title="Localisation des bureaux Nexia Fiducia Maroc"
           />
+        </div>
+
+        {/* Instructions pour voir les deux bureaux */}
+        <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
+          <p className="text-sm text-blue-800 text-center">
+            <strong>Pour localiser nos bureaux :</strong> Utilisez les liens "Voir sur Google Maps" ci-dessous pour accéder directement à chaque adresse avec géolocalisation précise.
+          </p>
         </div>
 
         {/* Marqueurs visuels des bureaux */}

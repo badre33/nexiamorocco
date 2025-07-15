@@ -217,11 +217,11 @@ export default function ContactForm() {
                   <Phone className="w-4 h-4" />
                   Téléphone *
                 </Label>
-                <div className="flex h-10 md:h-12 border border-gray-300 rounded-md focus-within:border-nexia-secondary focus-within:ring-1 focus-within:ring-nexia-secondary">
-                  <div className="w-[80px] md:w-[100px] bg-gray-50 border-r border-gray-300">
+                <div className="flex h-10 md:h-12">
+                  <div className="relative w-[80px] md:w-[100px]">
                     <Select onValueChange={handleCountryCodeChange} value={formData.countryCode}>
-                      <SelectTrigger className="w-full h-full border-0 focus:ring-0 bg-transparent shadow-none flex items-center justify-center">
-                        <SelectValue>
+                      <SelectTrigger className="w-full h-full border border-gray-300 rounded-l-md border-r-0 focus:border-nexia-secondary focus:ring-1 focus:ring-nexia-secondary bg-gray-50">
+                        <div className="flex items-center justify-center w-full h-full">
                           {(() => {
                             const selectedCountry = countryCodes.find(c => c.code === formData.countryCode);
                             return (
@@ -231,7 +231,7 @@ export default function ContactForm() {
                               </div>
                             );
                           })()}
-                        </SelectValue>
+                        </div>
                       </SelectTrigger>
                       <SelectContent className="bg-white border border-gray-200 shadow-lg z-[100] max-h-[300px] overflow-y-auto">
                         {countryCodes.map((country) => (
@@ -256,7 +256,7 @@ export default function ContactForm() {
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`flex-1 h-full border-0 focus:ring-0 rounded-l-none bg-white ${errors.phone ? 'border-red-500' : ''}`}
+                    className={`flex-1 h-full border border-gray-300 rounded-r-md border-l-0 focus:border-nexia-secondary focus:ring-1 focus:ring-nexia-secondary bg-white ${errors.phone ? 'border-red-500' : ''}`}
                     placeholder="XX XX XX XX"
                   />
                 </div>

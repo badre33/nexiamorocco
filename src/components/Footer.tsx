@@ -16,7 +16,7 @@ export default function Footer() {
           <div className="text-center md:text-left">
             <div className="flex flex-col items-center md:items-start">
               <img 
-                src="/lovable-uploads/a8a39b2b-5fe1-454f-b5a6-e491953923b7.png" 
+                src="/lovable-uploads/e1d74576-8966-4860-b878-b4ec418603de.png" 
                 alt="Nexia" 
                 className="h-8 w-auto"
                 style={{ mixBlendMode: 'screen' }}

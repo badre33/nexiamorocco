@@ -217,34 +217,39 @@ export default function ContactForm() {
                   <Phone className="w-4 h-4" />
                   Téléphone *
                 </Label>
-                <div className="flex border border-gray-300 rounded-md focus-within:border-nexia-secondary focus-within:ring-1 focus-within:ring-nexia-secondary">
-                  <Select onValueChange={handleCountryCodeChange} value={formData.countryCode}>
-                    <SelectTrigger className="w-[120px] h-12 border-0 focus:ring-0 bg-gray-50 rounded-r-none">
-                      <SelectValue />
-                    </SelectTrigger>
-                    <SelectContent className="bg-white border border-gray-200 shadow-lg z-[100] max-h-[300px] overflow-y-auto">
-                      {countryCodes.map((country) => (
-                        <SelectItem 
-                          key={country.code} 
-                          value={country.code}
-                          className="hover:bg-gray-100 cursor-pointer"
-                        >
-                          <div className="flex items-center gap-2">
-                            <span className="text-lg">{country.flag}</span>
-                            <span className="font-medium">{country.code}</span>
-                          </div>
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                  <div className="w-px bg-gray-300"></div>
+                <div className="relative">
+                  <div className="absolute inset-y-0 left-0 flex items-center">
+                    <Select onValueChange={handleCountryCodeChange} value={formData.countryCode}>
+                      <SelectTrigger className="w-[100px] h-12 border-0 focus:ring-0 bg-transparent">
+                        <div className="flex items-center gap-1">
+                          <span className="text-lg">🇲🇦</span>
+                          <span className="font-medium text-sm">{formData.countryCode}</span>
+                        </div>
+                      </SelectTrigger>
+                      <SelectContent className="bg-white border border-gray-200 shadow-lg z-[100] max-h-[300px] overflow-y-auto">
+                        {countryCodes.map((country) => (
+                          <SelectItem 
+                            key={country.code} 
+                            value={country.code}
+                            className="hover:bg-gray-100 cursor-pointer"
+                          >
+                            <div className="flex items-center gap-2">
+                              <span className="text-lg">{country.flag}</span>
+                              <span className="font-medium">{country.code}</span>
+                              <span className="text-sm text-gray-500">{country.country}</span>
+                            </div>
+                          </SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </div>
                   <Input
                     id="phone"
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleChange}
-                    className={`flex-1 h-12 border-0 focus:ring-0 rounded-l-none ${errors.phone ? 'border-red-500' : ''}`}
+                    className={`h-12 pl-[110px] ${errors.phone ? 'border-red-500' : 'border-gray-300'} focus:border-nexia-secondary`}
                     placeholder="XX XX XX XX"
                   />
                 </div>

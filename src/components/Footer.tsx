@@ -14,11 +14,7 @@ export default function Footer() {
         {/* Logo */}
         <div className="mb-12">
           <div className="text-center md:text-left">
-            <img 
-              src="/lovable-uploads/88ec29ce-efb7-4a4d-bd75-c6390f1f572c.png" 
-              alt="Nexia Fiducia Maroc" 
-              className="h-[50px] w-auto mx-auto md:mx-0"
-            />
+            <h2 className="text-white text-2xl font-bold">Nexia Fiducia Maroc</h2>
           </div>
         </div>
 

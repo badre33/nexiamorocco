@@ -4,18 +4,18 @@ import service3 from "@/assets/service-3.jpg";
 
 const services = [
   {
-    title: "Personal Relationships",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Relations Personnalisées",
+    description: "Chez Nexia Fiducia Maroc, nous privilégions des relations de proximité avec nos clients, basées sur la confiance mutuelle et une compréhension approfondie de leurs enjeux business.",
     image: service1,
   },
   {
-    title: "Business-Minded",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Vision Business",
+    description: "Notre approche orientée business nous permet d'accompagner nos clients avec des solutions pragmatiques et adaptées à leurs objectifs de croissance et de performance.",
     image: service2,
   },
   {
-    title: "Better Connected",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    title: "Réseau International",
+    description: "Grâce à notre appartenance au réseau mondial Nexia, nous offrons à nos clients un accès privilégié à une expertise internationale et des opportunités de développement à l'étranger.",
     image: service3,
   },
 ];
@@ -27,11 +27,11 @@ export default function ServicesSection() {
         {/* Section Header */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           <div className="lg:col-span-1">
-            <h3 className="text-3xl font-bold text-nexia-primary">Our Services</h3>
+            <h3 className="text-3xl font-bold text-nexia-primary">Nos Services</h3>
           </div>
           <div className="lg:col-span-2">
             <p className="text-nexia-primary text-lg leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              Fort de notre expertise et de notre appartenance au réseau international Nexia, nous proposons des services d'audit, de conseil et d'accompagnement adaptés aux défis de votre entreprise.
             </p>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function ServicesSection() {
                   href="#"
                   className="text-nexia-secondary font-medium hover:text-nexia-primary transition-colors duration-200"
                 >
-                  Read more →
+                  En savoir plus →
                 </a>
               </div>
             </div>

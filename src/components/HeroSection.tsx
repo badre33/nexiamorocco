@@ -18,13 +18,13 @@ export default function HeroSection() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="max-w-2xl bg-white/95 backdrop-blur-sm p-8 rounded-lg shadow-professional">
           <p className="text-nexia-primary font-semibold text-sm uppercase tracking-wide mb-4">
-            About Us
+            À PROPOS DE NOUS
           </p>
           <h1 className="text-4xl lg:text-5xl font-bold text-nexia-primary mb-6 leading-tight">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            Expertise et proximité au service de votre réussite
           </h1>
           <Button variant="professional" size="lg" className="mt-4">
-            Discover more
+            En savoir plus
           </Button>
         </div>
       </div>

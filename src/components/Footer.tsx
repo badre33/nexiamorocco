@@ -14,11 +14,15 @@ export default function Footer() {
         {/* Logo */}
         <div className="mb-12">
           <div className="text-center md:text-left">
-            <img 
-              src="/images/nexia-fiducia-maroc-logo.svg" 
-              alt="Nexia Fiducia Maroc" 
-              className="h-[50px] w-auto mx-auto md:mx-0"
-            />
+            <div className="flex flex-col items-center md:items-start">
+              <img 
+                src="/lovable-uploads/a0ccc744-ddac-47fb-b5e6-9c9de7196981.png" 
+                alt="Nexia" 
+                className="h-8 w-auto"
+                style={{ mixBlendMode: 'screen' }}
+              />
+              <span className="text-white text-sm font-medium mt-2">Fiducia Maroc</span>
+            </div>
           </div>
         </div>
 

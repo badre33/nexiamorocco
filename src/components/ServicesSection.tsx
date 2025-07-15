@@ -1,58 +1,58 @@
 const publications = [
   {
     id: 1,
-    title: "Nexia welcomes a new member firm in Uzbekistan",
-    description: "Nexia International continue son expansion avec l'arrivée d'un nouveau membre en Ouzbékistan, renforçant notre présence en Asie centrale.",
-    category: "Réseau international",
+    title: "Tax Guide for Ukraine 2024",
+    description: "Guide fiscal complet pour l'Ukraine en 2024, incluant les dernières réglementations et opportunités d'investissement.",
+    category: "Publication",
     author: "Nexia International",
-    date: "Juillet 2025",
-    readTime: "5 min",
-    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/07/shutterstock_2341786405.jpg",
-    excerpt: "Nexia International est ravi d'annoncer l'adhésion de notre nouveau cabinet membre en Ouzbékistan..."
+    date: "February 2024",
+    readTime: "15 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/02/ukraine-tax-guide-2024.jpg",
+    excerpt: "Un guide complet sur la fiscalité ukrainienne pour les entreprises internationales en 2024..."
   },
   {
     id: 2,
-    title: "Nexia welcomes a new member firm in Mexico",
-    description: "Le réseau Nexia accueille un nouveau cabinet membre au Mexique, élargissant notre couverture en Amérique latine pour mieux servir nos clients internationaux.",
-    category: "Réseau international",
+    title: "EMEA Holding Company Analysis Update 2023",
+    description: "Analyse mise à jour des structures de holding en région EMEA pour l'année 2023.",
+    category: "Publication",
     author: "Nexia International",
-    date: "Juillet 2025",
-    readTime: "5 min",
-    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/07/shutterstock_188040947.jpg",
-    excerpt: "Nous sommes heureux d'accueillir notre nouveau cabinet partenaire au Mexique..."
+    date: "June 2023",
+    readTime: "12 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2023/06/emea-holding-analysis-2023.jpg",
+    excerpt: "Découvrez les dernières tendances et évolutions des structures de holding en EMEA..."
   },
   {
     id: 3,
-    title: "International Business Report 2024",
-    description: "Rapport complet sur les tendances du business international et les opportunités d'investissement pour 2024.",
-    category: "Business international",
+    title: "Turnaround Restructuring Insolvency – Service brochure",
+    description: "Brochure de services spécialisés en restructuration et insolvabilité d'entreprises.",
+    category: "Publication",
     author: "Nexia International",
-    date: "Juin 2025",
-    readTime: "8 min",
-    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2024/06/business-report-2024.jpg",
-    excerpt: "Notre rapport annuel présente les principales tendances économiques mondiales..."
+    date: "June 2021",
+    readTime: "10 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2021/06/turnaround-restructuring-brochure.jpg",
+    excerpt: "Nos services spécialisés pour accompagner les entreprises en difficulté..."
   },
   {
     id: 4,
-    title: "Tax Updates Q2 2025",
-    description: "Mise à jour des réglementations fiscales internationales pour le deuxième trimestre 2025.",
-    category: "Fiscalité internationale",
-    author: "Nexia Tax Team",
-    date: "Juin 2025",
-    readTime: "6 min",
-    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/06/tax-updates-q2.jpg",
-    excerpt: "Découvrez les dernières modifications réglementaires qui impactent vos activités..."
+    title: "Doing business in the Netherlands",
+    description: "Guide pratique pour établir et développer son activité aux Pays-Bas.",
+    category: "Publication",
+    author: "Nexia International",
+    date: "May 2025",
+    readTime: "18 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/05/doing-business-netherlands.jpg",
+    excerpt: "Tout ce qu'il faut savoir pour réussir son implantation aux Pays-Bas..."
   },
   {
     id: 5,
-    title: "Digital Transformation in SMEs",
-    description: "Guide pratique pour la transformation digitale des PME dans un contexte international.",
-    category: "Transformation digitale",
-    author: "Nexia Digital Team",
-    date: "Mai 2025",
-    readTime: "7 min",
-    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/05/digital-transformation.jpg",
-    excerpt: "Les clés pour réussir votre transformation digitale et rester compétitif..."
+    title: "Investing in Germany",
+    description: "Guide complet pour les investissements et opportunités d'affaires en Allemagne.",
+    category: "Publication",
+    author: "Nexia International",
+    date: "April 2025",
+    readTime: "16 min",
+    image: "https://s3-eu-west-1.amazonaws.com/nexiawebsite/wp-media-folder-global-network-of-accounting-consultant-firms-nexia/wp-content/uploads/2025/04/investing-in-germany.jpg",
+    excerpt: "Découvrez les opportunités d'investissement et le climat des affaires en Allemagne..."
   },
 ];
 

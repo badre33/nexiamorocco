@@ -32,13 +32,22 @@ const EquipeDirecteante = () => {
       <Header />
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary/5 to-primary/10 py-20">
-        <div className="container mx-auto px-4">
+      <section 
+        className="py-20 relative overflow-hidden"
+        style={{
+          backgroundImage: `url('/lovable-uploads/a46d6c8c-98d8-4527-bb95-23f3aa12e9e9.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-primary/80"></div>
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
               Notre Équipe Dirigeante
             </h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Découvrez les profils et expertises des associés qui portent la vision de 
               Nexia Fiducia Maroc et accompagnent nos clients au quotidien.
             </p>
@@ -107,13 +116,22 @@ const EquipeDirecteante = () => {
       </section>
 
       {/* Call to Action */}
-      <section className="py-20 bg-gradient-to-br from-primary/5 to-primary/10">
-        <div className="container mx-auto px-4 text-center">
+      <section 
+        className="py-20 relative overflow-hidden"
+        style={{
+          backgroundImage: `url('/lovable-uploads/08470e3b-03ff-401c-abde-805b50c3c778.png')`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat'
+        }}
+      >
+        <div className="absolute inset-0 bg-primary/85"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
               Prêt à collaborer avec notre équipe ?
             </h2>
-            <p className="text-xl text-muted-foreground mb-8">
+            <p className="text-xl text-white/90 mb-8">
               Contactez-nous pour découvrir comment notre expertise peut accompagner 
               votre développement au Maroc et à l'international.
             </p>

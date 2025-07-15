@@ -40,11 +40,9 @@ export default function Header() {
           <div className="flex items-center">
             <Link to="/" className="block">
               <img 
-                src="/images/2023-08-nexia-member-logo.svg" 
-                alt="Nexia Templates" 
-                className="h-[69px] w-auto"
-                width="342"
-                height="69"
+                src="/lovable-uploads/f24a309f-ad74-4831-ae0b-1f4a66a6bb58.png" 
+                alt="Nexia Fiducia Maroc" 
+                className="h-[60px] w-auto"
               />
             </Link>
           </div>

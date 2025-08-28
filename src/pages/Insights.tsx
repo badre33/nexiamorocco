@@ -296,10 +296,16 @@ export default function Insights() {
                         {featuredInsight.readTime}
                       </div>
                     </div>
-                    <Button 
-                      className="bg-nexia-primary hover:bg-nexia-primary/90"
-                      onClick={() => window.open(featuredInsight.source, '_blank')}
-                    >
+                     <Button 
+                       className="bg-nexia-primary hover:bg-nexia-primary/90"
+                       onClick={() => {
+                         if (featuredInsight.id === 1) {
+                           window.location.href = '/perspectives-mondiales/cout-medicaments-maroc';
+                         } else if (featuredInsight.source) {
+                           window.open(featuredInsight.source, '_blank');
+                         }
+                       }}
+                     >
                       Lire l'article
                       <ArrowRight className="w-4 h-4 ml-2" />
                     </Button>
@@ -359,11 +365,17 @@ export default function Insights() {
                     {insight.date}
                   </div>
 
-                  <Button 
-                    variant="outline" 
-                    className="w-full group"
-                    onClick={() => insight.source && window.open(insight.source, '_blank')}
-                  >
+                   <Button 
+                     variant="outline" 
+                     className="w-full group"
+                     onClick={() => {
+                       if (insight.id === 1) {
+                         window.location.href = '/perspectives-mondiales/cout-medicaments-maroc';
+                       } else if (insight.source) {
+                         window.open(insight.source, '_blank');
+                       }
+                     }}
+                   >
                     Lire l'article
                     <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                   </Button>

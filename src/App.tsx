@@ -10,6 +10,7 @@ import Contact from "./pages/Contact";
 import EquipeDirecteante from "./pages/EquipeDirecteante";
 import EtudesDeCas from "./pages/EtudesDeCas";
 import Insights from "./pages/Insights";
+import MedicamentArticle from "./pages/MedicamentArticle";
 
 import NotFound from "./pages/NotFound";
 
@@ -29,6 +30,7 @@ const App = () => (
           <Route path="/a-propos" element={<About />} />
           <Route path="/equipe-dirigeante" element={<EquipeDirecteante />} />
           <Route path="/perspectives-mondiales" element={<Insights />} />
+          <Route path="/perspectives-mondiales/cout-medicaments-maroc" element={<MedicamentArticle />} />
           
           <Route path="/etudes-de-cas" element={<EtudesDeCas />} />
           <Route path="/contact" element={<Contact />} />

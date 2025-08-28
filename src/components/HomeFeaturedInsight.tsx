@@ -1,10 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Calendar, Clock, User, ArrowRight } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+// import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function HomeFeaturedInsight() {
-  const { t } = useLanguage();
+  // const { t } = useLanguage();
   
   return (
     <section className="py-12 md:py-16 lg:py-20 bg-gray-50">
@@ -12,10 +12,10 @@ export default function HomeFeaturedInsight() {
         {/* Section Header */}
         <div className="text-center mb-12 lg:mb-16">
           <h2 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-nexia-primary mb-4 lg:mb-6">
-            {t('insights.title')}
+            Perspectives Mondiales
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-nexia-primary/80 max-w-3xl mx-auto leading-relaxed px-4">
-            {t('insights.subtitle')}
+            Découvrez nos analyses d'experts sur les tendances mondiales qui façonnent l'avenir des entreprises au Maroc et à l'international
           </p>
         </div>
 
@@ -40,16 +40,16 @@ export default function HomeFeaturedInsight() {
                 </span>
               </div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-nexia-primary mb-3 lg:mb-4">
-                {t('insights.featured.title')}
+                Le coût des médicaments au Maroc : un enjeu économique et stratégique qui persiste
               </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">
-                {t('insights.featured.description')}
+                Plus de deux ans après l'annonce de mesures visant à réduire les prix des médicaments, la question reste d'une brûlante actualité. Ce décalage n'est pas uniquement une problématique budgétaire pour les ménages mais un enjeu systémique qui concerne la souveraineté sanitaire du Maroc.
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <div className="flex items-center gap-1">
                     <User className="w-4 h-4" />
-                    {t('common.author')}
+                    Nexia Fiducia Maroc
                   </div>
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function HomeFeaturedInsight() {
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
-                    12 {t('common.minutes')}
+                    12 min
                   </div>
                 </div>
                 <Button 
@@ -67,7 +67,7 @@ export default function HomeFeaturedInsight() {
                     window.scrollTo(0, 0);
                   }}
                 >
-                  {t('insights.read')}
+                  Lire l'article
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
@@ -86,7 +86,7 @@ export default function HomeFeaturedInsight() {
               window.scrollTo(0, 0);
             }}
           >
-            {t('insights.viewAll')}
+            Voir Toutes Nos Perspectives
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

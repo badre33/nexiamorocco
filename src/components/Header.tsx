@@ -8,30 +8,29 @@ import {
 import { Menu, ChevronDown } from "lucide-react";
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import LanguageToggle from "@/components/LanguageToggle";
+import SimpleLanguageToggle from "@/components/SimpleLanguageToggle";
 
-const getNavigation = (t: (key: string) => string) => [
-  { name: t('nav.home'), href: "/" },
+const navigation = [
+  { name: "Accueil", href: "/" },
   { name: "Nos domaines d'expertise", href: "/domaines-expertise" },
   { name: "Équipe dirigeante", href: "/equipe-dirigeante" },
   { 
-    name: t('nav.insights'), 
+    name: "Insights", 
     href: "#",
     dropdown: [
       { name: "Perspectives Mondiales", href: "/perspectives-mondiales" },
       { name: "Études de cas", href: "/etudes-de-cas" }
     ]
   },
-  { name: t('nav.about'), href: "/about" },
-  { name: t('nav.contact'), href: "/contact" },
+  { name: "À propos", href: "/about" },
+  { name: "Contactez-nous", href: "/contact" },
 ];
 
 export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { t } = useLanguage();
-  const navigation = getNavigation(t);
+  // const { t } = useLanguage();
+  // const navigation = getNavigation(t);
 
   const isInsightsActive = location.pathname === "/perspectives-mondiales" || location.pathname === "/etudes-de-cas";
 
@@ -56,7 +55,7 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            <LanguageToggle />
+            <SimpleLanguageToggle />
             {navigation.map((item) => {
               if (item.dropdown) {
                 return (

@@ -117,7 +117,8 @@ export const LanguageProvider: React.FC<{ children: ReactNode }> = ({ children }
   const [language, setLanguage] = useState<Language>('fr');
 
   const t = (key: string): string => {
-    return translations[language][key] || key;
+    const translation = translations[language]?.[key as keyof typeof translations['fr']];
+    return translation || key;
   };
 
   return (

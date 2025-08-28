@@ -49,6 +49,11 @@ const expertiseDomains = [
     title: "Conseil en stratégie & développement",
     image: "/lovable-uploads/90493dfc-c495-4692-97e9-4d6c1478d8e1.png",
     href: "/domaines-expertise#strategie"
+  },
+  {
+    title: "Talent & Mobility Solutions",
+    image: "/lovable-uploads/a46d6c8c-98d8-4527-bb95-23f3aa12e9e9.png",
+    href: "/domaines-expertise#talent-mobility"
   }
 ];
 

@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import RealHomeHero from "@/components/RealHomeHero";
 import HomeAboutUs from "@/components/HomeAboutUs";
-import HomeServices from "@/components/HomeServices";
+
 import HomeFeaturedInsight from "@/components/HomeFeaturedInsight";
 import LatestInsights from "@/components/LatestInsights";
 import WhyNexia from "@/components/WhyNexia";
@@ -16,7 +16,7 @@ const Index = () => {
       <main>
         <RealHomeHero />
         <HomeAboutUs />
-        <HomeServices />
+        
         <HomeFeaturedInsight />
         <LatestInsights />
         <WhyNexia />

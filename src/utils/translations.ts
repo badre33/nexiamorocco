@@ -10,10 +10,23 @@ export const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Votre partenaire de confiance pour une expertise comptable et financière de premier plan',
-    'hero.subtitle': 'Nexia Fiducia Maroc accompagne les entreprises dans leur développement avec des solutions sur mesure, une expertise reconnue et un service client d\'exception.',
-    'hero.cta': 'Découvrir nos services',
-    'hero.contact': 'Nous contacter',
+    'hero.slide1.title': 'L\'expertise de confiance, au service de votre performance',
+    'hero.slide1.subtitle': 'Audit, fiscalité, stratégie, conformité, corporate finance… Nos domaines d\'expertise s\'adaptent à vos enjeux au Maroc et à l\'international.',
+    'hero.slide1.button': 'Découvrir nos domaines d\'expertise',
+    'hero.slide2.title': 'Une signature locale, un réseau mondial',
+    'hero.slide2.subtitle': 'Nexia Fiducia Maroc, membre du réseau Nexia International, accompagne les entreprises marocaines et étrangères avec un engagement d\'excellence, d\'éthique et de proximité.',
+    'hero.slide2.button': 'En savoir plus sur Nexia Fiducia Maroc',
+    'hero.slide3.title': 'Une équipe dirigeante engagée à vos côtés',
+    'hero.slide3.subtitle': 'Découvrez les profils et expertises des associés qui portent la vision de Nexia Fiducia Maroc et accompagnent nos clients au quotidien.',
+    'hero.slide3.button': 'Rencontrer notre équipe',
+    
+    // About Section
+    'about.title': 'À propos de nous',
+    'about.description': 'Chez Nexia Fiducia Maroc, notre mission est d\'accompagner les entreprises marocaines et internationales dans toutes les étapes de leur croissance, de leur structuration et de leur mise en conformité. Grâce à notre ancrage local fort, allié à la puissance du réseau Nexia International, nous offrons des expertises pluridisciplinaires, rigoureuses et adaptées à vos enjeux réels.',
+    'about.link': 'En savoir plus sur nous',
+    'about.service1': 'Audit',
+    'about.service2': 'Fiscalité', 
+    'about.service3': 'Conseil',
     
     // Services
     'services.title': 'Nos domaines d\'expertise',
@@ -42,10 +55,23 @@ export const translations = {
     'nav.contact': 'Contact',
     
     // Hero Section
-    'hero.title': 'Your trusted partner for premier accounting and financial expertise',
-    'hero.subtitle': 'Nexia Fiducia Morocco supports companies in their development with tailor-made solutions, recognized expertise and exceptional customer service.',
-    'hero.cta': 'Discover our services',
-    'hero.contact': 'Contact us',
+    'hero.slide1.title': 'Trusted expertise, at the service of your performance',
+    'hero.slide1.subtitle': 'Audit, taxation, strategy, compliance, corporate finance... Our areas of expertise adapt to your challenges in Morocco and internationally.',
+    'hero.slide1.button': 'Discover our areas of expertise',
+    'hero.slide2.title': 'A local signature, a global network',
+    'hero.slide2.subtitle': 'Nexia Fiducia Morocco, member of the Nexia International network, supports Moroccan and foreign companies with a commitment to excellence, ethics and proximity.',
+    'hero.slide2.button': 'Learn more about Nexia Fiducia Morocco',
+    'hero.slide3.title': 'A management team committed to your side',
+    'hero.slide3.subtitle': 'Discover the profiles and expertise of the partners who carry the vision of Nexia Fiducia Morocco and support our clients on a daily basis.',
+    'hero.slide3.button': 'Meet our team',
+    
+    // About Section
+    'about.title': 'About us',
+    'about.description': 'At Nexia Fiducia Morocco, our mission is to support Moroccan and international companies in all stages of their growth, structuring and compliance. Thanks to our strong local roots, combined with the power of the Nexia International network, we offer multidisciplinary, rigorous expertise adapted to your real challenges.',
+    'about.link': 'Learn more about us',
+    'about.service1': 'Audit',
+    'about.service2': 'Taxation', 
+    'about.service3': 'Advisory',
     
     // Services
     'services.title': 'Our areas of expertise',

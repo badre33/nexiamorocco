@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 export default function HomeAboutUs() {
+  const { t } = useSimpleLanguage();
+  
   return (
     <section className="nexia-section-padding bg-white relative overflow-hidden rounded-2xl">
       {/* Background Image pour toute la section */}
@@ -17,16 +20,16 @@ export default function HomeAboutUs() {
         {/* About Us Text - Left Column */}
         <div className="flex flex-col justify-center pr-0 lg:pr-[15%] pt-10 pb-10">
           <p className="bolder text-nexia-primary font-poppins text-lg mb-6 bg-white/90 p-2 rounded-lg w-fit">
-            À propos de nous
+            {t('about.title')}
           </p>
           <p className="text-nexia-primary font-poppins text-[28px] leading-relaxed mb-8 bg-white/90 p-4 rounded-lg">
-            Chez Nexia Fiducia Maroc, notre mission est d'accompagner les entreprises marocaines et internationales dans toutes les étapes de leur croissance, de leur structuration et de leur mise en conformité. Grâce à notre ancrage local fort, allié à la puissance du réseau Nexia International, nous offrons des expertises pluridisciplinaires, rigoureuses et adaptées à vos enjeux réels.
+            {t('about.description')}
           </p>
           <Link
             to="/a-propos"
             className="inline-flex items-center text-nexia-primary font-poppins font-medium text-lg hover:text-nexia-secondary transition-colors duration-300 group bg-white/90 p-3 rounded-lg w-fit"
           >
-            En savoir plus sur nous
+            {t('about.link')}
             <svg 
               className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" 
               fill="none" 
@@ -41,13 +44,13 @@ export default function HomeAboutUs() {
         {/* Services List - Right Column */}
         <div className="space-y-4 p-8">
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight bg-white/90 p-4 rounded-lg w-fit">
-            Audit
+            {t('about.service1')}
           </h2>
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight bg-white/90 p-4 rounded-lg w-fit">
-            Fiscalité
+            {t('about.service2')}
           </h2>
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight bg-white/90 p-4 rounded-lg w-fit">
-            Conseil
+            {t('about.service3')}
           </h2>
         </div>
       </div>

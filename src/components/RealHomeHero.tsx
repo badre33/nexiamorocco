@@ -2,33 +2,35 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
-const slides = [
+const getSlides = (t: (key: string) => string) => [
   {
     id: 1,
-    title: "L'expertise de confiance, au service de votre performance",
-    subtitle: "Audit, fiscalité, stratégie, conformité, corporate finance… Nos domaines d'expertise s'adaptent à vos enjeux au Maroc et à l'international.",
-    buttonText: "Découvrir nos domaines d'expertise",
+    title: t('hero.slide1.title'),
+    subtitle: t('hero.slide1.subtitle'),
+    buttonText: t('hero.slide1.button'),
     link: "/domaines-expertise"
   },
   {
     id: 2,
-    title: "Une signature locale, un réseau mondial",
-    subtitle: "Nexia Fiducia Maroc, membre du réseau Nexia International, accompagne les entreprises marocaines et étrangères avec un engagement d'excellence, d'éthique et de proximité.",
-    buttonText: "En savoir plus sur Nexia Fiducia Maroc",
+    title: t('hero.slide2.title'),
+    subtitle: t('hero.slide2.subtitle'),
+    buttonText: t('hero.slide2.button'),
     link: "/a-propos"
   },
   {
     id: 3,
-    title: "Une équipe dirigeante engagée à vos côtés",
-    subtitle: "Découvrez les profils et expertises des associés qui portent la vision de Nexia Fiducia Maroc et accompagnent nos clients au quotidien.",
-    buttonText: "Rencontrer notre équipe",
+    title: t('hero.slide3.title'),
+    subtitle: t('hero.slide3.subtitle'),
+    buttonText: t('hero.slide3.button'),
     link: "/equipe-dirigeante"
   }
 ];
 
 export default function RealHomeHero() {
+  const { t } = useSimpleLanguage();
+  const slides = getSlides(t);
   const [currentSlide, setCurrentSlide] = useState(1); // Start at slide 2 (index 1)
 
   const nextSlide = () => {

@@ -2,6 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Mail, Phone, Linkedin } from "lucide-react";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 const teamMembers = [
   {
@@ -27,6 +28,8 @@ const teamMembers = [
 ];
 
 const EquipeDirecteante = () => {
+  const { t } = useSimpleLanguage();
+  
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -45,11 +48,10 @@ const EquipeDirecteante = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Notre Équipe Dirigeante
+              {t('team.heroTitle')}
             </h1>
             <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Découvrez les profils et expertises des associés qui portent la vision de 
-              Nexia Fiducia Maroc et accompagnent nos clients au quotidien.
+              {t('team.heroSubtitle')}
             </p>
           </div>
         </div>
@@ -66,11 +68,11 @@ const EquipeDirecteante = () => {
         <div className="container mx-auto px-4 relative z-10">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Nos Associés
+              {t('team.partnersTitle')}
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-primary to-primary/60 mx-auto mb-6"></div>
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              Une expertise reconnue au service de votre succès
+              {t('team.partnersSubtitle')}
             </p>
           </div>
           
@@ -113,7 +115,7 @@ const EquipeDirecteante = () => {
                     <div className="mb-6">
                       <h4 className="font-semibold text-foreground mb-4 text-center">
                         <span className="bg-primary/10 px-3 py-1 rounded-full text-primary">
-                          Domaines d'expertise
+                          {t('team.specialties')}
                         </span>
                       </h4>
                       <div className="flex flex-wrap justify-center gap-2">
@@ -167,17 +169,16 @@ const EquipeDirecteante = () => {
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Prêt à collaborer avec notre équipe ?
+              {t('team.ctaTitle')}
             </h2>
             <p className="text-xl text-white/90 mb-8">
-              Contactez-nous pour découvrir comment notre expertise peut accompagner 
-              votre développement au Maroc et à l'international.
+              {t('team.ctaSubtitle')}
             </p>
             <a 
               href="/contact" 
               className="inline-flex items-center justify-center nexia-button-primary font-medium px-8 py-4 text-lg"
             >
-              Nous contacter
+              {t('team.ctaButton')}
             </a>
           </div>
         </div>

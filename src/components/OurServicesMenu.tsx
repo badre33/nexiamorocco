@@ -15,6 +15,7 @@ import {
   Clock,
   CheckCircle
 } from "lucide-react";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 const expertiseDomains = [
     {
@@ -181,6 +182,7 @@ const expertiseDomains = [
   ];
 
 export default function OurServicesMenu() {
+  const { t } = useSimpleLanguage();
   const location = useLocation();
   const [activeTab, setActiveTab] = useState(expertiseDomains[0]?.id || "audit");
 
@@ -246,21 +248,20 @@ export default function OurServicesMenu() {
         <div className="text-center mb-12">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-nexia-secondary/10 rounded-full mb-6">
             <Award className="h-5 w-5 text-nexia-secondary" />
-            <span className="text-nexia-secondary font-semibold">Excellence & Expertise</span>
+            <span className="text-nexia-secondary font-semibold">{t('servicesMenu.excellenceTitle')}</span>
           </div>
           <h2 className="text-4xl lg:text-5xl font-bold text-nexia-primary mb-6 font-poppins">
-            Nos Domaines d'<span className="text-nexia-secondary">Expertise</span>
+            {t('servicesMenu.title')}
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Plus de 25 ans d'expérience au service de votre croissance. 
-            <strong className="text-nexia-primary"> 10 domaines d'expertise</strong> pour accompagner tous vos projets.
+            {t('servicesMenu.description')}
           </p>
           
           {/* Progress indicator amélioré */}
           <div className="mt-8 max-w-md mx-auto">
             <div className="flex items-center justify-between mb-3">
               <span className="text-sm font-medium text-nexia-primary">
-                Domaine {activeIndex + 1} sur {expertiseDomains.length}
+                {t('servicesMenu.domain')} {activeIndex + 1} {t('servicesMenu.on')} {expertiseDomains.length}
               </span>
               <span className="text-sm text-muted-foreground">
                 {Math.round(progressPercentage)}%

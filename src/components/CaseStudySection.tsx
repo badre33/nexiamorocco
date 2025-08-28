@@ -1,8 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-// import caseStudyImage from "@/assets/case-study-image.jpg";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 export default function CaseStudySection() {
+  const { t } = useSimpleLanguage();
+  
   return (
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -10,13 +12,13 @@ export default function CaseStudySection() {
           {/* Content */}
           <div className="space-y-6">
             <h3 className="text-3xl font-bold text-nexia-primary">
-              Études de cas
+              {t('caseStudy.title')}
             </h3>
             <p className="text-nexia-primary text-lg leading-relaxed">
-              Découvrez comment nous accompagnons nos clients dans leurs défis les plus complexes à travers des missions concrètes et des résultats mesurables. Transformation digitale, restructuration fiscale, accompagnement IPO... nos études de cas illustrent notre expertise en action.
+              {t('caseStudy.description')}
             </p>
             <Button asChild variant="professional" size="lg">
-              <Link to="/etudes-de-cas" onClick={() => window.scrollTo(0, 0)}>Découvrir nos études de cas</Link>
+              <Link to="/etudes-de-cas" onClick={() => window.scrollTo(0, 0)}>{t('caseStudy.button')}</Link>
             </Button>
           </div>
 

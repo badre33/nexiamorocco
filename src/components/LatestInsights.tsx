@@ -1,9 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-// import service1 from "@/assets/service-1.jpg";
-// import service2 from "@/assets/service-2.jpg";
-// import service3 from "@/assets/service-3.jpg";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 const insights = [
   {
@@ -30,20 +28,21 @@ const insights = [
 ];
 
 export default function LatestInsights() {
+  const { t } = useSimpleLanguage();
+  
   return (
     <section className="nexia-section-padding bg-white">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
         {/* Left Column - Content */}
         <div className="lg:col-span-1 space-y-4 lg:space-y-6 relative min-h-[250px] lg:min-h-0">
           <h3 className="text-3xl md:text-4xl lg:text-[42px] font-bold text-nexia-primary font-poppins">
-            Perspectives Mondiales
+            {t('latestInsights.title')}
           </h3>
           <p className="text-nexia-primary font-poppins leading-relaxed text-sm md:text-base">
-            Découvrez nos dernières analyses d'experts sur les tendances qui façonnent 
-            l'avenir des entreprises au Maroc et à l'international.
+            {t('latestInsights.description')}
           </p>
           <Button asChild className="nexia-button-outline font-poppins font-medium px-6 lg:px-10 text-sm md:text-base">
-            <Link to="/perspectives-mondiales" onClick={() => window.scrollTo(0, 0)}>Voir plus d'insights</Link>
+            <Link to="/perspectives-mondiales" onClick={() => window.scrollTo(0, 0)}>{t('latestInsights.button')}</Link>
           </Button>
           
           {/* Navigation Controls */}

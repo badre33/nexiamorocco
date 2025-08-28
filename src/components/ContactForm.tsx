@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, MessageSquare, Send, CheckCircle, ChevronDown } from "lucide-react";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 const countryCodes = [
   { code: "+1", country: "États-Unis/Canada", flag: "🇺🇸" },
@@ -217,6 +218,7 @@ const countryCodes = [
 ];
 
 export default function ContactForm() {
+  const { t } = useSimpleLanguage();
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
@@ -236,15 +238,15 @@ export default function ContactForm() {
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};
 
-    if (!formData.firstName.trim()) newErrors.firstName = "Le prénom est requis";
-    if (!formData.lastName.trim()) newErrors.lastName = "Le nom est requis";
+    if (!formData.firstName.trim()) newErrors.firstName = t('contactForm.errors.firstName');
+    if (!formData.lastName.trim()) newErrors.lastName = t('contactForm.errors.lastName');
     if (!formData.email.trim()) {
-      newErrors.email = "L'email est requis";
+      newErrors.email = t('contactForm.errors.email');
     } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
-      newErrors.email = "Format email invalide";
+      newErrors.email = t('contactForm.errors.emailInvalid');
     }
-    if (!formData.phone.trim()) newErrors.phone = "Le téléphone est requis";
-    if (!formData.message.trim()) newErrors.message = "Le message est requis";
+    if (!formData.phone.trim()) newErrors.phone = t('contactForm.errors.phone');
+    if (!formData.message.trim()) newErrors.message = t('contactForm.errors.message');
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -279,8 +281,8 @@ export default function ContactForm() {
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     toast({
-      title: "Message envoyé avec succès !",
-      description: "Nous vous répondrons dans les plus brefs délais.",
+      title: t('contactForm.success'),
+      description: t('contactForm.successDesc'),
     });
 
     // Reset form
@@ -304,10 +306,10 @@ export default function ContactForm() {
         {/* Header */}
         <div className="text-center mb-8 md:mb-12">
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-nexia-primary mb-4">
-            Contactez nos experts
+            {t('contactForm.title')}
           </h2>
           <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Parlez-nous de votre projet. Notre équipe d&apos;experts vous accompagnera dans toutes vos démarches comptables et fiscales.
+            {t('contactForm.description')}
           </p>
         </div>
 
@@ -319,7 +321,7 @@ export default function ContactForm() {
               <div className="space-y-2">
                 <Label htmlFor="firstName" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                   <User className="w-4 h-4 text-nexia-secondary" />
-                  Prénom *
+                  {t('contactForm.firstName')} *
                 </Label>
                 <Input
                   id="firstName"
@@ -328,14 +330,14 @@ export default function ContactForm() {
                   value={formData.firstName}
                   onChange={handleChange}
                   className={`h-12 transition-all duration-200 ${errors.firstName ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-nexia-secondary hover:border-gray-400'} focus:ring-2 focus:ring-nexia-secondary/20`}
-                  placeholder="Votre prénom"
+                  placeholder={t('contactForm.yourFirstName')}
                 />
                 {errors.firstName && <p className="text-red-500 text-sm font-medium">{errors.firstName}</p>}
               </div>
 
               <div className="space-y-2">
                 <Label htmlFor="lastName" className="text-sm font-semibold text-gray-700">
-                  Nom *
+                  {t('contactForm.lastName')} *
                 </Label>
                 <Input
                   id="lastName"
@@ -344,7 +346,7 @@ export default function ContactForm() {
                   value={formData.lastName}
                   onChange={handleChange}
                   className={`h-12 transition-all duration-200 ${errors.lastName ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-nexia-secondary hover:border-gray-400'} focus:ring-2 focus:ring-nexia-secondary/20`}
-                  placeholder="Votre nom"
+                  placeholder={t('contactForm.yourLastName')}
                 />
                 {errors.lastName && <p className="text-red-500 text-sm font-medium">{errors.lastName}</p>}
               </div>

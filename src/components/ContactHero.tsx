@@ -1,6 +1,10 @@
 // import heroBackground from "@/assets/hero-background.jpg";
 
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
+
 export default function ContactHero() {
+  const { t } = useSimpleLanguage();
+  
   return (
     <section className="relative min-h-[600px] py-12 md:py-16 lg:py-20 flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -17,7 +21,7 @@ export default function ContactHero() {
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white/95 backdrop-blur-sm p-4 sm:p-6 md:p-8 lg:p-12 rounded-lg shadow-professional">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-nexia-primary mb-6 md:mb-8 text-center">
-            Contactez-nous
+            {t('contactHero.title')}
           </h1>
           
           <div className="mb-6 md:mb-8">
@@ -56,7 +60,7 @@ export default function ContactHero() {
           {/* Manager Contact Section */}
           <div className="mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-200">
             <div className="text-center">
-              <h3 className="text-lg sm:text-xl font-bold text-nexia-primary mb-3 sm:mb-4">Contact Direct Manager</h3>
+              <h3 className="text-lg sm:text-xl font-bold text-nexia-primary mb-3 sm:mb-4">{t('contactHero.managerContact')}</h3>
               <div className="bg-gradient-to-br from-nexia-secondary/10 to-nexia-primary/10 p-4 sm:p-6 rounded-lg">
                 <h4 className="text-base sm:text-lg font-semibold text-nexia-primary mb-2">Mohammed EZZAHIR</h4>
                 <p className="text-sm sm:text-base text-nexia-primary mb-3">Manager</p>

@@ -5,13 +5,13 @@ import { Calculator, TrendingUp, Users, Shield } from "lucide-react";
 const services = [
   {
     icon: Calculator,
-    title: "Accounting & Audit",
-    description: "Comprehensive accounting and auditing services to ensure financial accuracy and compliance.",
+    title: "Audit & Comptabilité",
+    description: "Services complets d'audit et de comptabilité pour assurer la précision financière et la conformité.",
   },
   {
     icon: TrendingUp,
-    title: "Tax Advisory",
-    description: "Strategic tax planning and advisory services to optimize your financial position.",
+    title: "Conseil Fiscal",
+    description: "Planification fiscale stratégique et services de conseil pour optimiser votre position financière.",
   },
   {
     icon: Users,
@@ -20,8 +20,8 @@ const services = [
   },
   {
     icon: Shield,
-    title: "Risk Management",
-    description: "Comprehensive risk assessment and management solutions for your business.",
+    title: "Gestion des Risques",
+    description: "Solutions complètes d'évaluation et de gestion des risques pour votre entreprise.",
   },
 ];
 
@@ -32,10 +32,10 @@ export default function HomeServices() {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-nexia-primary mb-6">
-            Our Expertise
+            Nos Domaines d'Expertise
           </h2>
           <p className="text-xl text-nexia-primary/80 max-w-3xl mx-auto leading-relaxed">
-            We provide comprehensive professional services to help businesses thrive in today's competitive landscape.
+            Nous fournissons des services professionnels complets pour aider les entreprises à prospérer dans le paysage concurrentiel d'aujourd'hui.
           </p>
         </div>
 
@@ -62,7 +62,7 @@ export default function HomeServices() {
         {/* CTA */}
         <div className="text-center">
           <Button asChild variant="professional" size="lg">
-            <Link to="/about">Explore All Services</Link>
+            <Link to="/domaines-expertise">Découvrir Tous Nos Services</Link>
           </Button>
         </div>
       </div>

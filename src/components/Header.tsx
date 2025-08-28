@@ -23,7 +23,7 @@ const getNavigation = (t: (key: string) => string) => [
       { name: "Études de cas", href: "/etudes-de-cas" }
     ]
   },
-  { name: t('nav.about'), href: "/about" },
+  { name: t('nav.about'), href: "/a-propos" },
   { name: t('nav.contact'), href: "/contact" },
 ];
 

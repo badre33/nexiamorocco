@@ -40,16 +40,16 @@ export default function HomeFeaturedInsight() {
                 </span>
               </div>
               <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-nexia-primary mb-3 lg:mb-4">
-                Le coût des médicaments au Maroc : un enjeu économique et stratégique qui persiste
+                {t('insights.featured.title')}
               </h3>
               <p className="text-gray-600 mb-4 lg:mb-6 leading-relaxed text-sm sm:text-base">
-                Plus de deux ans après l'annonce de mesures visant à réduire les prix des médicaments, la question reste d'une brûlante actualité. Ce décalage n'est pas uniquement une problématique budgétaire pour les ménages mais un enjeu systémique qui concerne la souveraineté sanitaire du Maroc.
+                {t('insights.featured.description')}
               </p>
               <div className="flex items-center justify-between">
                 <div className="flex items-center gap-4 text-sm text-gray-500">
                   <div className="flex items-center gap-1">
                     <User className="w-4 h-4" />
-                    Nexia Fiducia Maroc
+                    {t('common.author')}
                   </div>
                   <div className="flex items-center gap-1">
                     <Calendar className="w-4 h-4" />
@@ -57,7 +57,7 @@ export default function HomeFeaturedInsight() {
                   </div>
                   <div className="flex items-center gap-1">
                     <Clock className="w-4 h-4" />
-                    12 min
+                    12 {t('common.minutes')}
                   </div>
                 </div>
                 <Button 
@@ -67,7 +67,7 @@ export default function HomeFeaturedInsight() {
                     window.scrollTo(0, 0);
                   }}
                 >
-                  Lire l'article
+                  {t('insights.read')}
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
               </div>
@@ -86,7 +86,7 @@ export default function HomeFeaturedInsight() {
               window.scrollTo(0, 0);
             }}
           >
-            Voir Toutes Nos Perspectives
+            {t('insights.viewAll')}
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
         </div>

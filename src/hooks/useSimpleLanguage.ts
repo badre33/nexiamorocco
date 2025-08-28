@@ -13,12 +13,18 @@ export const useSimpleLanguage = () => {
   }, []);
 
   const changeLanguage = (newLanguage: Language) => {
+    console.log('Changing language to:', newLanguage); // Debug log
     setLanguage(newLanguage);
     localStorage.setItem('nexia-language', newLanguage);
+    
+    // Force a page refresh to ensure all components update
+    window.location.reload();
   };
 
   const t = (key: string): string => {
-    return translate(language, key);
+    const result = translate(language, key);
+    console.log(`Translation for "${key}" in ${language}:`, result); // Debug log
+    return result;
   };
 
   return {

@@ -41,13 +41,13 @@ export default function HomeAboutUs() {
         {/* Services List - Right Column */}
         <div className="space-y-4 p-8">
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight bg-white/90 p-4 rounded-lg w-fit">
-            Audit.
+            Audit
           </h2>
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight bg-white/90 p-4 rounded-lg w-fit">
-            Fiscalité.
+            Fiscalité
           </h2>
           <h2 className="text-[70px] lg:text-[70px] font-bold text-nexia-primary font-poppins leading-tight bg-white/90 p-4 rounded-lg w-fit">
-            Conseil.
+            Conseil
           </h2>
         </div>
       </div>

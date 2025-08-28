@@ -17,7 +17,7 @@ const Services = () => {
         <OurCapabilities />
         <OurServicesMenu />
         <CaseStudySection />
-        <TestimonialsSection />
+        {/* <TestimonialsSection /> */}
         <ServicesInsights />
         <HowCanWeHelp />
       </main>

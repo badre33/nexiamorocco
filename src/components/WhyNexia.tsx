@@ -1,7 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 export default function WhyNexia() {
+  const { t } = useSimpleLanguage();
+  
   return (
     <section className="relative py-20 overflow-hidden">
       {/* Background Image with Overlay */}
@@ -30,8 +33,8 @@ export default function WhyNexia() {
               />
             </div>
             <h3 className="text-4xl lg:text-5xl font-bold text-white mb-6 leading-tight">
-              Pourquoi
-              <span className="block text-nexia-accent">Nexia Fiducia Maroc</span>
+              {t('whyNexia.title')}
+              <span className="block text-nexia-accent">{t('whyNexia.subtitle')}</span>
             </h3>
             <div className="w-24 h-1 bg-nexia-accent mx-auto lg:mx-0 rounded-full"></div>
           </div>
@@ -42,14 +45,14 @@ export default function WhyNexia() {
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-3 h-3 bg-nexia-accent rounded-full mt-2"></div>
                 <p className="text-nexia-primary text-lg leading-relaxed">
-                  Fort de notre appartenance au <strong>réseau international Nexia</strong>, nous combinons l'expertise locale approfondie du marché marocain avec les standards internationaux les plus exigeants.
+                  {t('whyNexia.description1')}
                 </p>
               </div>
               
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-3 h-3 bg-nexia-accent rounded-full mt-2"></div>
                 <p className="text-nexia-primary text-lg leading-relaxed">
-                  Notre <strong>approche personnalisée</strong> et notre engagement envers l'excellence nous permettent d'accompagner efficacement nos clients dans leurs défis financiers et stratégiques.
+                  {t('whyNexia.description2')}
                 </p>
               </div>
 
@@ -57,22 +60,22 @@ export default function WhyNexia() {
               <div className="grid grid-cols-3 gap-4 pt-6 border-t border-gray-200">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-nexia-primary">25+</div>
-                  <div className="text-sm text-gray-600">Années d'expérience</div>
+                  <div className="text-sm text-gray-600">{t('whyNexia.stats.experience')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-nexia-primary">500+</div>
-                  <div className="text-sm text-gray-600">Clients satisfaits</div>
+                  <div className="text-sm text-gray-600">{t('whyNexia.stats.clients')}</div>
                 </div>
                 <div className="text-center">
                   <div className="text-2xl font-bold text-nexia-primary">727</div>
-                  <div className="text-sm text-gray-600">Bureaux Nexia mondial</div>
+                  <div className="text-sm text-gray-600">{t('whyNexia.stats.offices')}</div>
                 </div>
               </div>
 
               <div className="pt-4">
                 <Button asChild variant="professional" size="lg" className="w-full lg:w-auto shadow-lg hover:shadow-xl transition-all duration-300">
                   <Link to="/about" className="inline-flex items-center justify-center">
-                    En savoir plus
+                    {t('whyNexia.button')}
                     <svg className="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                     </svg>

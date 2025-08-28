@@ -5,54 +5,54 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 // import taxService from "@/assets/tax-service.jpg";
 // import advisoryService from "@/assets/advisory-service.jpg";
 
-const expertiseDomains = [
+const getExpertiseDomains = (t: (key: string) => string) => [
   {
-    title: "Audit & Commissariat aux comptes",
+    title: t("service.audit.title"),
     image: "/lovable-uploads/01471ff8-a45a-4917-9e88-21cc4de0456d.png",
     href: "/domaines-expertise#audit"
   },
   {
-    title: "Expertise comptable & Conseil",
+    title: t("service.expertise.title"),
     image: "/lovable-uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
     href: "/domaines-expertise#comptable"
   },
   {
-    title: "Fiscalité & Optimisation fiscale",
+    title: t("service.fiscal.title"),
     image: "/lovable-uploads/53f46a0f-ef88-4282-bd21-b005312754ce.png",
     href: "/domaines-expertise#fiscalite"
   },
   {
-    title: "Corporate Finance & M&A",
+    title: t("service.finance.title"),
     image: "/lovable-uploads/4bed1dd7-b5f8-4423-abf2-a25ceac03f9d.png",
     href: "/domaines-expertise#corporate"
   },
   {
-    title: "Accompagnement juridique & social",
+    title: t("service.legal.title"),
     image: "/lovable-uploads/a7f22a1b-43e9-4c44-a47d-df43bbab5901.png",
     href: "/domaines-expertise#juridique"
   },
   {
-    title: "Outsourcing & Externalisation",
+    title: t("service.outsourcing.title"),
     image: "/lovable-uploads/0506b088-dd85-416f-a9a3-bc15fac33d20.png",
     href: "/domaines-expertise#outsourcing"
   },
   {
-    title: "Digitalisation et systèmes d'information",
+    title: t("service.digitalization.title"),
     image: "/lovable-uploads/c77098e9-3f18-4389-b9e1-012be59e78dd.png",
     href: "/domaines-expertise#digital"
   },
   {
-    title: "Support aux investisseurs étrangers",
+    title: t("service.support.title"),
     image: "/lovable-uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png",
     href: "/domaines-expertise#international"
   },
   {
-    title: "Conseil en stratégie & développement",
+    title: t("service.strategy.title"),
     image: "/lovable-uploads/90493dfc-c495-4692-97e9-4d6c1478d8e1.png",
     href: "/domaines-expertise#strategie"
   },
   {
-    title: "Talent & Mobility Solutions",
+    title: t("service.talent.title"),
     image: "/lovable-uploads/888e9d03-6404-4ee8-871e-6b4893b19f2a.png",
     href: "/domaines-expertise#talent-mobility"
   }
@@ -60,6 +60,7 @@ const expertiseDomains = [
 
 export default function ServiceTabs() {
   const { t } = useSimpleLanguage();
+  const expertiseDomains = getExpertiseDomains(t);
   
   const handleDomainClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();

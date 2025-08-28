@@ -40,6 +40,41 @@ export const translations = {
     'insights.read': 'Lire l\'article',
     'insights.viewAll': 'Voir Toutes Nos Perspectives',
     
+    // Why Nexia Section
+    'whyNexia.title': 'Pourquoi',
+    'whyNexia.subtitle': 'Nexia Fiducia Maroc',
+    'whyNexia.description1': 'Fort de notre appartenance au réseau international Nexia, nous combinons l\'expertise locale approfondie du marché marocain avec les standards internationaux les plus exigeants.',
+    'whyNexia.description2': 'Notre approche personnalisée et notre engagement envers l\'excellence nous permettent d\'accompagner efficacement nos clients dans leurs défis financiers et stratégiques.',
+    'whyNexia.stats.experience': 'Années d\'expérience',
+    'whyNexia.stats.clients': 'Clients satisfaits',
+    'whyNexia.stats.offices': 'Bureaux Nexia mondial',
+    'whyNexia.button': 'En savoir plus',
+    
+    // How Can We Help Section
+    'help.title': 'Comment pouvons-nous vous aider ?',
+    'help.description': 'Nos équipes sont à votre écoute pour construire avec vous des solutions sur-mesure, efficaces et conformes aux meilleures pratiques.',
+    'help.button': 'Contactez-nous',
+    
+    // Service Cards
+    'service.audit.title': 'Audit & Commissariat aux comptes',
+    'service.expertise.title': 'Expertise comptable & Conseil',
+    'service.fiscal.title': 'Fiscalité & Optimisation fiscale',
+    'service.finance.title': 'Corporate Finance & M&A',
+    'service.legal.title': 'Accompagnement juridique & social',
+    'service.outsourcing.title': 'Outsourcing & Externalisation',
+    'service.digitalization.title': 'Digitalisation et systèmes d\'information',
+    'service.support.title': 'Support aux investisseurs étrangers',
+    'service.strategy.title': 'Conseil en stratégie & développement',
+    'service.talent.title': 'Talent & Mobility',
+    
+    // Footer
+    'footer.description': 'Nexia Fiducia Maroc est membre de Nexia, un réseau mondial de premier plan de cabinets indépendants de comptabilité et de conseil.',
+    'footer.disclaimer': 'Member firm disclaimer',
+    'footer.privacy': 'Privacy policy', 
+    'footer.cookie': 'Cookie Policy',
+    'footer.email': 'Email disclaimer',
+    'footer.copyright': '© 2024 Nexia Templates. All rights reserved.',
+    
     // Common
     'common.readMore': 'En savoir plus',
     'common.contact': 'Nous contacter',
@@ -84,6 +119,41 @@ export const translations = {
     'insights.featured.description': 'More than two years after the announcement of measures aimed at reducing drug prices, the issue remains of burning relevance.',
     'insights.read': 'Read article',
     'insights.viewAll': 'View All Our Perspectives',
+    
+    // Why Nexia Section
+    'whyNexia.title': 'Why',
+    'whyNexia.subtitle': 'Nexia Fiducia Morocco',
+    'whyNexia.description1': 'Through our membership in the Nexia international network, we combine deep local expertise of the Moroccan market with the most demanding international standards.',
+    'whyNexia.description2': 'Our personalized approach and commitment to excellence enable us to effectively support our clients in their financial and strategic challenges.',
+    'whyNexia.stats.experience': 'Years of experience',
+    'whyNexia.stats.clients': 'Satisfied clients',
+    'whyNexia.stats.offices': 'Nexia offices worldwide',
+    'whyNexia.button': 'Learn more',
+    
+    // How Can We Help Section
+    'help.title': 'How can we help you?',
+    'help.description': 'Our teams are here to work with you to build tailor-made, effective solutions that comply with best practices.',
+    'help.button': 'Contact us',
+    
+    // Service Cards
+    'service.audit.title': 'Audit & Statutory Audit',
+    'service.expertise.title': 'Accounting Expertise & Advisory',
+    'service.fiscal.title': 'Taxation & Tax Optimization',
+    'service.finance.title': 'Corporate Finance & M&A',
+    'service.legal.title': 'Legal & Social Support',
+    'service.outsourcing.title': 'Outsourcing & Externalization',
+    'service.digitalization.title': 'Digitalization & Information Systems',
+    'service.support.title': 'Support for Foreign Investors',
+    'service.strategy.title': 'Strategy & Development Advisory',
+    'service.talent.title': 'Talent & Mobility',
+    
+    // Footer
+    'footer.description': 'Nexia Fiducia Morocco is a member of Nexia, a leading global network of independent accounting and advisory firms.',
+    'footer.disclaimer': 'Member firm disclaimer',
+    'footer.privacy': 'Privacy policy',
+    'footer.cookie': 'Cookie Policy', 
+    'footer.email': 'Email disclaimer',
+    'footer.copyright': '© 2024 Nexia Templates. All rights reserved.',
     
     // Common
     'common.readMore': 'Learn more',

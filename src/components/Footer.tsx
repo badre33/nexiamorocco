@@ -1,13 +1,17 @@
 import { Linkedin } from "lucide-react";
+import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
-const footerLinks = [
-  { text: "Member firm disclaimer", url: "https://nexia.com/member-firm-disclaimer/" },
-  { text: "Privacy policy", url: "https://nexia.com/privacy-policy/" },
-  { text: "Cookie Policy", url: "https://nexia.com/cookie-policy/" },
-  { text: "Email disclaimer", url: "https://nexia.com/email-disclaimer/" },
+const getFooterLinks = (t: (key: string) => string) => [
+  { text: t('footer.disclaimer'), url: "https://nexia.com/member-firm-disclaimer/" },
+  { text: t('footer.privacy'), url: "https://nexia.com/privacy-policy/" },
+  { text: t('footer.cookie'), url: "https://nexia.com/cookie-policy/" },
+  { text: t('footer.email'), url: "https://nexia.com/email-disclaimer/" },
 ];
 
 export default function Footer() {
+  const { t } = useSimpleLanguage();
+  const footerLinks = getFooterLinks(t);
+  
   return (
     <footer className="bg-nexia-primary text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -28,16 +32,7 @@ export default function Footer() {
         {/* Disclaimer */}
         <div className="mb-12">
           <p className="text-white/80 leading-relaxed max-w-4xl">
-            Nexia Fiducia Maroc est membre de{" "}
-            <a 
-              href="https://nexia.com/" 
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-nexia-secondary hover:text-white transition-colors duration-200 underline"
-            >
-              Nexia
-            </a>
-            , un réseau mondial de premier plan de cabinets indépendants de comptabilité et de conseil.
+            {t('footer.description')}
           </p>
         </div>
 
@@ -87,7 +82,7 @@ export default function Footer() {
         {/* Copyright */}
         <div className="mt-12 pt-8 border-t border-white/20 text-center">
           <p className="text-white/60 text-sm">
-            © 2024 Nexia Templates. All rights reserved.
+            {t('footer.copyright')}
           </p>
         </div>
       </div>

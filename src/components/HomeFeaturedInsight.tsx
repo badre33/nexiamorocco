@@ -24,7 +24,7 @@ export default function HomeFeaturedInsight() {
                 src="/lovable-uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png"
                 alt="Le coût des médicaments au Maroc"
                 className="w-full h-64 md:h-full object-cover"
-                style={{ objectPosition: '20% center' }}
+                style={{ objectPosition: '15% center' }}
               />
             </div>
             <div className="md:w-1/2 p-8">

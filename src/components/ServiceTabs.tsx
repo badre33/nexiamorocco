@@ -1,5 +1,6 @@
 import { ExternalLink } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/contexts/LanguageContext";
 // import auditService from "@/assets/audit-service.jpg";
 // import taxService from "@/assets/tax-service.jpg";
 // import advisoryService from "@/assets/advisory-service.jpg";
@@ -52,12 +53,14 @@ const expertiseDomains = [
   },
   {
     title: "Talent & Mobility Solutions",
-    image: "/lovable-uploads/a46d6c8c-98d8-4527-bb95-23f3aa12e9e9.png",
+    image: "/lovable-uploads/888e9d03-6404-4ee8-871e-6b4893b19f2a.png",
     href: "/domaines-expertise#talent-mobility"
   }
 ];
 
 export default function ServiceTabs() {
+  const { t } = useLanguage();
+  
   const handleDomainClick = (e: React.MouseEvent, href: string) => {
     e.preventDefault();
     const [path, hash] = href.split('#');
@@ -75,17 +78,17 @@ export default function ServiceTabs() {
   return (
     <section className="nexia-section-padding bg-white">
       {/* Section Title */}
-      <div className="text-center mb-12 lg:mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold text-nexia-primary font-poppins mb-4">
-          Nos domaines d'expertise
+      <div className="text-center mb-8 lg:mb-12">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-nexia-primary font-poppins mb-4">
+          {t('services.title')}
         </h2>
-        <p className="text-base md:text-lg text-nexia-primary/80 max-w-3xl mx-auto">
-          Découvrez l'ensemble de nos services professionnels conçus pour accompagner votre entreprise dans sa croissance et sa réussite.
+        <p className="text-sm md:text-base lg:text-lg text-nexia-primary/80 max-w-3xl mx-auto px-4">
+          {t('services.subtitle')}
         </p>
       </div>
 
       {/* Expertise Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 lg:px-0">
         {expertiseDomains.map((domain, index) => (
           <Link
             key={index}
@@ -93,7 +96,7 @@ export default function ServiceTabs() {
             onClick={(e) => handleDomainClick(e, domain.href)}
             className="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 block"
           >
-            <div className="relative h-64 md:h-72 lg:h-80">
+            <div className="relative h-48 sm:h-56 md:h-64 lg:h-72">
               <img
                 src={domain.image}
                 alt={domain.title}

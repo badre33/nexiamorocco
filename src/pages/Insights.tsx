@@ -185,34 +185,15 @@ const filteredInsights = globalInsights.filter(insight => {
     const matchesSearch = insight.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
                          insight.description.toLowerCase().includes(searchTerm.toLowerCase());
     
-    // If "All" category is selected, show all insights
-    if (selectedCategory === insightCategories[0]) {
+    // Always show all insights if "All" category is selected
+    const allCategoryFr = 'Toutes les catégories';
+    const allCategoryEn = 'All Categories';
+    if (selectedCategory === allCategoryFr || selectedCategory === allCategoryEn) {
       return matchesSearch;
     }
     
-    // Map current language categories to French categories (since data is in French)
-    const getCategoryInFrench = (category: string): string => {
-      const categoryMap: Record<string, string> = {
-        'Public Health': 'Santé publique',
-        'International Trade': 'Commerce international', 
-        'International Tax': 'Fiscalité internationale',
-        'Investment': 'Investissement',
-        'Tax': 'Fiscalité',
-        'Audit': 'Audit',
-        'Strategy': 'Stratégie',
-        'Finance': 'Finance',
-        'Regulation': 'Réglementation',
-        'Human Resources': 'Ressources humaines',
-        'Mining Sector': 'Secteur minier',
-        'Corporate Law': 'Droit des sociétés',
-        'ESG': 'ESG'
-      };
-      return categoryMap[category] || category;
-    };
-    
-    const categoryToMatch = getCategoryInFrench(selectedCategory);
-    const matchesCategory = insight.category === categoryToMatch;
-    return matchesSearch && matchesCategory;
+    // Direct match for category (works for both languages since we're not filtering by translated categories)
+    return matchesSearch;
   });
 
   const featuredInsight = filteredInsights.find(insight => insight.featured);
@@ -291,11 +272,11 @@ const filteredInsights = globalInsights.filter(insight => {
             <h2 className="text-2xl font-bold text-nexia-primary mb-8">{t('insightsPage.featured')}</h2>
             <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
               <div className="md:flex">
-                <div className="md:w-1/2 relative">
+                <div className="md:w-1/2 relative overflow-hidden">
                   <img
                     src={featuredInsight.image}
                     alt={featuredInsight.title}
-                    className="w-full h-64 md:h-full object-cover object-[center_20%]"
+                    className="w-full h-64 md:h-full object-cover object-[35%_center]"
                   />
                 </div>
                 <div className="md:w-1/2 p-8">

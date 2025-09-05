@@ -479,8 +479,8 @@ export const translations = {
     'whyNexia.title': 'Why',
     
     // Case Studies Page
-    'caseStudiesPage.title': 'Case Studies',
-    'caseStudiesPage.subtitle': 'Discover how we support our clients in their most complex challenges through concrete missions and measurable results.',
+    'caseStudiesPage.title': 'Our Case Studies',
+    'caseStudiesPage.subtitle': 'Discover how we helped our clients overcome their challenges',
     'caseStudiesPage.sector': 'Sector',
     'caseStudiesPage.duration': 'Duration',
     'caseStudiesPage.services': 'Services mobilized:',
@@ -494,28 +494,28 @@ export const translations = {
     'ourCapabilities.subtitle': 'Over 25 years of experience serving your growth. 10 areas of expertise to support all your projects.',
     
     // Services page - Global Perspectives
-    'servicesInsights.title': 'Global Perspectives',
-    'servicesInsights.subtitle': 'Discover our latest expert analyses on trends shaping the future of businesses in Morocco and internationally.',
+    'servicesInsights.title': 'Our Latest Insights',
+    'servicesInsights.subtitle': 'Discover our latest articles and insights on contemporary business challenges',
     'servicesInsights.button': 'View all insights',
     
     // About page - Video section (rename conflicting keys)
-    'aboutVideo.tagline': 'About Nexia Fiduciaire Maroc',
-    'aboutVideo.title': 'Nexia Fiduciaire Maroc Presentation 2025',
-    'aboutVideo.description': 'Discover our expertise and commitment to supporting Moroccan and international businesses through our comprehensive range of advisory and auditing services.',
+    'aboutVideo.tagline': 'DISCOVER NEXIA',
+    'aboutVideo.title': 'Nexia - Our world in numbers 2024',
+    'aboutVideo.description': 'Discover the global performance and impact of the Nexia International network worldwide.',
     'aboutVideo.videoTitle': 'Nexia Fiduciaire Maroc Presentation Video',
     
     // Services Section (About page)
-    'servicesSection.title': 'Nexia International Publications',
-    'servicesSection.subtitle': 'Discover our latest publications and analyses from the Nexia international network. Stay informed about market trends, regulatory developments and our sector insights.',
+    'servicesSection.title': 'Our Areas of Expertise',
+    'servicesSection.subtitle': 'A complete range of services to support your growth',
     
     // Image with Card Section
-    'imageCard.title': 'Our Moroccan Heritage',
-    'imageCard.description': 'With deep roots in Morocco and a global perspective through the Nexia International network, we combine local expertise with international standards to serve our clients.',
+    'imageCard.title': 'Excellence & Governance',
+    'imageCard.description': 'At Nexia Fiducia Morocco, we are committed to maintaining the highest standards of governance and professional excellence, in line with the values of the Nexia international network.',
     
     // LinkedIn Posts
-    'linkedinPosts.title': 'Our News',
-    'linkedinPosts.subtitle': 'Follow our latest news and insights',
-    'linkedinPosts.viewProfile': 'View our LinkedIn profile',
+    'linkedinPosts.title': 'LinkedIn News',
+    'linkedinPosts.subtitle': 'Follow our latest posts and news on LinkedIn',
+    'linkedinPosts.viewProfile': 'View LinkedIn profile',
     
     // Governance Section / Team
     'governance.title': 'Executive Team',
@@ -583,12 +583,12 @@ export const translations = {
     'nav.caseStudies': 'Case Studies',
     
     // Contact Map Section
-    'contactMap.title': 'Location of our offices',
-    'contactMap.subtitle': 'Interactive map with both offices',
+    'contactMap.title': 'Our Offices',
+    'contactMap.subtitle': 'Find us in our offices in Casablanca and Rabat',
     'contactMap.instructions': 'To locate our offices:',
     'contactMap.instructionsDetails': 'Use the "View on Google Maps" links below to access each address directly with precise geolocation.',
-    'contactMap.office1': 'Office 1',
-    'contactMap.office2': 'Office 2',
+    'contactMap.office1': 'Casablanca Office',
+    'contactMap.office2': 'Rabat Office',
     'contactMap.viewOnMaps': 'View on Google Maps',
     'contactMap.helpText': 'To see both offices on the map, use the individual links above or search for the addresses directly.',
     'contactMap.mapTitle': 'Nexia Fiducia Morocco offices location',

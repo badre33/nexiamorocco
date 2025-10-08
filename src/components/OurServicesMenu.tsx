@@ -278,7 +278,7 @@ export default function OurServicesMenu() {
         </div>
 
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 lg:grid-cols-10 gap-3 h-auto p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-professional border border-border/50">
+          <TabsList className="grid w-full grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-10 gap-2 md:gap-3 h-auto p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-professional border border-border/50">
             {expertiseDomains.map((domain, index) => {
               const IconComponent = domain.icon;
               const isActive = activeTab === domain.id;
@@ -287,7 +287,7 @@ export default function OurServicesMenu() {
                   key={domain.id} 
                   value={domain.id}
                   className={`
-                    group relative flex flex-col items-center p-4 min-h-[110px] 
+                    group relative flex flex-col items-center p-2 md:p-4 min-h-[90px] md:min-h-[110px] 
                     transition-all duration-300 ease-out rounded-xl border-0
                     hover:scale-105 hover:shadow-hover hover:-translate-y-2
                     ${isActive 
@@ -297,19 +297,19 @@ export default function OurServicesMenu() {
                   `}
                 >
                   <div className={`
-                    relative p-3 rounded-xl mb-2 transition-all duration-300
+                    relative p-2 md:p-3 rounded-xl mb-1 md:mb-2 transition-all duration-300
                     ${isActive 
                       ? 'bg-white/20 text-white backdrop-blur-sm' 
                       : `${domain.color} group-hover:scale-110 group-hover:rotate-3`
                     }
                   `}>
-                    <IconComponent className="h-7 w-7 transition-all duration-300 group-hover:scale-110" />
+                    <IconComponent className="h-5 w-5 md:h-7 md:w-7 transition-all duration-300 group-hover:scale-110" />
                     {isActive && (
                       <div className="absolute inset-0 rounded-xl bg-white/10 animate-pulse" />
                     )}
                   </div>
-                  <span className="text-xs font-bold text-center leading-tight transition-all duration-300 group-hover:scale-105">
-                    {domain.title.split(' ')[0]}
+                  <span className="text-[10px] md:text-xs font-bold text-center leading-tight transition-all duration-300 group-hover:scale-105 px-1">
+                    {domain.title}
                   </span>
                   {isActive && (
                     <>
@@ -330,68 +330,68 @@ export default function OurServicesMenu() {
                 value={domain.id} 
                 className="mt-8 animate-fade-in"
               >
-                <div className="bg-white rounded-2xl p-8 shadow-professional hover:shadow-hover transition-all duration-500 transform hover:-translate-y-1 border border-border/20 nexia-card-rounded">
+                <div className="bg-white rounded-2xl p-4 md:p-8 shadow-professional hover:shadow-hover transition-all duration-500 transform hover:-translate-y-1 border border-border/20 nexia-card-rounded">
                   {/* Header avec badge et stats */}
-                  <div className="flex items-start justify-between mb-6">
-                    <div className="flex items-start gap-6">
+                  <div className="flex flex-col md:flex-row items-start justify-between mb-6 gap-4">
+                    <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 w-full">
                       <div className={`
-                        relative p-6 rounded-2xl transition-all duration-300 hover:scale-105
+                        relative p-4 md:p-6 rounded-2xl transition-all duration-300 hover:scale-105
                         bg-gradient-to-br from-nexia-primary to-nexia-blue text-white shadow-professional
                       `}>
-                        <IconComponent className="h-12 w-12" />
-                        <div className="absolute -top-1 -right-1 w-6 h-6 bg-nexia-yellow rounded-full flex items-center justify-center">
+                        <IconComponent className="h-8 w-8 md:h-12 md:w-12" />
+                        <div className="absolute -top-1 -right-1 w-5 h-5 md:w-6 md:h-6 bg-nexia-yellow rounded-full flex items-center justify-center">
                           <CheckCircle className="h-3 w-3 text-nexia-primary" />
                         </div>
                       </div>
-                      <div className="flex-1">
-                        <div className="flex items-center gap-3 mb-2">
-                          <h3 className="text-3xl font-bold text-nexia-primary font-poppins hover:text-nexia-secondary transition-colors duration-300">
+                      <div className="flex-1 w-full">
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-3">
+                          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-nexia-primary font-poppins hover:text-nexia-secondary transition-colors duration-300">
                             {domain.title}
                           </h3>
-                          <span className="inline-flex items-center gap-1 px-3 py-1 bg-nexia-secondary/10 text-nexia-secondary rounded-full text-sm font-semibold">
+                          <span className="inline-flex items-center gap-1 px-2 md:px-3 py-1 bg-nexia-secondary/10 text-nexia-secondary rounded-full text-xs md:text-sm font-semibold w-fit">
                             <Award className="h-3 w-3" />
                             {domain.badge}
                           </span>
                         </div>
                         
                         {/* Statistiques percutantes */}
-                        <div className="flex gap-6 mb-4">
+                        <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 sm:gap-4 md:gap-6 mb-4">
                           <div className="flex items-center gap-2">
-                            <Clock className="h-4 w-4 text-nexia-secondary" />
-                            <span className="text-sm font-semibold text-nexia-primary">{domain.stats.years} {t('expertise.yearsExperience')}</span>
+                            <Clock className="h-4 w-4 text-nexia-secondary flex-shrink-0" />
+                            <span className="text-xs md:text-sm font-semibold text-nexia-primary">{domain.stats.years} {t('expertise.yearsExperience')}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <Users className="h-4 w-4 text-nexia-secondary" />
-                            <span className="text-sm font-semibold text-nexia-primary">{domain.stats.clients} {t('expertise.clientsSupported')}</span>
+                            <Users className="h-4 w-4 text-nexia-secondary flex-shrink-0" />
+                            <span className="text-xs md:text-sm font-semibold text-nexia-primary">{domain.stats.clients} {t('expertise.clientsSupported')}</span>
                           </div>
                           <div className="flex items-center gap-2">
-                            <CheckCircle className="h-4 w-4 text-nexia-secondary" />
-                            <span className="text-sm font-semibold text-nexia-primary">Certification {domain.stats.certification}</span>
+                            <CheckCircle className="h-4 w-4 text-nexia-secondary flex-shrink-0" />
+                            <span className="text-xs md:text-sm font-semibold text-nexia-primary">Certification {domain.stats.certification}</span>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
 
-                  <p className="text-lg text-nexia-primary/80 mb-8 leading-relaxed font-poppins">
+                  <p className="text-sm md:text-base lg:text-lg text-nexia-primary/80 mb-6 md:mb-8 leading-relaxed font-poppins">
                     {domain.description}
                   </p>
                   
                   {/* Services avec design amélioré */}
-                  <div className="bg-gradient-to-br from-muted/30 to-transparent rounded-xl p-6">
-                    <h4 className="text-xl font-bold text-nexia-primary mb-4 flex items-center gap-2">
-                      <Target className="h-5 w-5 text-nexia-secondary" />
+                  <div className="bg-gradient-to-br from-muted/30 to-transparent rounded-xl p-4 md:p-6">
+                    <h4 className="text-lg md:text-xl font-bold text-nexia-primary mb-4 flex items-center gap-2">
+                      <Target className="h-4 w-4 md:h-5 md:w-5 text-nexia-secondary" />
                       {t('expertise.servicesTitle')}
                     </h4>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-3 md:gap-4">
                       {domain.services.map((service, serviceIndex) => (
                         <div 
                           key={serviceIndex} 
-                          className="group flex items-center gap-3 p-4 rounded-lg bg-white hover:bg-gradient-to-r hover:from-nexia-secondary/5 hover:to-nexia-primary/5 transition-all duration-300 hover:shadow-sm hover:scale-[1.02] border border-transparent hover:border-nexia-secondary/20"
+                          className="group flex items-start gap-2 md:gap-3 p-3 md:p-4 rounded-lg bg-white hover:bg-gradient-to-r hover:from-nexia-secondary/5 hover:to-nexia-primary/5 transition-all duration-300 hover:shadow-sm hover:scale-[1.02] border border-transparent hover:border-nexia-secondary/20"
                           style={{ animationDelay: `${serviceIndex * 100}ms` }}
                         >
-                          <div className="w-3 h-3 bg-gradient-to-r from-nexia-secondary to-nexia-primary rounded-full transition-transform duration-300 group-hover:scale-125 flex-shrink-0"></div>
-                          <span className="text-nexia-primary font-poppins font-medium group-hover:text-nexia-secondary transition-colors duration-300 group-hover:font-semibold">
+                          <div className="w-2 h-2 md:w-3 md:h-3 bg-gradient-to-r from-nexia-secondary to-nexia-primary rounded-full transition-transform duration-300 group-hover:scale-125 flex-shrink-0 mt-1.5 md:mt-1"></div>
+                          <span className="text-sm md:text-base text-nexia-primary font-poppins font-medium group-hover:text-nexia-secondary transition-colors duration-300 group-hover:font-semibold">
                             {service}
                           </span>
                         </div>

@@ -360,6 +360,9 @@ export const translations = {
     'governance.partner3.description': 'Responsable du développement commercial et des relations clients.',
     'governance.viewTeam': 'Voir l\'équipe complète',
     
+    // Team Page
+    'teamPage.specialties': 'Spécialités',
+    
     // Contact Map Section
     'contactMap.title': 'Nos Bureaux',
     'contactMap.subtitle': 'Retrouvez-nous dans nos bureaux à Casablanca',
@@ -648,6 +651,9 @@ export const translations = {
     'nav.globalPerspectives': 'Global Perspectives',
     'nav.caseStudies': 'Case Studies',
     
+    // Team Page
+    'teamPage.specialties': 'Specialties',
+    
     // Contact Map Section
     'contactMap.title': 'Our Offices',
     'contactMap.subtitle': 'Find us in our offices in Casablanca',
@@ -669,9 +675,6 @@ export const translations = {
     'contactForm.tabPrivacy': 'Guaranteed Privacy',
     'contactForm.privacyTitle': 'Your data is protected',
     'contactForm.privacyContent': 'All information shared through this form is treated with the strictest confidentiality. We are committed to protecting your personal data in accordance with applicable regulations.',
-    
-    // Team specialties in EquipeDirecteante
-    'teamPage.specialties': 'Areas of expertise',
     
     // Detailed Expertise Domains
     'expertise.audit.title': 'Audit & Statutory Audit',

@@ -4,7 +4,7 @@ export default function ServicesHero() {
   const { t } = useSimpleLanguage();
   
   return (
-    <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
+    <section className="relative h-[500px] md:h-[600px] flex items-center justify-center overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
@@ -16,15 +16,15 @@ export default function ServicesHero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-        <div className="bg-white p-8 lg:p-12 max-w-3xl">
-          <p className="text-nexia-secondary font-bold text-lg mb-4">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8 w-full">
+        <div className="bg-white p-6 md:p-8 lg:p-12 max-w-3xl">
+          <p className="text-nexia-secondary font-bold text-base md:text-lg mb-3 md:mb-4">
             {t('servicesHero.tagline')}
           </p>
-          <h1 className="text-3xl lg:text-4xl xl:text-5xl font-bold text-nexia-primary leading-tight mb-6">
+          <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-nexia-primary leading-tight mb-4 md:mb-6">
             {t('servicesHero.title')}
           </h1>
-          <p className="text-lg text-nexia-primary leading-relaxed">
+          <p className="text-base md:text-lg text-nexia-primary leading-relaxed">
             {t('servicesHero.description')}
           </p>
         </div>

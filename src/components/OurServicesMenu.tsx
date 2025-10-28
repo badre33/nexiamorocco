@@ -13,7 +13,9 @@ import {
   Target,
   Award,
   Clock,
-  CheckCircle
+  CheckCircle,
+  Lightbulb,
+  UserCheck
 } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
@@ -149,8 +151,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "strategie",
       title: t('expertise.strategie.title'),
-      icon: Target,
-      color: "text-nexia-primary bg-blue-100",
+      icon: Lightbulb,
+      color: "text-amber-600 bg-amber-50",
       stats: { years: "15+", clients: "90+", certification: "Strategy" },
       badge: t('expertise.strategie.badge'),
       description: t('expertise.strategie.description'),
@@ -165,7 +167,7 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "talent-mobility",
       title: t('expertise.talent.title'),
-      icon: Users,
+      icon: UserCheck,
       color: "text-purple-600 bg-purple-50",
       stats: { years: "10+", clients: "100+", certification: "RH" },
       badge: t('expertise.talent.badge'),

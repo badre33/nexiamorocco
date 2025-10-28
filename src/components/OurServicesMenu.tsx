@@ -15,7 +15,7 @@ import {
   Clock,
   CheckCircle,
   Lightbulb,
-  Briefcase
+  UserPlus
 } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
@@ -167,7 +167,7 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "talent-mobility",
       title: t('expertise.talent.title'),
-      icon: Briefcase,
+      icon: UserPlus,
       color: "text-purple-600 bg-purple-50",
       stats: { years: "10+", clients: "100+", certification: "RH" },
       badge: t('expertise.talent.badge'),

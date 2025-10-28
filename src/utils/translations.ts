@@ -319,6 +319,10 @@ export const translations = {
     'ourCapabilities.title': 'Nos Domaines d\'Expertise',
     'ourCapabilities.subtitle': 'Plus de 25 ans d\'expérience au service de votre croissance. 10 domaines d\'expertise pour accompagner tous vos projets.',
     
+    // Our Clients Section
+    'clients.title': 'Ils nous font confiance',
+    'clients.subtitle': 'Des partenaires de renom qui témoignent de notre expertise',
+    
     // Services page - Global Perspectives
     'servicesInsights.title': 'Nos Dernières Perspectives',
     'servicesInsights.subtitle': 'Découvrez nos derniers articles et analyses sur les enjeux business contemporains',
@@ -561,6 +565,10 @@ export const translations = {
     // Services page - Our Capabilities
     'ourCapabilities.title': 'Our Areas of Expertise',
     'ourCapabilities.subtitle': 'Over 25 years of experience serving your growth. 10 areas of expertise to support all your projects.',
+    
+    // Our Clients Section
+    'clients.title': 'They trust us',
+    'clients.subtitle': 'Renowned partners who testify to our expertise',
     
     // Services page - Global Perspectives
     'servicesInsights.title': 'Our Latest Insights',

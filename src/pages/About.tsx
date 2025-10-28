@@ -6,6 +6,7 @@ import ImageWithCardSection from "@/components/ImageWithCardSection";
 import FactsSection from "@/components/FactsSection";
 import GovernanceSection from "@/components/GovernanceSection";
 import LinkedInPosts from "@/components/LinkedInPosts";
+import OurClients from "@/components/OurClients";
 import Footer from "@/components/Footer";
 
 const About = () => {
@@ -18,6 +19,7 @@ const About = () => {
         <ServicesSection />
         <ImageWithCardSection />
         <FactsSection />
+        <OurClients />
         <LinkedInPosts />
         <GovernanceSection />
       </main>

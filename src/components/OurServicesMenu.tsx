@@ -340,7 +340,7 @@ export default function OurServicesMenu() {
                     <div className="flex flex-col md:flex-row items-start gap-4 md:gap-6 w-full">
                       <div className={`
                         relative p-4 md:p-6 rounded-2xl transition-all duration-500 hover:scale-105 hover:rotate-3
-                        ${domain.color.replace('text-', 'bg-').replace('bg-bg-', 'bg-')} shadow-lg
+                        ${domain.color.split(' ')[1]} shadow-lg
                       `}>
                         <IconComponent className={`h-8 w-8 md:h-12 md:w-12 ${domain.color.split(' ')[0]} transition-all duration-500`} />
                         <div className="absolute -top-1 -right-1 w-5 h-5 md:w-6 md:h-6 bg-nexia-yellow rounded-full flex items-center justify-center animate-pulse">

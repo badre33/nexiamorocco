@@ -42,16 +42,15 @@ export default function ContactMap() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-nexia-primary mb-2">{t('contactMap.office1')}</h3>
-                <p className="text-gray-600 text-sm mb-1">3, Rue Bab El Mansour</p>
-                <p className="text-gray-600 text-sm mb-1">Résidence Imrane - RDC Bureau n°15</p>
-                <p className="text-gray-600 text-sm mb-1">Espace Porte d'Anfa</p>
+                <p className="text-gray-600 text-sm mb-1">41 Rue Jbel Toudgha</p>
+                <p className="text-gray-600 text-sm mb-1">CIL</p>
                 <p className="text-gray-600 text-sm mb-3">Casablanca - Maroc</p>
                 <div className="flex flex-col gap-2">
-                  <a href="tel:+212522364588" className="text-nexia-secondary hover:text-nexia-primary font-medium">
-                    +(212) 05 22 36 45 88/89
+                  <a href="tel:+212522364377" className="text-nexia-secondary hover:text-nexia-primary font-medium">
+                    05 22 364377
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=3+Rue+Bab+El+Mansour+Casablanca+Morocco"
+                    href="https://www.google.com/maps/search/?api=1&query=41+Rue+Jbel+Toudgha+CIL+Casablanca+Morocco"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
@@ -77,15 +76,15 @@ export default function ContactMap() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-nexia-primary mb-2">{t('contactMap.office2')}</h3>
-                <p className="text-gray-600 text-sm mb-1">Rue des Pléaides</p>
-                <p className="text-gray-600 text-sm mb-1">Quartier des Hôpitaux</p>
-                <p className="text-gray-600 text-sm mb-3">Casablanca - Maroc</p>
+                <p className="text-gray-600 text-sm mb-1">Lotissement New Center Lots 3</p>
+                <p className="text-gray-600 text-sm mb-1">Etage 1, N°16</p>
+                <p className="text-gray-600 text-sm mb-3">Tanger - Maroc</p>
                 <div className="flex flex-col gap-2">
-                  <a href="tel:+212522863715" className="text-nexia-secondary hover:text-nexia-primary font-medium">
-                    +(212) 522 863 715
+                  <a href="tel:+212531295075" className="text-nexia-secondary hover:text-nexia-primary font-medium">
+                    0531295075
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Rue+des+Pleaides+Quartier+des+Hopitaux+Casablanca+Morocco"
+                    href="https://www.google.com/maps/search/?api=1&query=Lotissement+New+Center+Lots+3+Tanger+Morocco"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"

@@ -369,11 +369,11 @@ export const translations = {
     
     // Contact Map Section
     'contactMap.title': 'Nos Bureaux',
-    'contactMap.subtitle': 'Retrouvez-nous dans nos bureaux à Casablanca',
+    'contactMap.subtitle': 'Retrouvez-nous dans nos bureaux à Casablanca et Tanger',
     'contactMap.instructions': 'Pour localiser nos bureaux :',
     'contactMap.instructionsDetails': 'Utilisez les liens "Voir sur Google Maps" ci-dessous pour accéder directement à chaque adresse avec géolocalisation précise.',
-    'contactMap.office1': 'Bureau Casablanca 1',
-    'contactMap.office2': 'Bureau Casablanca 2',
+    'contactMap.office1': 'Bureau Casablanca',
+    'contactMap.office2': 'Bureau Tanger',
     'contactMap.viewOnMaps': 'Voir sur Google Maps',
     'contactMap.helpText': 'Pour voir les deux bureaux sur la carte, utilisez les liens individuels ci-dessus ou recherchez directement les adresses.',
     'contactMap.mapTitle': 'Localisation des bureaux Nexia Morocco',
@@ -664,11 +664,11 @@ export const translations = {
     
     // Contact Map Section
     'contactMap.title': 'Our Offices',
-    'contactMap.subtitle': 'Find us in our offices in Casablanca',
+    'contactMap.subtitle': 'Find us in our offices in Casablanca and Tangier',
     'contactMap.instructions': 'To locate our offices:',
     'contactMap.instructionsDetails': 'Use the "View on Google Maps" links below to access each address directly with precise geolocation.',
-    'contactMap.office1': 'Casablanca Office 1',
-    'contactMap.office2': 'Casablanca Office 2',
+    'contactMap.office1': 'Casablanca Office',
+    'contactMap.office2': 'Tangier Office',
     'contactMap.viewOnMaps': 'View on Google Maps',
     'contactMap.helpText': 'To see both offices on the map, use the individual links above or search for the addresses directly.',
     'contactMap.mapTitle': 'Nexia Morocco offices location',

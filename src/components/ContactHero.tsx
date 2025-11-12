@@ -33,12 +33,11 @@ export default function ContactHero() {
             <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
               <h3 className="text-lg sm:text-xl font-bold text-nexia-primary mb-3 sm:mb-4">{t('contactMap.office1')}</h3>
               <div className="space-y-2">
-                <p className="text-nexia-primary text-sm sm:text-base">3, Rue Bab El Mansour</p>
-                <p className="text-nexia-primary text-sm sm:text-base">Résidence Imrane - RDC Bureau n°15</p>
-                <p className="text-nexia-primary text-sm sm:text-base">Espace Porte d'Anfa</p>
+                <p className="text-nexia-primary text-sm sm:text-base">41 Rue Jbel Toudgha</p>
+                <p className="text-nexia-primary text-sm sm:text-base">CIL</p>
                 <p className="text-nexia-primary text-sm sm:text-base">Casablanca - Maroc</p>
                 <p className="text-nexia-primary font-medium mt-3 text-sm sm:text-base">
-                  Tél: <a href="tel:+212522364588" className="text-nexia-secondary hover:underline break-all">+(212) 05 22 36 45 88/89</a>
+                  Tél: <a href="tel:+212522364377" className="text-nexia-secondary hover:underline break-all">05 22 364377</a>
                 </p>
               </div>
             </div>
@@ -47,11 +46,11 @@ export default function ContactHero() {
             <div className="bg-gray-50 p-4 sm:p-6 rounded-lg">
               <h3 className="text-lg sm:text-xl font-bold text-nexia-primary mb-3 sm:mb-4">{t('contactMap.office2')}</h3>
               <div className="space-y-2">
-                <p className="text-nexia-primary text-sm sm:text-base">Rue des Pléaides</p>
-                <p className="text-nexia-primary text-sm sm:text-base">Quartier des Hôpitaux</p>
-                <p className="text-nexia-primary text-sm sm:text-base">Casablanca - Maroc</p>
+                <p className="text-nexia-primary text-sm sm:text-base">Lotissement New Center Lots 3</p>
+                <p className="text-nexia-primary text-sm sm:text-base">Etage 1, N°16</p>
+                <p className="text-nexia-primary text-sm sm:text-base">Tanger - Maroc</p>
                 <p className="text-nexia-primary font-medium mt-3 text-sm sm:text-base">
-                  Tél: <a href="tel:+212522863715" className="text-nexia-secondary hover:underline break-all">+(212) 522 863 715</a>
+                  Tél: <a href="tel:+212531295075" className="text-nexia-secondary hover:underline break-all">0531295075</a>
                 </p>
               </div>
             </div>

@@ -5,11 +5,6 @@ export default function LinkedInPosts() {
   
   const posts = [
     {
-      id: "les-petites-et-moyennes-entreprises-au-maroc-un-potentiel-h0bfe",
-      type: "article",
-      height: 600,
-    },
-    {
       id: "7392603637279055872",
       type: "activity",
       height: 600,
@@ -69,29 +64,16 @@ export default function LinkedInPosts() {
                 className="flex-none w-80 bg-white rounded-lg shadow-professional hover:shadow-hover transition-all duration-300 overflow-hidden"
               >
                 <div className="relative">
-                  {post.type === 'article' ? (
-                    <iframe
-                      src={`https://www.linkedin.com/embed/feed/update/urn:li:article:${post.id}`}
-                      height={Math.min(post.height, 500)}
-                      width="100%"
-                      frameBorder="0"
-                      allowFullScreen
-                      title={`Publication LinkedIn ${index + 1}`}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  ) : (
-                    <iframe
-                      src={`https://www.linkedin.com/embed/feed/update/urn:li:${post.type}:${post.id}?collapsed=1`}
-                      height={Math.min(post.height, 500)}
-                      width="100%"
-                      frameBorder="0"
-                      allowFullScreen
-                      title={`Publication LinkedIn ${index + 1}`}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  )}
+                  <iframe
+                    src={`https://www.linkedin.com/embed/feed/update/urn:li:${post.type}:${post.id}?collapsed=1`}
+                    height={Math.min(post.height, 500)}
+                    width="100%"
+                    frameBorder="0"
+                    allowFullScreen
+                    title={`Publication LinkedIn ${index + 1}`}
+                    className="w-full"
+                    loading="lazy"
+                  />
                 </div>
               </div>
             ))}

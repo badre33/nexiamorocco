@@ -38,15 +38,15 @@ const globalInsights = [
     },
     author: "Nexia Morocco",
     date: {
-      fr: "Novembre 2025",
-      en: "November 2025"
+      fr: "14 Novembre 2025",
+      en: "November 14, 2025"
     },
     readTime: {
       fr: "8 min",
       en: "8 min"
     },
     image: "https://media.licdn.com/dms/image/v2/D4E12AQHIpX8I5WvWMA/article-cover_image-shrink_720_1280/B4EZqDJK.NIwAI-/0/1763136814513?e=2147483647&v=beta&t=3hLRNecmitrG_jloFriZJ1diUiqLZUNNJOMnetayWao",
-    featured: false,
+    featured: true,
     source: "https://www.linkedin.com/pulse/les-petites-et-moyennes-entreprises-au-maroc-un-potentiel-h0bfe"
   },
   {
@@ -73,7 +73,7 @@ const globalInsights = [
       en: "12 min"
     },
     image: "/lovable-uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png",
-    featured: true,
+    featured: false,
     content: {
       fr: `Casablanca, 28 août 2025 – Plus de deux ans après l'annonce de mesures visant à réduire les prix des médicaments, la question reste d'une brûlante actualité. Malgré certains ajustements réglementaires et l'introduction progressive de génériques, les prix de nombreux traitements demeurent élevés, parfois trois à quatre fois supérieurs à ceux pratiqués dans des pays comparables.
 

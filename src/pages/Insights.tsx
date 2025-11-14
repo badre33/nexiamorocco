@@ -25,6 +25,33 @@ const globalInsights = [
   {
     id: 1,
     title: {
+      fr: "Les petites et moyennes entreprises au Maroc : un potentiel important limité par des obstacles structurels",
+      en: "Small and medium-sized enterprises in Morocco: significant potential limited by structural obstacles"
+    },
+    description: {
+      fr: "Le récent rapport du Conseil Économique, Social et Environnemental (CESE) met en lumière les difficultés persistantes auxquelles sont confrontées les petites et moyennes entreprises (PME) au Maroc. Bien qu'elles constituent la majorité du tissu entrepreneurial national et contribuent de manière déterminante à la dynamique économique, une grande partie d'entre elles ne parviennent pas à inscrire leur activité dans une trajectoire de croissance durable.",
+      en: "The recent report by the Economic, Social and Environmental Council (CESE) highlights the persistent difficulties faced by small and medium-sized enterprises (SMEs) in Morocco. Although they constitute the majority of the national entrepreneurial fabric and contribute decisively to the economic dynamics, a large part of them fail to establish their activity in a sustainable growth trajectory."
+    },
+    category: {
+      fr: "Stratégie d'entreprise",
+      en: "Business Strategy"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "Novembre 2025",
+      en: "November 2025"
+    },
+    readTime: {
+      fr: "8 min",
+      en: "8 min"
+    },
+    image: "https://media.licdn.com/dms/image/v2/D4E12AQHIpX8I5WvWMA/article-cover_image-shrink_720_1280/B4EZqDJK.NIwAI-/0/1763136814513?e=2147483647&v=beta&t=3hLRNecmitrG_jloFriZJ1diUiqLZUNNJOMnetayWao",
+    featured: false,
+    source: "https://www.linkedin.com/pulse/les-petites-et-moyennes-entreprises-au-maroc-un-potentiel-h0bfe"
+  },
+  {
+    id: 2,
+    title: {
       fr: "Le coût des médicaments au Maroc : un enjeu économique et stratégique qui persiste",
       en: "The cost of medicines in Morocco: a persistent economic and strategic challenge"
     },

@@ -5,15 +5,6 @@ export default function LinkedInPosts() {
   
   const posts = [
     {
-      id: "pme-article",
-      type: "custom",
-      height: 600,
-      title: "Les petites et moyennes entreprises au Maroc : un potentiel important limité par des obstacles structurels",
-      image: "https://media.licdn.com/dms/image/v2/D4E12AQHIpX8I5WvWMA/article-cover_image-shrink_720_1280/B4EZqDJK.NIwAI-/0/1763136814513?e=2147483647&v=beta&t=3hLRNecmitrG_jloFriZJ1diUiqLZUNNJOMnetayWao",
-      link: "https://www.linkedin.com/pulse/les-petites-et-moyennes-entreprises-au-maroc-un-potentiel-h0bfe",
-      date: "14 Nov 2025"
-    },
-    {
       id: "7394411157484097537",
       type: "activity",
       height: 600,
@@ -82,56 +73,18 @@ export default function LinkedInPosts() {
                 key={post.id}
                 className="flex-none w-80 bg-white rounded-lg shadow-professional hover:shadow-hover transition-all duration-300 overflow-hidden"
               >
-                {post.type === 'custom' ? (
-                  <a
-                    href={post.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block h-[500px] flex flex-col"
-                  >
-                    <div className="relative h-48 overflow-hidden">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-4 flex-1 flex flex-col">
-                      <div className="flex items-center gap-2 mb-3">
-                        <img 
-                          src="/lovable-uploads/nexia-member-firm-logo.png" 
-                          alt="Nexia Morocco"
-                          className="w-8 h-8 rounded"
-                        />
-                        <div className="text-sm">
-                          <p className="font-semibold text-nexia-primary">Nexia Morocco</p>
-                          <p className="text-gray-500 text-xs">{post.date}</p>
-                        </div>
-                      </div>
-                      <h3 className="text-sm font-semibold text-nexia-primary line-clamp-3 mb-3">
-                        {post.title}
-                      </h3>
-                      <div className="mt-auto">
-                        <span className="text-xs text-nexia-secondary hover:underline">
-                          Lire l'article →
-                        </span>
-                      </div>
-                    </div>
-                  </a>
-                ) : (
-                  <div className="relative">
-                    <iframe
-                      src={`https://www.linkedin.com/embed/feed/update/urn:li:${post.type}:${post.id}?collapsed=1`}
-                      height={Math.min(post.height, 500)}
-                      width="100%"
-                      frameBorder="0"
-                      allowFullScreen
-                      title={`Publication LinkedIn ${index + 1}`}
-                      className="w-full"
-                      loading="lazy"
-                    />
-                  </div>
-                )}
+                <div className="relative">
+                  <iframe
+                    src={`https://www.linkedin.com/embed/feed/update/urn:li:${post.type}:${post.id}?collapsed=1`}
+                    height={Math.min(post.height, 500)}
+                    width="100%"
+                    frameBorder="0"
+                    allowFullScreen
+                    title={`Publication LinkedIn ${index + 1}`}
+                    className="w-full"
+                    loading="lazy"
+                  />
+                </div>
               </div>
             ))}
           </div>

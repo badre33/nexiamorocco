@@ -13,20 +13,24 @@ export default function Footer() {
   const footerLinks = getFooterLinks(t);
   
   return (
-    <footer className="bg-nexia-primary text-white py-16">
+    <footer className="bg-nexia-secondary text-white py-16">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Logo (official Nexia Morocco logo, inverted to white on dark teal background) */}
-        <div className="mb-12 text-center md:text-left">
+        {/* Logo + tagline (style nexia.com officiel : logo + 'Audit. Tax. Advisory.') */}
+        <div className="mb-12 flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
           <img
             src="/nexia-morocco-logo.png"
             alt="Nexia Morocco"
-            className="h-20 md:h-24 lg:h-28 w-auto inline-block brightness-0 invert"
+            className="h-20 md:h-24 lg:h-28 w-auto brightness-0 invert"
           />
+          <div className="hidden md:block w-px h-12 bg-white/30" aria-hidden />
+          <p className="text-xl md:text-2xl font-poppins font-medium text-white">
+            {t('footer.tagline')}
+          </p>
         </div>
 
         {/* Disclaimer */}
         <div className="mb-12">
-          <p className="text-white/80 leading-relaxed max-w-4xl">
+          <p className="text-white/90 leading-relaxed max-w-4xl font-poppins">
             {t('footer.description')}
           </p>
         </div>
@@ -42,7 +46,7 @@ export default function Footer() {
                   href={link.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white/80 hover:text-nexia-secondary transition-colors duration-200"
+                  className="text-white/90 hover:text-nexia-primary transition-colors duration-200 font-poppins"
                 >
                   {link.text}
                 </a>
@@ -56,7 +60,7 @@ export default function Footer() {
               href="https://www.linkedin.com/company/nexia-fiducia-maroc/"
               target="_blank"
               rel="noopener noreferrer"
-              className="w-10 h-10 bg-white/10 hover:bg-nexia-secondary rounded-full flex items-center justify-center transition-colors duration-200"
+              className="w-10 h-10 bg-white/15 hover:bg-nexia-primary rounded-full flex items-center justify-center transition-colors duration-200"
             >
               <Linkedin className="h-5 w-5" />
             </a>
@@ -75,11 +79,11 @@ export default function Footer() {
         </div>
 
         {/* Legal name + Copyright */}
-        <div className="mt-12 pt-8 border-t border-white/20 text-center space-y-1">
-          <p className="text-white/70 text-sm font-medium">
+        <div className="mt-12 pt-8 border-t border-white/30 text-center space-y-1">
+          <p className="text-white text-sm font-medium font-poppins">
             {t('footer.legalName')}
           </p>
-          <p className="text-white/60 text-sm">
+          <p className="text-white/80 text-sm font-poppins">
             {t('footer.copyright')}
           </p>
         </div>

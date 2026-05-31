@@ -54,6 +54,12 @@ export default function Header() {
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
             <SimpleLanguageToggle />
+            <Link
+              to="/contact"
+              className="inline-flex items-center px-5 py-2 rounded-full border border-white/40 text-white text-sm xl:text-base font-poppins font-medium hover:bg-white hover:text-nexia-primary transition-colors duration-200"
+            >
+              {t('nav.contactCta')}
+            </Link>
             {navigation.map((item) => {
               if (item.dropdown) {
                 return (

@@ -26,15 +26,15 @@ const useMoroccoStats = (t: (k: string) => string): Stat[] => [
   { number: "2", label: t('facts.moroccoOffices') },
 ];
 
+/**
+ * Chiffres Nexia International (récupérés sur nexia.com/network-stats, 31/05/2026).
+ * Source officielle du réseau, à jour à la dernière publication annuelle.
+ */
 const useInternationalStats = (t: (k: string) => string): Stat[] => [
-  { number: "$2.6Mds", label: t('facts.intlRevenue') },
-  { number: "17e", label: t('facts.intlRank') },
-  { number: "180+", label: t('facts.intlFirms') },
-  { number: "120+", label: t('facts.intlCountries') },
-  { number: "752", label: t('facts.intlOffices') },
-  { number: "5", label: t('facts.intlContinents') },
-  { number: "38k+", label: t('facts.intlProfessionals') },
-  { number: "2 000+", label: t('facts.intlPartners') },
+  { number: "186", label: t('facts.intlFirms') },
+  { number: "519", label: t('facts.intlOffices') },
+  { number: "1 942", label: t('facts.intlPartners') },
+  { number: "119", label: t('facts.intlCountries') },
 ];
 
 export default function FactsSection() {
@@ -89,14 +89,14 @@ export default function FactsSection() {
   );
 }
 
-/** Cellule de chiffre — style brochure Nexia Morocco 2026 p.8-9 */
+/** Cellule de chiffre — style brochure Nexia Morocco 2026 p.8-9 + impact typo nexia.com */
 function Cell({ stat }: { stat: Stat }) {
   return (
     <div>
-      <div className="text-4xl md:text-5xl font-bold text-nexia-primary mb-2 font-poppins leading-none">
+      <div className="text-5xl md:text-6xl lg:text-7xl font-bold text-nexia-primary mb-3 font-poppins leading-none tracking-tight">
         {stat.number}
       </div>
-      <div className="text-sm text-nexia-primary/70 font-poppins leading-snug">
+      <div className="text-sm md:text-base text-nexia-primary/70 font-poppins leading-snug">
         {stat.label}
       </div>
     </div>

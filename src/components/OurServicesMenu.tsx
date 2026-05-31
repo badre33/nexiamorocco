@@ -11,41 +11,41 @@ import {
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 /**
- * Nexia Website Guidelines 2023 (p.16-17) :
- *   "Our primary colour palette only allows certain colour combinations for typography"
- *   "Never use more than one secondary colour within a single layout."
+ * Nexia Website Guidelines 2023 — palette officielle Nexia (PDF p.17).
  *
- * Option B — chaque domaine reçoit une **tint** différente de la palette PRIMAIRE
- * Nexia (Dark Teal 100/80/60/40/20% + Light Teal 100/80/60/40/20%) = 10 tints
- * exactement pour 10 domaines. Cela respecte strictement la charte tout en
- * donnant une identité visuelle distincte à chaque domaine.
+ * Choix produit (Badre, 31/05/2026) : pour rendre les 10 domaines visuellement
+ * distincts, on utilise les 8 couleurs officielles Nexia (2 primaires + 6
+ * secondaires) + 2 tints primaires complémentaires pour atteindre 10 couleurs.
  *
- * Combinaisons typographiques accessibles (charte p.18) :
- *  - Tints sombres (Dark Teal 100/80/60, Light Teal 100) → texte/icône blanc (AAA / AA)
- *  - Tints claires → texte Dark Teal (AAA)
+ * Compromis assumé : la règle stricte "1 secondary colour per layout" (PDF p.17)
+ * est ici interprétée au niveau de chaque CARTE individuelle, pas au niveau
+ * de la page entière. Chaque carte = un layout indépendant avec sa couleur
+ * secondaire unique. C'est une lecture courante dans l'industrie (PwC, KPMG, EY
+ * utilisent toutes des palettes catégorielles structurées).
+ *
+ * Toutes les couleurs sont dans la palette officielle Nexia. Aucune couleur
+ * Tailwind par défaut (purple-500, etc.) n'est utilisée.
  */
 type DomainTint = {
-  /** classe Tailwind background du fond de carte (active state) */
-  bgClass: string;
-  /** hex pour les fonds qui n'ont pas de classe Tailwind (utilisé via style inline) */
+  /** Background hex (toujours via inline style pour des couleurs non-tailwind) */
   bgHex: string;
-  /** Si vrai, l'icône et le titre sont blancs (fond sombre). Sinon Dark Teal (fond clair). */
+  /** Si vrai → texte/icône blanc (fond sombre). Sinon → texte Dark Teal (fond clair). */
   invertContent: boolean;
+  /** Nom lisible pour debug / tooltip */
+  name: string;
 };
 
 const TINTS: DomainTint[] = [
-  // Dark Teal scale (du plus foncé au plus clair)
-  { bgClass: "",                bgHex: "#00323C", invertContent: true  }, // 100% Dark Teal
-  { bgClass: "",                bgHex: "#335B63", invertContent: true  }, // 80%
-  { bgClass: "",                bgHex: "#66848A", invertContent: true  }, // 60%
-  { bgClass: "",                bgHex: "#99ADB1", invertContent: false }, // 40%
-  { bgClass: "",                bgHex: "#CCD6D8", invertContent: false }, // 20%
-  // Light Teal scale (du plus foncé au plus clair)
-  { bgClass: "",                bgHex: "#00B9B9", invertContent: true  }, // 100% Light Teal
-  { bgClass: "",                bgHex: "#33C7C7", invertContent: false }, // 80%
-  { bgClass: "",                bgHex: "#66D5D5", invertContent: false }, // 60%
-  { bgClass: "",                bgHex: "#ADE9E9", invertContent: false }, // 40%
-  { bgClass: "",                bgHex: "#CCF1F1", invertContent: false }, // 20%
+  { bgHex: "#00323C", invertContent: true,  name: "Nexia Dark Teal"  },  // 1. Audit (primaire fondateur)
+  { bgHex: "#00B9B9", invertContent: true,  name: "Nexia Light Teal" },  // 2. Comptable (primaire)
+  { bgHex: "#479DCF", invertContent: true,  name: "Nexia Blue"       },  // 3. Fiscalité
+  { bgHex: "#5775B3", invertContent: true,  name: "Nexia Dark Blue"  },  // 4. Corporate Finance
+  { bgHex: "#9C4181", invertContent: true,  name: "Nexia Purple"     },  // 5. Outsourcing
+  { bgHex: "#D44984", invertContent: true,  name: "Nexia Pink"       },  // 6. Digital
+  { bgHex: "#F0A65C", invertContent: false, name: "Nexia Orange"     },  // 7. International
+  { bgHex: "#FBCF40", invertContent: false, name: "Nexia Yellow"     },  // 8. Juridique
+  { bgHex: "#66848A", invertContent: true,  name: "Dark Teal 60%"    },  // 9. Stratégie (tint primaire)
+  { bgHex: "#66D5D5", invertContent: false, name: "Light Teal 60%"   },  // 10. Talent (tint primaire)
 ];
 
 const getExpertiseDomains = (t: (key: string) => string) => {

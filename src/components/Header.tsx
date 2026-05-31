@@ -46,7 +46,7 @@ export default function Header() {
               <img
                 src="/nexia-morocco-logo.png"
                 alt="Nexia Morocco"
-                className="h-14 md:h-16 lg:h-20 w-auto brightness-0 invert"
+                className="h-16 md:h-20 lg:h-28 w-auto brightness-0 invert"
               />
             </Link>
           </div>

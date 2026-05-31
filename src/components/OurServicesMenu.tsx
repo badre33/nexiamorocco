@@ -1,30 +1,31 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { 
-  ShieldCheck, 
-  BookOpen, 
-  PiggyBank, 
-  TrendingUp, 
-  Users, 
-  Laptop, 
-  Globe, 
-  Scale, 
+import {
   Target,
   Award,
   Clock,
   CheckCircle,
-  Lightbulb,
-  HeartHandshake
+  Users,
 } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
+
+/**
+ * Nexia Website Guidelines 2023 (p.16) :
+ *   "Never use more than one secondary colour within a single layout."
+ *
+ * Tous les domaines utilisent donc la même palette : Nexia Light Teal #00B9B9
+ * (couleur d'accent du primary set) sur fond clair. Les icônes sont les icônes
+ * officielles Nexia stockées dans /public/icons/.
+ */
+const NEXIA_DOMAIN_COLOR = "text-nexia-secondary bg-nexia-secondary/10";
 
 const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "audit",
       title: t('expertise.audit.title'),
-      icon: ShieldCheck,
-      color: "text-nexia-blue bg-blue-50",
+      iconSrc: "/icons/audit.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "IFRS" },
       badge: t('expertise.audit.badge'),
       description: t('expertise.audit.description'),
@@ -39,8 +40,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "comptable",
       title: t('expertise.comptable.title'),
-      icon: BookOpen,
-      color: "text-nexia-yellow bg-yellow-50",
+      iconSrc: "/icons/books.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "Expert" },
       badge: t('expertise.comptable.badge'),
       description: t('expertise.comptable.description'),
@@ -55,8 +56,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "fiscalite",
       title: t('expertise.fiscalite.title'),
-      icon: PiggyBank,
-      color: "text-orange-600 bg-orange-50",
+      iconSrc: "/icons/piggy-bank.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "Fiscal" },
       badge: t('expertise.fiscalite.badge'),
       description: t('expertise.fiscalite.description'),
@@ -71,8 +72,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "corporate",
       title: t('expertise.corporate.title'),
-      icon: TrendingUp,
-      color: "text-nexia-pink bg-pink-50",
+      iconSrc: "/icons/graph.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "M&A" },
       badge: t('expertise.corporate.badge'),
       description: t('expertise.corporate.description'),
@@ -87,8 +88,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "outsourcing",
       title: t('expertise.outsourcing.title'),
-      icon: Users,
-      color: "text-green-600 bg-green-50",
+      iconSrc: "/icons/people.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "BPO" },
       badge: t('expertise.outsourcing.badge'),
       description: t('expertise.outsourcing.description'),
@@ -103,8 +104,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "digital",
       title: t('expertise.digital.title'),
-      icon: Laptop,
-      color: "text-nexia-blue bg-indigo-50",
+      iconSrc: "/icons/computer.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "5", clients: "50", certification: "Digital" },
       badge: t('expertise.digital.badge'),
       description: t('expertise.digital.description'),
@@ -119,8 +120,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "international",
       title: t('expertise.international.title'),
-      icon: Globe,
-      color: "text-red-600 bg-red-50",
+      iconSrc: "/icons/globe.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "Global" },
       badge: t('expertise.international.badge'),
       description: t('expertise.international.description'),
@@ -135,8 +136,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "juridique",
       title: t('expertise.juridique.title'),
-      icon: Scale,
-      color: "text-gray-600 bg-gray-50",
+      iconSrc: "/icons/briefcase.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "Juridique" },
       badge: t('expertise.juridique.badge'),
       description: t('expertise.juridique.description'),
@@ -151,8 +152,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "strategie",
       title: t('expertise.strategie.title'),
-      icon: Lightbulb,
-      color: "text-amber-600 bg-amber-50",
+      iconSrc: "/icons/lightbulb.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "34+", clients: "400+", certification: "Strategy" },
       badge: t('expertise.strategie.badge'),
       description: t('expertise.strategie.description'),
@@ -167,8 +168,8 @@ const getExpertiseDomains = (t: (key: string) => string) => [
     {
       id: "talent-mobility",
       title: t('expertise.talent.title'),
-      icon: HeartHandshake,
-      color: "text-purple-600 bg-purple-50",
+      iconSrc: "/icons/handshake.png",
+      color: NEXIA_DOMAIN_COLOR,
       stats: { years: "5+", clients: "30+", certification: "RH" },
       badge: t('expertise.talent.badge'),
       description: t('expertise.talent.description'),
@@ -283,30 +284,33 @@ export default function OurServicesMenu() {
           <div className="overflow-x-auto pb-4 -mx-4 px-4">
             <TabsList className="inline-flex w-max min-w-full gap-2 md:gap-3 h-auto p-2 md:p-3 bg-white/80 backdrop-blur-sm rounded-2xl shadow-professional border border-border/50">
               {expertiseDomains.map((domain, index) => {
-              const IconComponent = domain.icon;
               const isActive = activeTab === domain.id;
               return (
-                <TabsTrigger 
-                  key={domain.id} 
+                <TabsTrigger
+                  key={domain.id}
                   value={domain.id}
                   className={`
                     group relative flex flex-col items-center p-3 md:p-4 min-h-[90px] md:min-h-[110px] min-w-[100px] md:min-w-[120px]
                     transition-all duration-300 ease-out rounded-xl border-0
                     hover:scale-105 hover:shadow-hover hover:-translate-y-2
-                    ${isActive 
-                      ? 'bg-gradient-to-br from-nexia-primary to-nexia-blue text-white shadow-hover transform scale-105 -translate-y-2' 
+                    ${isActive
+                      ? 'bg-gradient-to-br from-nexia-primary to-nexia-secondary text-white shadow-hover transform scale-105 -translate-y-2'
                       : 'bg-white text-nexia-primary hover:bg-gradient-to-br hover:from-gray-50 hover:to-white hover:text-nexia-secondary'
                     }
                   `}
                 >
                   <div className={`
                     relative p-2 md:p-3 rounded-xl mb-1 md:mb-2 transition-all duration-300
-                    ${isActive 
-                      ? 'bg-white/20 text-white backdrop-blur-sm' 
+                    ${isActive
+                      ? 'bg-white/20 backdrop-blur-sm'
                       : `${domain.color} group-hover:scale-110 group-hover:rotate-3`
                     }
                   `}>
-                    <IconComponent className="h-5 w-5 md:h-7 md:w-7 transition-all duration-300 group-hover:scale-110" />
+                    <img
+                      src={domain.iconSrc}
+                      alt={domain.title}
+                      className={`h-5 w-5 md:h-7 md:w-7 transition-all duration-300 group-hover:scale-110 object-contain ${isActive ? 'brightness-0 invert' : ''}`}
+                    />
                     {isActive && (
                       <div className="absolute inset-0 rounded-xl bg-white/10 animate-pulse" />
                     )}
@@ -327,11 +331,10 @@ export default function OurServicesMenu() {
           </div>
 
           {expertiseDomains.map((domain, index) => {
-            const IconComponent = domain.icon;
             return (
-              <TabsContent 
-                key={domain.id} 
-                value={domain.id} 
+              <TabsContent
+                key={domain.id}
+                value={domain.id}
                 className="mt-8 animate-fade-in"
               >
                 <div className="bg-gradient-to-br from-white to-gray-50/50 rounded-3xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-border/30 nexia-card-rounded">
@@ -342,8 +345,12 @@ export default function OurServicesMenu() {
                         relative p-4 md:p-6 rounded-2xl transition-all duration-500 hover:scale-105 hover:rotate-3
                         ${domain.color.split(' ')[1]} shadow-lg
                       `}>
-                        <IconComponent className={`h-8 w-8 md:h-12 md:w-12 ${domain.color.split(' ')[0]} transition-all duration-500`} />
-                        <div className="absolute -top-1 -right-1 w-5 h-5 md:w-6 md:h-6 bg-nexia-yellow rounded-full flex items-center justify-center animate-pulse">
+                        <img
+                          src={domain.iconSrc}
+                          alt={domain.title}
+                          className="h-8 w-8 md:h-12 md:w-12 transition-all duration-500 object-contain"
+                        />
+                        <div className="absolute -top-1 -right-1 w-5 h-5 md:w-6 md:h-6 bg-nexia-secondary rounded-full flex items-center justify-center animate-pulse">
                           <CheckCircle className="h-3 w-3 text-white" />
                         </div>
                       </div>

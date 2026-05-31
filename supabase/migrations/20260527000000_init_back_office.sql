@@ -202,6 +202,36 @@ create policy "Admins can delete client files"
   on public.client_files for delete
   using (public.current_user_role() = 'admin');
 
+-- 6. LINKEDIN POSTS (curated public-feed posts shown on the website) -
+create table public.linkedin_posts (
+  id uuid primary key default gen_random_uuid(),
+  post_id text not null,            -- e.g. '7394411157484097537'
+  post_type text not null default 'activity',  -- activity | ugcPost | share
+  height integer not null default 600,
+  display_order integer not null default 0,
+  is_visible boolean not null default true,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+create index linkedin_posts_visible_order_idx
+  on public.linkedin_posts(is_visible, display_order);
+
+alter table public.linkedin_posts enable row level security;
+
+-- Anyone (anon included) can read visible posts (public website displays them)
+create policy "Anyone can read visible LinkedIn posts"
+  on public.linkedin_posts for select
+  using (is_visible = true);
+
+create policy "Staff can read all LinkedIn posts"
+  on public.linkedin_posts for select
+  using (public.current_user_role() in ('admin', 'collaborator'));
+
+create policy "Staff can manage LinkedIn posts"
+  on public.linkedin_posts for all
+  using (public.current_user_role() in ('admin', 'collaborator'));
+
 -- =====================================================================
 -- AUTO updated_at
 -- =====================================================================
@@ -217,4 +247,7 @@ create trigger profiles_touch before update on public.profiles
   for each row execute function public.touch_updated_at();
 
 create trigger internal_documents_touch before update on public.internal_documents
+  for each row execute function public.touch_updated_at();
+
+create trigger linkedin_posts_touch before update on public.linkedin_posts
   for each row execute function public.touch_updated_at();

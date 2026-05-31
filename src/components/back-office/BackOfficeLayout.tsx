@@ -10,6 +10,7 @@ import {
   FileText,
   LogOut,
   ExternalLink,
+  Linkedin,
 } from 'lucide-react';
 
 interface BackOfficeLayoutProps {
@@ -61,6 +62,9 @@ export default function BackOfficeLayout({ title, children }: BackOfficeLayoutPr
               </NavLink>
               <NavLink to="/admin/contacts" className={navLinkClass}>
                 <Inbox className="w-4 h-4" /> Demandes de contact
+              </NavLink>
+              <NavLink to="/admin/linkedin" className={navLinkClass}>
+                <Linkedin className="w-4 h-4" /> Posts LinkedIn
               </NavLink>
               <NavLink to="/collaborateurs" className={navLinkClass}>
                 <FolderOpen className="w-4 h-4" /> Espace collaborateurs

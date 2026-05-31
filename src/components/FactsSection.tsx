@@ -1,5 +1,12 @@
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
+/**
+ * "Notre monde en chiffres" — refondue selon Nexia Website Guidelines 2023.
+ * Règle du guide (p.16) : "Never use more than one secondary colour within a single layout."
+ * On utilise donc UNIQUEMENT la palette primaire Nexia (Dark Teal + Light Teal) + grisâtre,
+ * sans purple/orange/pink/teal Tailwind par défaut.
+ */
+
 const getGlobalStats = (t: (key: string) => string) => [
   { number: "35 000+", label: t('facts.globalPeople'), region: "global" },
   { number: "122", label: t('facts.globalCountries'), region: "global" },
@@ -19,9 +26,45 @@ const getRegionalStats = (t: (key: string) => string) => [
 ];
 
 const getServices = (t: (key: string) => string) => [
-  { name: t('facts.serviceConsulting'), color: "bg-purple-600" },
-  { name: t('facts.serviceAudit'), color: "bg-purple-500" },
-  { name: t('facts.serviceTax'), color: "bg-orange-500" },
+  { name: t('facts.serviceConsulting') },
+  { name: t('facts.serviceAudit') },
+  { name: t('facts.serviceTax') },
+];
+
+interface Achievement {
+  iconSrc: string;
+  iconAlt: string;
+  badge: string;
+  title: string;
+  subtitle?: string;
+}
+
+const getAchievements = (t: (key: string) => string): Achievement[] => [
+  {
+    iconSrc: "/icons/graph.png",
+    iconAlt: "Croissance",
+    badge: "9th",
+    title: "International Accounting Bulletin Survey 2019",
+  },
+  {
+    iconSrc: "/icons/lightbulb.png",
+    iconAlt: "Distinction",
+    badge: "★",
+    title: "Prix du Réseau Étoile Montante — IAB Awards 2019",
+  },
+  {
+    iconSrc: "/icons/money.png",
+    iconAlt: "Revenu global",
+    badge: "$",
+    title: t('facts.revenue'),
+  },
+  {
+    iconSrc: "/icons/globe.png",
+    iconAlt: "Bureaux mondiaux",
+    badge: "727",
+    title: t('facts.worldwideOffices'),
+    subtitle: t('facts.globalNetwork'),
+  },
 ];
 
 export default function FactsSection() {
@@ -29,14 +72,17 @@ export default function FactsSection() {
   const globalStats = getGlobalStats(t);
   const regionalStats = getRegionalStats(t);
   const services = getServices(t);
-  
+  const achievements = getAchievements(t);
+
   return (
     <section className="py-16 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Section Header */}
+        {/* Section Header — Effra Bold, Nexia Dark Teal (guide p.4) */}
         <div className="mb-12">
-          <h2 className="text-4xl font-bold text-nexia-primary mb-6">{t('facts.title')}</h2>
-          <p className="text-lg text-gray-700 max-w-5xl leading-relaxed">
+          <h2 className="text-4xl font-bold text-nexia-primary mb-6 font-poppins">
+            {t('facts.title')}
+          </h2>
+          <p className="text-lg text-nexia-primary/80 max-w-5xl leading-relaxed font-poppins">
             {t('facts.description')}
           </p>
         </div>
@@ -45,28 +91,48 @@ export default function FactsSection() {
           {/* Statistics Section */}
           <div className="lg:col-span-3">
             <div className="bg-white rounded-2xl p-8 shadow-lg">
-              {/* Global Stats */}
+              {/* Global Stats — fond teal léger, chiffres en Light Teal */}
               <div className="mb-8">
-                <h3 className="text-2xl font-bold text-nexia-primary mb-6">{t('facts.globalStats')}</h3>
+                <h3 className="text-2xl font-bold text-nexia-primary mb-6 font-poppins">
+                  {t('facts.globalStats')}
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                   {globalStats.map((stat, index) => (
-                    <div key={index} className="text-center p-6 bg-purple-50 rounded-lg">
-                      <div className="text-3xl font-bold text-purple-600 mb-2">{stat.number}</div>
-                      <div className="text-gray-700 font-medium">{stat.label}</div>
+                    <div
+                      key={index}
+                      className="text-center p-6 rounded-lg bg-nexia-secondary/10 border border-nexia-secondary/20"
+                    >
+                      <div className="text-3xl font-bold text-nexia-secondary mb-2 font-poppins">
+                        {stat.number}
+                      </div>
+                      <div className="text-nexia-primary font-medium font-poppins">
+                        {stat.label}
+                      </div>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Regional Stats */}
+              {/* Regional Stats — grille neutre, chiffres en Dark Teal */}
               <div>
-                <h3 className="text-2xl font-bold text-nexia-primary mb-6">{t('facts.regionalStats')}</h3>
+                <h3 className="text-2xl font-bold text-nexia-primary mb-6 font-poppins">
+                  {t('facts.regionalStats')}
+                </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                   {regionalStats.map((stat, index) => (
-                    <div key={index} className="bg-gray-50 p-4 rounded-lg text-center">
-                      <div className="text-2xl font-bold text-purple-600 mb-1">{stat.number}</div>
-                      <div className="text-sm text-gray-700 font-medium">{stat.label}</div>
-                      <div className="text-xs text-gray-500 mt-1">({stat.region})</div>
+                    <div
+                      key={index}
+                      className="bg-gray-50 p-4 rounded-lg text-center border border-gray-100"
+                    >
+                      <div className="text-2xl font-bold text-nexia-primary mb-1 font-poppins">
+                        {stat.number}
+                      </div>
+                      <div className="text-sm text-nexia-primary/80 font-medium font-poppins">
+                        {stat.label}
+                      </div>
+                      <div className="text-xs text-nexia-primary/50 mt-1 font-poppins">
+                        ({stat.region})
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -76,60 +142,51 @@ export default function FactsSection() {
 
           {/* Services and Achievements */}
           <div className="space-y-6">
-            {/* Services */}
+            {/* Services — tag pills Dark Teal (Nexia primary) */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('facts.services')}</h3>
+              <h3 className="text-lg font-semibold text-nexia-primary mb-4 font-poppins">
+                {t('facts.services')}
+              </h3>
               <div className="space-y-3">
                 {services.map((service, index) => (
-                  <div key={index} className="flex items-center gap-3">
-                    <div className={`${service.color} text-white px-4 py-2 rounded-full text-sm font-medium flex-1 text-center`}>
-                      {service.name}
-                    </div>
+                  <div
+                    key={index}
+                    className="bg-nexia-primary text-white px-4 py-2 rounded-full text-sm font-medium text-center font-poppins"
+                  >
+                    {service.name}
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Achievements */}
+            {/* Achievements — icônes officielles Nexia + badge Light Teal */}
             <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-800 mb-4">{t('facts.achievements')}</h3>
+              <h3 className="text-lg font-semibold text-nexia-primary mb-4 font-poppins">
+                {t('facts.achievements')}
+              </h3>
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center">
-                    <span className="text-purple-600 font-bold text-xs">9th</span>
+                {achievements.map((a, index) => (
+                  <div key={index} className="flex items-center gap-3">
+                    <div className="relative w-12 h-12 bg-nexia-secondary/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <img
+                        src={a.iconSrc}
+                        alt={a.iconAlt}
+                        className="w-7 h-7 object-contain"
+                      />
+                      <span className="absolute -bottom-1 -right-1 text-[10px] font-bold text-white bg-nexia-secondary rounded-full px-1.5 py-0.5 leading-none">
+                        {a.badge}
+                      </span>
+                    </div>
+                    <div className="flex-1 text-sm text-nexia-primary/80 font-poppins">
+                      <div className="font-medium">{a.title}</div>
+                      {a.subtitle && (
+                        <div className="text-xs text-nexia-primary/50 mt-0.5">
+                          {a.subtitle}
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <div className="flex-1 text-sm text-gray-600">
-                    <div className="font-medium">International Accounting Bulletin Survey 2019</div>
-                  </div>
-                </div>
-                
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-pink-100 rounded-full flex items-center justify-center">
-                    <span className="text-pink-600 font-bold text-sm">★</span>
-                  </div>
-                  <div className="flex-1 text-sm text-gray-600">
-                    <div className="font-medium">Prix du Réseau Étoile Montante - IAB Awards 2019</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-orange-100 rounded-full flex items-center justify-center">
-                    <span className="text-orange-600 font-bold text-xs">$</span>
-                  </div>
-                  <div className="flex-1 text-sm text-gray-600">
-                    <div className="font-medium">{t('facts.revenue')}</div>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center">
-                    <span className="text-teal-600 font-bold text-xs">727</span>
-                  </div>
-                  <div className="flex-1 text-sm text-gray-600">
-                    <div className="font-medium">{t('facts.worldwideOffices')}</div>
-                    <div className="text-xs text-gray-500">{t('facts.globalNetwork')}</div>
-                  </div>
-                </div>
+                ))}
               </div>
             </div>
           </div>

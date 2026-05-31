@@ -26,6 +26,7 @@ import ForgotPassword from "./pages/auth/ForgotPassword";
 // Back-office pages
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ContactRequests from "./pages/admin/ContactRequests";
+import LinkedInManager from "./pages/admin/LinkedInManager";
 import Collaborateurs from "./pages/collaborateurs/Collaborateurs";
 import PortailClient from "./pages/client/PortailClient";
 
@@ -70,6 +71,14 @@ const App = () => (
                 element={
                   <ProtectedRoute allowedRoles={['admin', 'collaborator']}>
                     <ContactRequests />
+                  </ProtectedRoute>
+                }
+              />
+              <Route
+                path="/admin/linkedin"
+                element={
+                  <ProtectedRoute allowedRoles={['admin', 'collaborator']}>
+                    <LinkedInManager />
                   </ProtectedRoute>
                 }
               />

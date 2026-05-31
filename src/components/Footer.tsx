@@ -20,7 +20,7 @@ export default function Footer() {
           <img
             src="/nexia-morocco-logo.png"
             alt="Nexia Morocco"
-            className="h-12 md:h-14 w-auto inline-block brightness-0 invert"
+            className="h-20 md:h-24 lg:h-28 w-auto inline-block brightness-0 invert"
           />
         </div>
 
@@ -53,7 +53,7 @@ export default function Footer() {
           {/* Social Icons and WhatsApp */}
           <div className="flex space-x-4 lg:justify-end">
             <a
-              href="https://www.linkedin.com/company/nexia-morocco/?viewAsMember=true"
+              href="https://www.linkedin.com/company/nexia-fiducia-maroc/"
               target="_blank"
               rel="noopener noreferrer"
               className="w-10 h-10 bg-white/10 hover:bg-nexia-secondary rounded-full flex items-center justify-center transition-colors duration-200"

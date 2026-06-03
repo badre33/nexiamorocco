@@ -12,3 +12,12 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+# Routes privees (back-office, auth) - bloquees pour eviter l'indexation
+Disallow: /admin/
+Disallow: /auth/
+Disallow: /collaborateurs
+Disallow: /client/portail
+
+# Sitemap
+Sitemap: https://nexiamorocco.com/sitemap.xml

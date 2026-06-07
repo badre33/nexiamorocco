@@ -35,6 +35,24 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Coordonnées des bureaux — NAP cohérent (référencement local Google) */}
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/20 pt-8">
+          <address className="not-italic">
+            <h3 className="text-lg font-semibold font-poppins mb-2">Cabinet d'expertise comptable — Casablanca</h3>
+            <p className="text-white/90 font-poppins text-sm leading-relaxed">
+              41 Rue Jbel Toudgha, CIL, Casablanca 20000, Maroc<br />
+              <a href="tel:+212522364377" className="hover:text-nexia-primary transition-colors">+212 5 22 36 43 77</a>
+            </p>
+          </address>
+          <address className="not-italic">
+            <h3 className="text-lg font-semibold font-poppins mb-2">Bureau de Tanger</h3>
+            <p className="text-white/90 font-poppins text-sm leading-relaxed">
+              Lotissement New Center, Lots 3, Étage 1 N°16, Tanger, Maroc<br />
+              <a href="tel:+212531295075" className="hover:text-nexia-primary transition-colors">+212 5 31 29 50 75</a>
+            </p>
+          </address>
+        </div>
+
         {/* Footer Links and Social */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Links */}

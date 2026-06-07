@@ -1,8 +1,21 @@
+import { useState } from "react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
+
+// Embeds Google Maps correspondant exactement aux fiches Google Business Profile
+// (q = nom de l'établissement + adresse => affiche le pin de la fiche, pas une simple coordonnée)
+const OFFICE_MAPS = {
+  casablanca:
+    "https://www.google.com/maps?q=Nexia+Morocco,+41+Rue+Jbel+Toudgha,+Casablanca+20000&z=16&output=embed",
+  tanger:
+    "https://www.google.com/maps?q=Nexia+Fiducia,+Lotissement+New+Center,+Tanger&z=16&output=embed",
+} as const;
+
+type OfficeKey = keyof typeof OFFICE_MAPS;
 
 export default function ContactMap() {
   const { t } = useSimpleLanguage();
-  
+  const [activeOffice, setActiveOffice] = useState<OfficeKey>("casablanca");
+
   return (
     <section className="py-16 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -10,25 +23,51 @@ export default function ContactMap() {
           <h2 className="text-3xl font-bold text-nexia-primary mb-4">{t('contactMap.title')}</h2>
           <p className="text-nexia-primary">{t('contactMap.subtitle')}</p>
         </div>
-        
+
+        {/* Sélecteur de bureau — bascule la carte embarquée entre les deux fiches GBP */}
+        <div className="flex justify-center gap-3 mb-6">
+          <button
+            type="button"
+            onClick={() => setActiveOffice("casablanca")}
+            aria-pressed={activeOffice === "casablanca"}
+            className={`px-6 py-2.5 rounded-full font-medium transition-colors ${
+              activeOffice === "casablanca"
+                ? "bg-nexia-primary text-white shadow-md"
+                : "bg-white text-nexia-primary border border-nexia-primary/30 hover:border-nexia-primary"
+            }`}
+          >
+            {t('contactMap.office1')}
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveOffice("tanger")}
+            aria-pressed={activeOffice === "tanger"}
+            className={`px-6 py-2.5 rounded-full font-medium transition-colors ${
+              activeOffice === "tanger"
+                ? "bg-nexia-secondary text-white shadow-md"
+                : "bg-white text-nexia-primary border border-nexia-primary/30 hover:border-nexia-primary"
+            }`}
+          >
+            {t('contactMap.office2')}
+          </button>
+        </div>
+
         <div className="rounded-lg overflow-hidden shadow-professional">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6595.947!2d-7.6298!3d33.5890!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda7cd4778aa113b%3A0x8f5b0e85b6a9b9a9!2sCasablanca%2C%20Morocco!5e0!3m2!1sfr!2sma!4v1642765432198!5m2!1sfr!2sma&z=14"
+            key={activeOffice}
+            src={OFFICE_MAPS[activeOffice]}
             width="100%"
             height="450"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title={t('contactMap.mapTitle')}
+            title={
+              activeOffice === "casablanca"
+                ? "Nexia Morocco — Cabinet d'expertise comptable, 41 Rue Jbel Toudgha, Casablanca"
+                : "Nexia Morocco — Bureau de Tanger, Lotissement New Center"
+            }
           />
-        </div>
-
-        {/* Instructions pour voir les deux bureaux */}
-        <div className="mt-4 p-4 bg-blue-50 rounded-lg border border-blue-200">
-          <p className="text-sm text-blue-800 text-center">
-            <strong>{t('contactMap.instructions')}</strong> {t('contactMap.instructionsDetails')}
-          </p>
         </div>
 
         {/* Marqueurs visuels des bureaux */}
@@ -47,10 +86,10 @@ export default function ContactMap() {
                 <p className="text-gray-600 text-sm mb-3">Casablanca - Maroc</p>
                 <div className="flex flex-col gap-2">
                   <a href="tel:+212522364377" className="text-nexia-secondary hover:text-nexia-primary font-medium">
-                    05 22 364377
+                    05 22 36 43 77
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=41+Rue+Jbel+Toudgha+CIL+Casablanca+Morocco"
+                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+41+Rue+Jbel+Toudgha+CIL+Casablanca"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
@@ -81,10 +120,10 @@ export default function ContactMap() {
                 <p className="text-gray-600 text-sm mb-3">Tanger - Maroc</p>
                 <div className="flex flex-col gap-2">
                   <a href="tel:+212531295075" className="text-nexia-secondary hover:text-nexia-primary font-medium">
-                    0531295075
+                    05 31 29 50 75
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Lotissement+New+Center+Lots+3+Tanger+Morocco"
+                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Fiducia+Lotissement+New+Center+Tanger"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
@@ -99,13 +138,6 @@ export default function ContactMap() {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Légende pour aider l'utilisateur */}
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            {t('contactMap.helpText')}
-          </p>
         </div>
       </div>
     </section>

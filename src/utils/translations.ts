@@ -379,7 +379,7 @@ export const translations = {
     
     // Contact Map Section
     'contactMap.title': 'Nos Bureaux',
-    'contactMap.subtitle': 'Retrouvez-nous dans nos bureaux à Casablanca et Tanger',
+    'contactMap.subtitle': 'Votre cabinet d\'audit et d\'expertise comptable à Casablanca et Tanger',
     'contactMap.instructions': 'Pour localiser nos bureaux :',
     'contactMap.instructionsDetails': 'Utilisez les liens "Voir sur Google Maps" ci-dessous pour accéder directement à chaque adresse avec géolocalisation précise.',
     'contactMap.office1': 'Bureau Casablanca',
@@ -684,7 +684,7 @@ export const translations = {
     
     // Contact Map Section
     'contactMap.title': 'Our Offices',
-    'contactMap.subtitle': 'Find us in our offices in Casablanca and Tangier',
+    'contactMap.subtitle': 'Your audit and accounting firm in Casablanca and Tangier',
     'contactMap.instructions': 'To locate our offices:',
     'contactMap.instructionsDetails': 'Use the "View on Google Maps" links below to access each address directly with precise geolocation.',
     'contactMap.office1': 'Casablanca Office',

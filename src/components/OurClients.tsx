@@ -17,21 +17,18 @@ interface ClientLogo {
   url?: string;
 }
 
-const CLIENTS: ClientLogo[] = [
-  // TODO Badre : remplacer chaque src par /clients/xxx.png quand les vrais logos sont fournis
-  { name: "Client 1", src: null },
-  { name: "Client 2", src: null },
-  { name: "Client 3", src: null },
-  { name: "Client 4", src: null },
-  { name: "Client 5", src: null },
-  { name: "Client 6", src: null },
-  { name: "Client 7", src: null },
-  { name: "Client 8", src: null },
-  { name: "Client 9", src: null },
-  { name: "Client 10", src: null },
-  { name: "Client 11", src: null },
-  { name: "Client 12", src: null },
-];
+/**
+ * 30 logos clients extraits de la slide 28 ("Ils nous font confiance") de la
+ * Présentation Nexia Morocco 2026.pptx. Ordre identique à celui de la slide.
+ *
+ * Les noms sont génériques (Client 01 ... 30) car la présentation ne contient
+ * pas le nom textuel des marques. Badre pourra renommer manuellement chaque
+ * `name` quand il identifiera les clients (utile pour l'attribut alt SEO).
+ */
+const CLIENTS: ClientLogo[] = Array.from({ length: 30 }, (_, i) => {
+  const num = String(i + 1).padStart(2, "0");
+  return { name: `Client ${num}`, src: `/clients/client-${num}.png` };
+});
 
 export default function OurClients() {
   const { t } = useSimpleLanguage();

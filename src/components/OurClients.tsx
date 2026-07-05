@@ -21,14 +21,41 @@ interface ClientLogo {
  * 30 logos clients extraits de la slide 28 ("Ils nous font confiance") de la
  * Présentation Nexia Morocco 2026.pptx. Ordre identique à celui de la slide.
  *
- * Les noms sont génériques (Client 01 ... 30) car la présentation ne contient
- * pas le nom textuel des marques. Badre pourra renommer manuellement chaque
- * `name` quand il identifiera les clients (utile pour l'attribut alt SEO).
+ * Noms identifiés visuellement en juin 2026. Les attributs `name` servent
+ * d'alt SEO (important pour l'accessibilité et le référencement local).
  */
-const CLIENTS: ClientLogo[] = Array.from({ length: 30 }, (_, i) => {
-  const num = String(i + 1).padStart(2, "0");
-  return { name: `Client ${num}`, src: `/clients/client-${num}.png` };
-});
+const CLIENTS: ClientLogo[] = [
+  { name: "John Cockerill",             src: "/clients/client-01.png" },
+  { name: "Zurich Insurance",           src: "/clients/client-02.png" },
+  { name: "Wafa Assurance",             src: "/clients/client-03.png" },
+  { name: "Teltonika",                  src: "/clients/client-04.png" },
+  { name: "Schindler",                  src: "/clients/client-05.png" },
+  { name: "MATU Assurance",             src: "/clients/client-06.png" },
+  { name: "OCP",                        src: "/clients/client-07.png" },
+  { name: "CCI France Maroc",           src: "/clients/client-08.png" },
+  { name: "Lydec",                      src: "/clients/client-09.png" },
+  { name: "Safran Engineering Services", src: "/clients/client-10.png" },
+  { name: "IPSEN Industrial Packing",   src: "/clients/client-11.png" },
+  { name: "TRIA",                       src: "/clients/client-12.png" },
+  { name: "IQVIA",                      src: "/clients/client-13.png" },
+  { name: "Esnapharm Laboratoire",      src: "/clients/client-14.png" },
+  { name: "Volvo",                      src: "/clients/client-15.png" },
+  { name: "Snetor Maroc",               src: "/clients/client-16.png" },
+  { name: "Glen Invest",                src: "/clients/client-17.png" },
+  { name: "TLS Groupe",                 src: "/clients/client-18.png" },
+  { name: "Steinmüller Engineering",    src: "/clients/client-19.png" },
+  { name: "Continental ContiTech",      src: "/clients/client-20.png" },
+  { name: "COLIN'S",                    src: "/clients/client-21.png" },
+  { name: "AXA",                        src: "/clients/client-22.png" },
+  { name: "Arrow Electronics",          src: "/clients/client-23.png" },
+  { name: "Arab Bank",                  src: "/clients/client-24.png" },
+  { name: "DuPont",                     src: "/clients/client-25.png" },
+  { name: "ifm electronic",             src: "/clients/client-26.png" },
+  { name: "DAF Trucks",                 src: "/clients/client-27.png" },
+  { name: "FISA Maroc",                 src: "/clients/client-28.png" },
+  { name: "Orange",                     src: "/clients/client-29.png" },
+  { name: "Allianz",                    src: "/clients/client-30.png" },
+];
 
 export default function OurClients() {
   const { t } = useSimpleLanguage();

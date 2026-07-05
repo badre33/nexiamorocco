@@ -29,6 +29,15 @@ export default function HowCanWeHelp() {
             <Button asChild className="nexia-button-primary font-poppins font-medium px-6 md:px-10">
               <Link to="/contact">{t('help.button')}</Link>
             </Button>
+            <p className="text-nexia-primary/90 font-poppins text-sm md:text-base pt-2">
+              <a href="/expertise-comptable-audit-casablanca" className="underline hover:text-white transition-colors">
+                Expertise comptable &amp; audit à Casablanca
+              </a>
+              {" · "}
+              <a href="/creer-societe-maroc" className="underline hover:text-white transition-colors">
+                Créer une société au Maroc
+              </a>
+            </p>
           </div>
         </div>
       </div>

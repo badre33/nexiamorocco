@@ -35,6 +35,22 @@ export default function Footer() {
           </p>
         </div>
 
+        {/* Maillage interne — pages piliers (SEO) */}
+        <div className="mb-10 border-t border-white/20 pt-8">
+          <h3 className="text-lg font-semibold font-poppins mb-3">Nos expertises</h3>
+          <nav className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/expertise-comptable-audit-casablanca" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Expertise comptable &amp; audit à Casablanca
+            </a>
+            <a href="/creer-societe-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Créer une société au Maroc
+            </a>
+            <a href="/domaines-expertise" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Nos domaines d'expertise
+            </a>
+          </nav>
+        </div>
+
         {/* Coordonnées des bureaux — NAP cohérent (référencement local Google) */}
         <div className="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-white/20 pt-8">
           <address className="not-italic">

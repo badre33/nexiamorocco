@@ -1,5 +1,6 @@
 import { Linkedin } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
+import { trackWhatsAppClick } from "@/lib/analytics";
 
 const getFooterLinks = (t: (key: string) => string) => [
   { text: t('footer.disclaimer'), url: "https://nexia.com/member-firm-disclaimer/" },
@@ -103,6 +104,7 @@ export default function Footer() {
               href="https://wa.me/212630300386"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackWhatsAppClick("footer")}
               aria-label="Contacter Nexia Morocco sur WhatsApp"
               className="w-14 h-14 md:w-16 md:h-16 bg-green-500 hover:bg-green-600 rounded-full flex items-center justify-center transition-colors duration-200 group"
               title="Contact us on WhatsApp"

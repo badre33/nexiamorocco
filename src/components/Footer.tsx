@@ -101,7 +101,7 @@ export default function Footer() {
               <Linkedin className="h-7 w-7 md:h-8 md:w-8" />
             </a>
             <a
-              href="https://wa.me/212630300386"
+              href="https://wa.me/212699024526"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => trackWhatsAppClick("footer")}

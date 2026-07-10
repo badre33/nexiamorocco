@@ -32,6 +32,27 @@
     <priority>0.9</priority>
   </url>
 
+  <!-- Page pilier AEO : honoraires expert-comptable Casablanca -->
+  <url>
+    <loc>https://nexiamorocco.com/honoraires-expert-comptable-casablanca</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page pilier AEO : commissaire aux comptes Maroc -->
+  <url>
+    <loc>https://nexiamorocco.com/commissaire-aux-comptes-maroc</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Page pilier AEO : externalisation paie Casablanca -->
+  <url>
+    <loc>https://nexiamorocco.com/externalisation-paie-casablanca</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
   <!-- À propos -->
   <url>
     <loc>https://nexiamorocco.com/a-propos</loc>

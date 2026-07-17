@@ -78,7 +78,7 @@ export const translations = {
     
     // Facts Section
     'facts.title': 'Notre monde en chiffres',
-    'facts.description': 'Une signature locale, un réseau mondial. Depuis 1994, Nexia Morocco s\'appuie sur la force du réseau Nexia International pour accompagner les entreprises marocaines et internationales avec les standards les plus exigeants.',
+    'facts.description': 'Une signature locale, un réseau mondial. Depuis 1991, Nexia Morocco s\'appuie sur la force du réseau Nexia International pour accompagner les entreprises marocaines et internationales avec les standards les plus exigeants.',
     'facts.moroccoLabel': 'Nexia Morocco',
     'facts.moroccoTagline': 'Casablanca · Tanger',
     'facts.moroccoSince': 'Année de création',
@@ -327,7 +327,7 @@ export const translations = {
     
     // Services page - Our Capabilities
     'ourCapabilities.title': 'Nos Domaines d\'Expertise',
-    'ourCapabilities.subtitle': 'Plus de 25 ans d\'expérience au service de votre croissance. 10 domaines d\'expertise pour accompagner tous vos projets.',
+    'ourCapabilities.subtitle': 'Plus de 35 ans d\'expérience au service de votre croissance. 10 domaines d\'expertise pour accompagner tous vos projets.',
     
     // Our Clients Section
     'clients.title': 'Ils nous font confiance',
@@ -473,7 +473,7 @@ export const translations = {
     
     // Facts Section
     'facts.title': 'Our world in numbers',
-    'facts.description': 'A local signature, a global network. Since 1994, Nexia Morocco has drawn on the strength of the Nexia International network to support Moroccan and international companies with the highest standards.',
+    'facts.description': 'A local signature, a global network. Since 1991, Nexia Morocco has drawn on the strength of the Nexia International network to support Moroccan and international companies with the highest standards.',
     'facts.moroccoLabel': 'Nexia Morocco',
     'facts.moroccoTagline': 'Casablanca · Tangier',
     'facts.moroccoSince': 'Founded',
@@ -569,7 +569,7 @@ export const translations = {
     
     // Services page - Our Capabilities
     'ourCapabilities.title': 'Our Areas of Expertise',
-    'ourCapabilities.subtitle': 'Over 25 years of experience serving your growth. 10 areas of expertise to support all your projects.',
+    'ourCapabilities.subtitle': 'Over 35 years of experience serving your growth. 10 areas of expertise to support all your projects.',
     
     // Our Clients Section
     'clients.title': 'They trust us',

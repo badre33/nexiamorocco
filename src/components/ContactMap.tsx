@@ -5,7 +5,7 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 // (q = nom de l'établissement + adresse => affiche le pin de la fiche, pas une simple coordonnée)
 const OFFICE_MAPS = {
   casablanca:
-    "https://www.google.com/maps?q=Nexia+Morocco,+41+Rue+Jbel+Toudgha,+Casablanca+20000&z=16&output=embed",
+    "https://www.google.com/maps?q=Nexia+Morocco,+Beausejour,+Rue+Madiak+Toudgha+43,+Hay+Essalam,+Casablanca&z=16&output=embed",
   tanger:
     "https://www.google.com/maps?q=Nexia+Fiducia,+Lotissement+New+Center,+Tanger&z=16&output=embed",
 } as const;
@@ -64,8 +64,8 @@ export default function ContactMap() {
             referrerPolicy="no-referrer-when-downgrade"
             title={
               activeOffice === "casablanca"
-                ? "Nexia Morocco — Cabinet d'expertise comptable, 41 Rue Jbel Toudgha, Casablanca"
-                : "Nexia Morocco — Bureau de Tanger, Lotissement New Center"
+                ? "Nexia Morocco, Cabinet d'expertise comptable, Beauséjour, Rue Madiak Toudgha n°43, Hay Essalam, Casablanca"
+                : "Nexia Morocco, Bureau de Tanger, Lotissement New Center"
             }
           />
         </div>
@@ -81,15 +81,15 @@ export default function ContactMap() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-nexia-primary mb-2">{t('contactMap.office1')}</h3>
-                <p className="text-gray-600 text-sm mb-1">41 Rue Jbel Toudgha</p>
-                <p className="text-gray-600 text-sm mb-1">CIL</p>
+                <p className="text-gray-600 text-sm mb-1">Beauséjour, Lot Amina</p>
+                <p className="text-gray-600 text-sm mb-1">Rue Madiak Toudgha n°43, Hay Essalam</p>
                 <p className="text-gray-600 text-sm mb-3">Casablanca - Maroc</p>
                 <div className="flex flex-col gap-2">
                   <a href="tel:+212522364377" className="text-nexia-secondary hover:text-nexia-primary font-medium">
                     05 22 36 43 77
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+41+Rue+Jbel+Toudgha+CIL+Casablanca"
+                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+Beausejour+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"

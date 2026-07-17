@@ -53,7 +53,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "audit",
       iconSrc: "/icons/audit.png",
-      stats: { years: "34+", clients: "400+", certification: "IFRS" },
+      stats: { years: "35+", clients: "400+", certification: "IFRS" },
       titleKey: 'expertise.audit.title',
       badgeKey: 'expertise.audit.badge',
       descriptionKey: 'expertise.audit.description',
@@ -62,7 +62,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "comptable",
       iconSrc: "/icons/books.png",
-      stats: { years: "34+", clients: "400+", certification: "Expert" },
+      stats: { years: "35+", clients: "400+", certification: "Expert" },
       titleKey: 'expertise.comptable.title',
       badgeKey: 'expertise.comptable.badge',
       descriptionKey: 'expertise.comptable.description',
@@ -71,7 +71,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "fiscalite",
       iconSrc: "/icons/piggy-bank.png",
-      stats: { years: "34+", clients: "400+", certification: "Fiscal" },
+      stats: { years: "35+", clients: "400+", certification: "Fiscal" },
       titleKey: 'expertise.fiscalite.title',
       badgeKey: 'expertise.fiscalite.badge',
       descriptionKey: 'expertise.fiscalite.description',
@@ -80,7 +80,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "corporate",
       iconSrc: "/icons/graph.png",
-      stats: { years: "34+", clients: "400+", certification: "M&A" },
+      stats: { years: "35+", clients: "400+", certification: "M&A" },
       titleKey: 'expertise.corporate.title',
       badgeKey: 'expertise.corporate.badge',
       descriptionKey: 'expertise.corporate.description',
@@ -89,7 +89,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "outsourcing",
       iconSrc: "/icons/people.png",
-      stats: { years: "34+", clients: "400+", certification: "BPO" },
+      stats: { years: "35+", clients: "400+", certification: "BPO" },
       titleKey: 'expertise.outsourcing.title',
       badgeKey: 'expertise.outsourcing.badge',
       descriptionKey: 'expertise.outsourcing.description',
@@ -107,7 +107,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "international",
       iconSrc: "/icons/globe.png",
-      stats: { years: "34+", clients: "400+", certification: "Global" },
+      stats: { years: "35+", clients: "400+", certification: "Global" },
       titleKey: 'expertise.international.title',
       badgeKey: 'expertise.international.badge',
       descriptionKey: 'expertise.international.description',
@@ -116,7 +116,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "juridique",
       iconSrc: "/icons/briefcase.png",
-      stats: { years: "34+", clients: "400+", certification: "Juridique" },
+      stats: { years: "35+", clients: "400+", certification: "Juridique" },
       titleKey: 'expertise.juridique.title',
       badgeKey: 'expertise.juridique.badge',
       descriptionKey: 'expertise.juridique.description',
@@ -125,7 +125,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
     {
       id: "strategie",
       iconSrc: "/icons/lightbulb.png",
-      stats: { years: "34+", clients: "400+", certification: "Strategy" },
+      stats: { years: "35+", clients: "400+", certification: "Strategy" },
       titleKey: 'expertise.strategie.title',
       badgeKey: 'expertise.strategie.badge',
       descriptionKey: 'expertise.strategie.description',

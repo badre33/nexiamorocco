@@ -20,7 +20,7 @@ type Stat = {
 };
 
 const useMoroccoStats = (t: (k: string) => string): Stat[] => [
-  { number: "1994", label: t('facts.moroccoSince') },
+  { number: "1991", label: t('facts.moroccoSince') },
   { number: "60+", label: t('facts.moroccoProfessionals') },
   { number: "400+", label: t('facts.moroccoClients') },
   { number: "2", label: t('facts.moroccoOffices') },

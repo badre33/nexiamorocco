@@ -45,7 +45,7 @@ export default function ImageWithCardSection() {
       {/* Background Image */}
       <div className="relative h-[600px] overflow-hidden">
         <img
-          src="/lovable-uploads/06eb7b25-b3c4-4644-98e3-2e17f8aedcc7.png"
+          src="/uploads/06eb7b25-b3c4-4644-98e3-2e17f8aedcc7.png"
           alt="Professional team celebrating success"
           className="w-full h-full object-cover"
         />

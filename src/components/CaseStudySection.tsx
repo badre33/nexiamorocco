@@ -25,7 +25,7 @@ export default function CaseStudySection() {
           {/* Image */}
           <div className="relative">
             <img
-              src="/lovable-uploads/205e24d0-c46d-47e0-95e8-f94cd3c806a7.png"
+              src="/uploads/205e24d0-c46d-47e0-95e8-f94cd3c806a7.png"
               alt="Case Study"
               className="w-full h-auto rounded-lg shadow-lg"
             />

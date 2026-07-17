@@ -9,7 +9,7 @@ export default function HeroSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png"
+          src="/uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png"
           alt="Professional office building"
           className="w-full h-full object-cover"
         />

@@ -12,7 +12,7 @@ const EtudesDeCas = () => {
       description: t('caseStudies.study1.description') || "Accompagnement complet dans la fusion stratégique entre PHL Group et Malling Health, incluant due diligence financière et fiscale approfondie.",
       sector: t('caseStudies.study1.sector') || "Santé",
       services: [t('caseStudies.study1.service1') || "Due diligence", t('caseStudies.study1.service2') || "Fiscalité", t('caseStudies.study1.service3') || "Fusion-acquisition"],
-      image: "/lovable-uploads/f9a9ffbc-dfd6-41ee-8f0a-4b081a69b3f6.png",
+      image: "/uploads/f9a9ffbc-dfd6-41ee-8f0a-4b081a69b3f6.png",
       duration: "6 mois",
       results: [
         "Fusion réussie de deux groupes de santé",
@@ -26,7 +26,7 @@ const EtudesDeCas = () => {
       description: "Services de conseil fiscal et de conformité pour un prêteur spécialisé non-bancaire et fournisseur d'investissements en Nouvelle-Zélande.",
       sector: "Services financiers",
       services: ["Fiscalité", "Conformité", "Conseil stratégique"],
-      image: "/lovable-uploads/bd99796a-f609-4596-9da6-b52d88335565.png",
+      image: "/uploads/bd99796a-f609-4596-9da6-b52d88335565.png",
       duration: "Ongoing",
       results: [
         "Conformité réglementaire assurée",
@@ -40,7 +40,7 @@ const EtudesDeCas = () => {
       description: "Accompagnement complet d'une société minière domiciliée au Canada dans ses opérations internationales et sa structure fiscale.",
       sector: "Mines et ressources",
       services: ["Fiscalité internationale", "Audit", "Conseil stratégique"],
-      image: "/lovable-uploads/62424296-4463-4444-8768-830bed080c2c.png",
+      image: "/uploads/62424296-4463-4444-8768-830bed080c2c.png",
       duration: "18 mois",
       results: [
         "Structuration fiscale internationale",
@@ -54,7 +54,7 @@ const EtudesDeCas = () => {
       description: "Expertise en TVA polonaise pour un fabricant britannique de fours industriels et équipements de chauffage spécialisés.",
       sector: "Industrie",
       services: ["TVA internationale", "Conformité", "Conseil fiscal"],
-      image: "/lovable-uploads/4f1c034e-ed7b-4fc6-b4fe-3ce249ccb763.png",
+      image: "/uploads/4f1c034e-ed7b-4fc6-b4fe-3ce249ccb763.png",
       duration: "4 mois",
       results: [
         "Conformité TVA polonaise",
@@ -68,7 +68,7 @@ const EtudesDeCas = () => {
       description: "Accompagnement d'une société de divertissement et de production d'événements basée en Argentine dans sa structuration et développement.",
       sector: "Divertissement",
       services: ["Structuration", "Conseil stratégique", "Fiscalité"],
-      image: "/lovable-uploads/73661ed9-5340-4b07-b8a6-5234fe52dcbb.png",
+      image: "/uploads/73661ed9-5340-4b07-b8a6-5234fe52dcbb.png",
       duration: "8 mois",
       results: [
         "Structuration optimisée",
@@ -82,7 +82,7 @@ const EtudesDeCas = () => {
       description: "Support complet pour un fabricant d'équipements de golf incorporé aux États-Unis avec des opérations internationales.",
       sector: "Sport et loisirs",
       services: ["Fiscalité internationale", "Audit", "Conseil stratégique"],
-      image: "/lovable-uploads/823f190c-49d7-43a4-9359-54d2406a61eb.png",
+      image: "/uploads/823f190c-49d7-43a4-9359-54d2406a61eb.png",
       duration: "12 mois",
       results: [
         "Optimisation fiscale internationale",
@@ -96,7 +96,7 @@ const EtudesDeCas = () => {
       description: "Services complets pour une entreprise d'ingénierie domiciliée au Royaume-Uni avec des opérations mondiales.",
       sector: "Ingénierie",
       services: ["Audit", "Fiscalité", "Conseil opérationnel"],
-      image: "/lovable-uploads/e942bb5a-c552-4079-b062-2bedfd6c4efd.png",
+      image: "/uploads/e942bb5a-c552-4079-b062-2bedfd6c4efd.png",
       duration: "Ongoing",
       results: [
         "Optimisation des opérations globales",
@@ -110,7 +110,7 @@ const EtudesDeCas = () => {
       description: "Due diligence fiscale approfondie dans le cadre de l'acquisition d'une société espagnole du secteur agroalimentaire.",
       sector: "Agroalimentaire",
       services: ["Due diligence", "Fiscalité", "Fusion-acquisition"],
-      image: "/lovable-uploads/90ae2755-c626-4fca-9dab-c7c8b88e7a97.png",
+      image: "/uploads/90ae2755-c626-4fca-9dab-c7c8b88e7a97.png",
       duration: "5 mois",
       results: [
         "Acquisition réussie",

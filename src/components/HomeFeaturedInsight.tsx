@@ -24,7 +24,7 @@ export default function HomeFeaturedInsight() {
           <div className="flex flex-col md:flex-row">
             <div className="md:w-1/2">
               <img
-                src="/lovable-uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png"
+                src="/uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png"
                 alt="Le coût des médicaments au Maroc"
                 className="w-full h-48 sm:h-56 md:h-full object-cover"
                 style={{ objectPosition: '10% center' }}

@@ -10,7 +10,7 @@ export default function WhyNexia() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/461ab464-dd40-429d-aa6b-df6c27d93c9e.png"
+          src="/uploads/461ab464-dd40-429d-aa6b-df6c27d93c9e.png"
           alt="Professionnels collaborant"
           className="w-full h-full object-cover"
         />
@@ -27,7 +27,7 @@ export default function WhyNexia() {
           <div className="text-center lg:text-left">
             <div className="mb-6">
               <img 
-                src="/lovable-uploads/59726acf-0a45-496a-88e6-79f58a0fb51d.png" 
+                src="/uploads/59726acf-0a45-496a-88e6-79f58a0fb51d.png" 
                 alt="Nexia Logo" 
                 className="h-16 w-auto object-contain"
               />

@@ -5,21 +5,21 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 
 const insights = [
   {
-    image: "/lovable-uploads/e819835e-38b7-425e-917b-276faa067599.png",
+    image: "/uploads/e819835e-38b7-425e-917b-276faa067599.png",
     title: "Nexia Experts discuss the current Global Tariffs from the USA",
     description: "Dans ce podcast, nous abordons l'importance pour les entreprises de se tenir au courant des changements fréquents de tarifs dans le monde.",
     date: "Juillet 2025",
     source: "https://nexia.com/insights/nexia-experts-discuss-the-current-global-tariffs-from-the-usa/"
   },
   {
-    image: "/lovable-uploads/3ee486b2-8d9a-4f08-b3a6-37819c7f9273.png",
+    image: "/uploads/3ee486b2-8d9a-4f08-b3a6-37819c7f9273.png",
     title: "Switzerland – Commercial investment trading",
     description: "En Suisse, les gains en capital réalisés par un particulier sur des biens mobiliers ne sont généralement pas soumis à l'impôt sur le revenu.",
     date: "Juin 2025",
     source: "https://nexia.com/insights/switzerland-commercial-investment-trading/"
   },
   {
-    image: "/lovable-uploads/6b743136-5ea7-43a5-959d-0cdcee6f4b63.png",
+    image: "/uploads/6b743136-5ea7-43a5-959d-0cdcee6f4b63.png",
     title: "Mining and the future: Strategic perspectives on global resource management",
     description: "À une époque de transformation rapide, le secteur minier mondial fait face à un examen intensifié, à des réglementations en évolution.",
     date: "Mai 2025",

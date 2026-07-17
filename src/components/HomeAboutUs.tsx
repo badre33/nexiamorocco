@@ -9,7 +9,7 @@ export default function HomeAboutUs() {
       {/* Background Image pour toute la section */}
       <div className="absolute inset-0">
         <img 
-          src="/lovable-uploads/c6eaa709-a9e2-42bc-8d20-36f8616c4e6e.png" 
+          src="/uploads/c6eaa709-a9e2-42bc-8d20-36f8616c4e6e.png" 
           alt="Chefchaouen, Morocco" 
           className="w-full h-full object-cover"
         />

@@ -8,17 +8,17 @@ import { Link } from "react-router-dom";
 export default function RelatedInsights() {
   const insights = [
     {
-      image: "/lovable-uploads/39143591-1dc1-4223-a2f1-480dd592d440.png",
+      image: "/uploads/39143591-1dc1-4223-a2f1-480dd592d440.png",
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "17 January"
     },
     {
-      image: "/lovable-uploads/683558d0-ea3d-4016-81a3-c31382efa76b.png", 
+      image: "/uploads/683558d0-ea3d-4016-81a3-c31382efa76b.png", 
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "17 January"
     },
     {
-      image: "/lovable-uploads/36d7db3b-24d7-4f04-aaed-d9f2509146f0.png",
+      image: "/uploads/36d7db3b-24d7-4f04-aaed-d9f2509146f0.png",
       title: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
       date: "17 January"
     }

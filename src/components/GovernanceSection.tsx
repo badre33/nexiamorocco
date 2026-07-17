@@ -8,7 +8,7 @@ export default function GovernanceSection() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/031a3c04-ca5d-4ca8-b276-f114c99bd54f.png"
+          src="/uploads/031a3c04-ca5d-4ca8-b276-f114c99bd54f.png"
           alt="Vue aérienne de la médina marocaine"
           className="w-full h-full object-cover"
         />

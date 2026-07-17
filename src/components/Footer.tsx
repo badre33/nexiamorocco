@@ -43,6 +43,15 @@ export default function Footer() {
             <a href="/expertise-comptable-audit-casablanca" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
               Expertise comptable &amp; audit à Casablanca
             </a>
+            <a href="/commissaire-aux-comptes-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Commissaire aux comptes au Maroc
+            </a>
+            <a href="/honoraires-expert-comptable-casablanca" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Honoraires d'expert-comptable
+            </a>
+            <a href="/externalisation-paie-casablanca" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Externalisation de la paie
+            </a>
             <a href="/creer-societe-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
               Créer une société au Maroc
             </a>

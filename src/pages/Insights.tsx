@@ -72,7 +72,7 @@ const globalInsights = [
       fr: "12 min",
       en: "12 min"
     },
-    image: "/lovable-uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png",
+    image: "/uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png",
     featured: false,
     content: {
       fr: `Casablanca, 28 août 2025 – Plus de deux ans après l'annonce de mesures visant à réduire les prix des médicaments, la question reste d'une brûlante actualité. Malgré certains ajustements réglementaires et l'introduction progressive de génériques, les prix de nombreux traitements demeurent élevés, parfois trois à quatre fois supérieurs à ceux pratiqués dans des pays comparables.
@@ -182,7 +182,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
       fr: "8 min",
       en: "8 min"
     },
-    image: "/lovable-uploads/e819835e-38b7-425e-917b-276faa067599.png",
+    image: "/uploads/e819835e-38b7-425e-917b-276faa067599.png",
     featured: false,
     source: "https://nexia.com/insights/nexia-experts-discuss-the-current-global-tariffs-from-the-usa/"
   },
@@ -194,7 +194,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Experts Nexia Suisse",
     date: "Juin 2025",
     readTime: "6 min",
-    image: "/lovable-uploads/3ee486b2-8d9a-4f08-b3a6-37819c7f9273.png",
+    image: "/uploads/3ee486b2-8d9a-4f08-b3a6-37819c7f9273.png",
     featured: false,
     source: "https://nexia.com/insights/switzerland-commercial-investment-trading/"
   },
@@ -206,7 +206,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Experts Nexia International",
     date: "Mai 2025",
     readTime: "45 min",
-    image: "/lovable-uploads/ed4ab84d-ff57-4a60-983a-ae7fe9a6254a.png",
+    image: "/uploads/ed4ab84d-ff57-4a60-983a-ae7fe9a6254a.png",
     featured: false,
     source: "https://nexia.com/insights/diversity-equity-and-inclusion-focused-webinars/"
   },
@@ -218,7 +218,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Glen Wei",
     date: "Mai 2025",
     readTime: "15 min",
-    image: "/lovable-uploads/6b84a4c9-de19-45d9-9cae-7d14878afd56.png",
+    image: "/uploads/6b84a4c9-de19-45d9-9cae-7d14878afd56.png",
     featured: false,
     source: "https://nexia.com/insights/compilation-of-tax-laws-and-regulations-in-china-as-of-30-april-2025/"
   },
@@ -230,7 +230,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Experts Nexia International",
     date: "Mai 2025",
     readTime: "12 min",
-    image: "/lovable-uploads/6b743136-5ea7-43a5-959d-0cdcee6f4b63.png",
+    image: "/uploads/6b743136-5ea7-43a5-959d-0cdcee6f4b63.png",
     featured: false,
     source: "https://nexia.com/insights/mining-and-the-future-strategic-perspectives-on-global-resource-management/"
   },
@@ -242,7 +242,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Michael Felber",
     date: "Avril 2025",
     readTime: "8 min",
-    image: "/lovable-uploads/3ee486b2-8d9a-4f08-b3a6-37819c7f9273.png",
+    image: "/uploads/3ee486b2-8d9a-4f08-b3a6-37819c7f9273.png",
     featured: false,
     source: "https://nexia.com/insights/capital-contribution-principle-leading-decision-of-the-federal-supreme-court-of-21-march-2025/"
   },
@@ -254,7 +254,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Experts Nexia International",
     date: "Mars 2025",
     readTime: "10 min",
-    image: "/lovable-uploads/bc52453e-7581-4a37-b09c-62f1f38dd695.png",
+    image: "/uploads/bc52453e-7581-4a37-b09c-62f1f38dd695.png",
     featured: false,
     source: "https://nexia.com/insights/communicating-your-esg-story-to-stakeholders/"
   },
@@ -266,7 +266,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     author: "Experts Nexia International",
     date: "Février 2025",
     readTime: "9 min",
-    image: "/lovable-uploads/0b2291f3-b8ee-4ac8-bb4b-ca08457d1215.png",
+    image: "/uploads/0b2291f3-b8ee-4ac8-bb4b-ca08457d1215.png",
     featured: false,
     source: "https://nexia.com/insights/implementing-esg-best-practices-in-your-supply-chain/"
   }

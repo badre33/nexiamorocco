@@ -9,7 +9,7 @@ export default function ContactHero() {
       {/* Background Image */}
       <div className="absolute inset-0">
         <img
-          src="/lovable-uploads/cd1d5d63-1fdb-4d40-9016-a19aaeb69709.png"
+          src="/uploads/cd1d5d63-1fdb-4d40-9016-a19aaeb69709.png"
           alt="Contact us hero background"
           className="w-full h-full object-cover"
         />

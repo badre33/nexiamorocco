@@ -301,7 +301,8 @@ export default function OurServicesMenu() {
               <TabsContent
                 key={domain.id}
                 value={domain.id}
-                className="mt-8 animate-fade-in"
+                forceMount
+                className="mt-8 animate-fade-in data-[state=inactive]:hidden"
               >
                 <div className="bg-white rounded-3xl p-4 md:p-8 shadow-lg hover:shadow-xl transition-all duration-500 border border-gray-100 nexia-card-rounded">
                   {/* Header avec badge et stats — bandeau couleur du domaine */}

@@ -11,7 +11,7 @@ export default function HowCanWeHelp() {
         {/* Image Column */}
         <div className="flex-1 h-[300px] lg:h-full">
           <img
-            src="/lovable-uploads/d94f1f3b-e519-4e70-ac5b-aa9ce953e580.png"
+            src="/uploads/d94f1f3b-e519-4e70-ac5b-aa9ce953e580.png"
             alt="How we can help you"
             className="w-full h-full object-cover"
           />

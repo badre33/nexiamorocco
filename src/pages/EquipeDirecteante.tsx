@@ -11,7 +11,7 @@ const teamMembers = [
     title: "Président",
     specialties: ["Audit & Commissariat aux comptes", "Expertise comptable", "Présidence de l'ordre des Experts-Comptables"],
     description: "Une longue carrière à son actif, depuis 1998, chez ORSIA Finance, KPMG International puis DARLY & CO AUDITING. Yassine EL MAGUIRI est expert comptable – commissaire aux comptes, mais également le Président de l'ordre des Experts-Comptables, Conseil Région de Casablanca et Sud. Yassine est l'associé-fondateur du cabinet Advisoris à Casablanca, avant l'opération de regroupement avec NEXIA, donnant naissance à un nouveau géant marocain du métier de l'audit, commissariat aux comptes et du conseil.",
-    image: "/lovable-uploads/0e997ed8-ef54-4573-a7e6-0b1be1b3bb22.png",
+    image: "/uploads/0e997ed8-ef54-4573-a7e6-0b1be1b3bb22.png",
     email: "y.elmaguiri@nexiafiducia.ma"
   },
   {
@@ -20,7 +20,7 @@ const teamMembers = [
     title: "Directeur Général",
     specialties: ["Expertise comptable", "Commissariat aux comptes", "Analyses économiques et financières", "Gestion déléguée"],
     description: "Ancien directeur de mission au sein de AETD Paris, et directeur du bureau d'AETD au Maroc, Jalal BENSAID est expert-comptable – commissaire aux comptes diplômé, titulaire d'un DESCF à l'ISEM Montpellier. Il possède une expertise dans la distribution, l'industrie, la gestion déléguée, les études de marché ainsi que les analyses économiques et financières. Jalal est l'associé historique dans le cabinet NEXIA, avant le regroupement avec ADVISORIS en 2022, où il a pu pérenniser la firme, et renforcer progressivement sa présence sur le marché marocain.",
-    image: "/lovable-uploads/340c2c11-0db9-4dda-8759-2bbe8cc749c7.png",
+    image: "/uploads/340c2c11-0db9-4dda-8759-2bbe8cc749c7.png",
     email: "J.bensaid@nexiafiducia.ma"
   }
 ];
@@ -36,7 +36,7 @@ const EquipeDirecteante = () => {
       <section 
         className="py-20 relative overflow-hidden"
         style={{
-          backgroundImage: `url('/lovable-uploads/a46d6c8c-98d8-4527-bb95-23f3aa12e9e9.png')`,
+          backgroundImage: `url('/uploads/a46d6c8c-98d8-4527-bb95-23f3aa12e9e9.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'
@@ -153,7 +153,7 @@ const EquipeDirecteante = () => {
       <section 
         className="py-20 relative overflow-hidden"
         style={{
-          backgroundImage: `url('/lovable-uploads/08470e3b-03ff-401c-abde-805b50c3c778.png')`,
+          backgroundImage: `url('/uploads/08470e3b-03ff-401c-abde-805b50c3c778.png')`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat'

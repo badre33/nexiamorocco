@@ -114,7 +114,7 @@ export default function MedicamentArticle() {
           {/* Featured Image */}
           <div className="mb-12">
             <img
-              src="/lovable-uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png"
+              src="/uploads/cef4902e-b1e7-4925-9e79-9a625447ce65.png"
               alt="Le coût des médicaments au Maroc"
               className="w-full h-96 object-cover object-center rounded-lg shadow-lg"
             />

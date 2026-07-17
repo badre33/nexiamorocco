@@ -8,52 +8,52 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 const getExpertiseDomains = (t: (key: string) => string) => [
   {
     title: t("service.audit.title"),
-    image: "/lovable-uploads/01471ff8-a45a-4917-9e88-21cc4de0456d.png",
+    image: "/uploads/01471ff8-a45a-4917-9e88-21cc4de0456d.png",
     href: "/domaines-expertise#audit"
   },
   {
     title: t("service.expertise.title"),
-    image: "/lovable-uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
+    image: "/uploads/31bfa1ea-3054-4d56-967c-b20714ac5574.png",
     href: "/domaines-expertise#comptable"
   },
   {
     title: t("service.fiscal.title"),
-    image: "/lovable-uploads/53f46a0f-ef88-4282-bd21-b005312754ce.png",
+    image: "/uploads/53f46a0f-ef88-4282-bd21-b005312754ce.png",
     href: "/domaines-expertise#fiscalite"
   },
   {
     title: t("service.finance.title"),
-    image: "/lovable-uploads/4bed1dd7-b5f8-4423-abf2-a25ceac03f9d.png",
+    image: "/uploads/4bed1dd7-b5f8-4423-abf2-a25ceac03f9d.png",
     href: "/domaines-expertise#corporate"
   },
   {
     title: t("service.legal.title"),
-    image: "/lovable-uploads/a7f22a1b-43e9-4c44-a47d-df43bbab5901.png",
+    image: "/uploads/a7f22a1b-43e9-4c44-a47d-df43bbab5901.png",
     href: "/domaines-expertise#juridique"
   },
   {
     title: t("service.outsourcing.title"),
-    image: "/lovable-uploads/0506b088-dd85-416f-a9a3-bc15fac33d20.png",
+    image: "/uploads/0506b088-dd85-416f-a9a3-bc15fac33d20.png",
     href: "/domaines-expertise#outsourcing"
   },
   {
     title: t("service.digitalization.title"),
-    image: "/lovable-uploads/c77098e9-3f18-4389-b9e1-012be59e78dd.png",
+    image: "/uploads/c77098e9-3f18-4389-b9e1-012be59e78dd.png",
     href: "/domaines-expertise#digital"
   },
   {
     title: t("service.support.title"),
-    image: "/lovable-uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png",
+    image: "/uploads/622c05eb-5be8-4d65-8337-8b1100601dbb.png",
     href: "/domaines-expertise#international"
   },
   {
     title: t("service.strategy.title"),
-    image: "/lovable-uploads/90493dfc-c495-4692-97e9-4d6c1478d8e1.png",
+    image: "/uploads/90493dfc-c495-4692-97e9-4d6c1478d8e1.png",
     href: "/domaines-expertise#strategie"
   },
   {
     title: t("service.talent.title"),
-    image: "/lovable-uploads/888e9d03-6404-4ee8-871e-6b4893b19f2a.png",
+    image: "/uploads/888e9d03-6404-4ee8-871e-6b4893b19f2a.png",
     href: "/domaines-expertise#talent-mobility"
   }
 ];

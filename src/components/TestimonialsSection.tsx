@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
         <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-8">
           <div className="flex items-center gap-6">
             <img
-              src="/lovable-uploads/ce1428c7-4931-400b-9c66-2cc0d7d26a55.png"
+              src="/uploads/ce1428c7-4931-400b-9c66-2cc0d7d26a55.png"
               alt="Testimonial author"
               className="w-24 h-24 rounded-full object-cover"
             />

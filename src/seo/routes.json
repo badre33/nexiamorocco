@@ -47,6 +47,12 @@
     "robots": "index, follow",
     "type": "website"
   },
+  "/merci": {
+    "title": "Merci pour votre demande | Nexia Morocco",
+    "description": "Votre demande a bien été transmise à l'équipe Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
   "/auth/login": {
     "title": "Connexion | Nexia Morocco",
     "description": "Espace sécurisé Nexia Morocco.",

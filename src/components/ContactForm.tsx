@@ -9,6 +9,7 @@ import { Mail, Phone, User, Building2, MessageSquare, Send, CheckCircle, Chevron
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 import { supabase } from "@/integrations/supabase/client";
 import { serializeLeadAttribution, trackEvent, trackGenerateLead } from "@/lib/analytics";
+import { useNavigate } from "react-router-dom";
 
 const countryCodes = [
   { code: "+1", country: "États-Unis/Canada", flag: "🇺🇸" },
@@ -222,6 +223,7 @@ const countryCodes = [
 export default function ContactForm() {
   const { t } = useSimpleLanguage();
   const { toast } = useToast();
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const hasStartedForm = useRef(false);
@@ -233,7 +235,8 @@ export default function ContactForm() {
     countryCode: "+212",
     phone: "",
     service: "",
-    message: ""
+    message: "",
+    website: ""
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
@@ -243,12 +246,13 @@ export default function ContactForm() {
 
     if (!formData.firstName.trim()) newErrors.firstName = t('contactForm.errors.firstName');
     if (!formData.lastName.trim()) newErrors.lastName = t('contactForm.errors.lastName');
-    if (!formData.email.trim()) {
-      newErrors.email = t('contactForm.errors.email');
-    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+    if (formData.email.trim() && !/\S+@\S+\.\S+/.test(formData.email)) {
       newErrors.email = t('contactForm.errors.emailInvalid');
     }
-    if (!formData.phone.trim()) newErrors.phone = t('contactForm.errors.phone');
+    if (!formData.email.trim() && !formData.phone.trim()) {
+      newErrors.email = t('contactForm.errors.contactMethod');
+      newErrors.phone = t('contactForm.errors.contactMethod');
+    }
     if (!formData.message.trim()) newErrors.message = t('contactForm.errors.message');
 
     setErrors(newErrors);
@@ -276,6 +280,12 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Honeypot: silently absorb automated spam submissions.
+    if (formData.website.trim()) {
+      navigate('/merci');
+      return;
+    }
     
     if (!validateForm()) {
       trackEvent("form_error", {
@@ -332,12 +342,36 @@ export default function ContactForm() {
     });
     trackGenerateLead(formData.service);
 
+    const notificationPayload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      company: formData.company,
+      countryCode: formData.countryCode,
+      phone: formData.phone,
+      service: formData.service,
+      message: formData.message,
+    };
+    void fetch('/api/notify-lead', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(notificationPayload),
+      keepalive: true,
+    }).then((response) => {
+      trackEvent(response.ok ? 'lead_notification_sent' : 'lead_notification_error', {
+        notification_channel: 'email',
+      });
+    }).catch(() => {
+      trackEvent('lead_notification_error', { notification_channel: 'email' });
+    });
+
     toast({
       title: t('contactForm.success'),
       description: t('contactForm.successDesc'),
     });
 
-    // Reset form
+    window.sessionStorage.setItem('nexia_last_lead_service', formData.service || 'non_precise');
+
     setFormData({
       firstName: "",
       lastName: "",
@@ -346,10 +380,12 @@ export default function ContactForm() {
       countryCode: "+212",
       phone: "",
       service: "",
-      message: ""
+      message: "",
+      website: ""
     });
 
     setIsSubmitting(false);
+    navigate('/merci');
   };
 
   return (
@@ -377,6 +413,17 @@ export default function ContactForm() {
             }}
             className="space-y-6"
           >
+            <div className="sr-only" aria-hidden="true">
+              <Label htmlFor="website">Site web</Label>
+              <Input
+                id="website"
+                name="website"
+                value={formData.website}
+                onChange={handleChange}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+            </div>
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-2">
@@ -414,11 +461,14 @@ export default function ContactForm() {
             </div>
 
             {/* Contact Fields */}
+            <p className="text-sm text-gray-500 -mb-3">
+              {t('contactForm.contactMethodHint')}
+            </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-2">
                 <Label htmlFor="email" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                   <Mail className="w-4 h-4 text-nexia-secondary" />
-                  Email *
+                  Email
                 </Label>
                 <Input
                   id="email"
@@ -435,7 +485,7 @@ export default function ContactForm() {
               <div className="space-y-2">
                 <Label htmlFor="phone" className="text-sm font-semibold text-gray-700 flex items-center gap-2">
                   <Phone className="w-4 h-4 text-nexia-secondary" />
-                  Téléphone *
+                  Téléphone
                 </Label>
                 <div className="relative">
                   <div className={`flex h-12 border rounded-md transition-all duration-200 ${errors.phone ? 'border-red-500' : 'border-gray-300 hover:border-gray-400 focus-within:border-nexia-secondary'} focus-within:ring-2 focus-within:ring-nexia-secondary/20`}>

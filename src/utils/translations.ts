@@ -147,11 +147,13 @@ export const translations = {
     'contactForm.yourLastName': 'Votre nom',
     'contactForm.yourMessage': 'Votre message...',
     'contactForm.selectService': 'Sélectionnez un service',
+    'contactForm.contactMethodHint': 'Indiquez au moins un moyen de contact : email ou téléphone.',
     'contactForm.errors.firstName': 'Le prénom est requis',
     'contactForm.errors.lastName': 'Le nom est requis',
     'contactForm.errors.email': 'L\'email est requis',
     'contactForm.errors.emailInvalid': 'Format email invalide',
     'contactForm.errors.phone': 'Le téléphone est requis',
+    'contactForm.errors.contactMethod': 'Indiquez un email ou un numéro de téléphone',
     'contactForm.errors.message': 'Le message est requis',
     
     // Insights
@@ -542,11 +544,13 @@ export const translations = {
     'contactForm.yourLastName': 'Your last name',
     'contactForm.yourMessage': 'Your message...',
     'contactForm.selectService': 'Select a service',
+    'contactForm.contactMethodHint': 'Provide at least one contact method: email or phone.',
     'contactForm.errors.firstName': 'First name is required',
     'contactForm.errors.lastName': 'Last name is required',
     'contactForm.errors.email': 'Email is required',
     'contactForm.errors.emailInvalid': 'Invalid email format',
     'contactForm.errors.phone': 'Phone is required',
+    'contactForm.errors.contactMethod': 'Provide an email address or phone number',
     'contactForm.errors.message': 'Message is required',
     
     // Insights

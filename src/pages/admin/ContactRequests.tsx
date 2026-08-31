@@ -38,6 +38,17 @@ function parseAttribution(notes: string | null): LeadAttribution | null {
   }
 }
 
+function leadAge(createdAt: string) {
+  const hours = Math.max(0, Math.floor((Date.now() - new Date(createdAt).getTime()) / 3_600_000));
+  if (hours < 1) return "Moins d’une heure";
+  if (hours < 24) return `${hours} h`;
+  return `${Math.floor(hours / 24)} j`;
+}
+
+function isLeadOverdue(request: ContactRequest) {
+  return request.status === 'new' && Date.now() - new Date(request.created_at).getTime() > 4 * 3_600_000;
+}
+
 export default function ContactRequests() {
   const { toast } = useToast();
   const [requests, setRequests] = useState<ContactRequest[]>([]);
@@ -128,8 +139,9 @@ export default function ContactRequests() {
                         {status.label}
                       </span>
                     </div>
-                    <p className="text-xs text-gray-400 mt-1">
-                      {new Date(r.created_at).toLocaleString('fr-FR')}
+                    <p className={`text-xs mt-1 ${isLeadOverdue(r) ? 'font-semibold text-red-600' : 'text-gray-400'}`}>
+                      {new Date(r.created_at).toLocaleString('fr-FR')} · {leadAge(r.created_at)}
+                      {isLeadOverdue(r) ? ' · À traiter' : ''}
                     </p>
                   </li>
                 );
@@ -157,7 +169,9 @@ export default function ContactRequests() {
                 {selected.phone && (
                   <p className="flex items-center gap-2">
                     <Phone className="w-4 h-4 text-nexia-secondary" />
-                    {selected.country_code} {selected.phone}
+                    <a href={`tel:${selected.country_code ?? ''}${selected.phone.replace(/\s/g, '')}`} className="text-nexia-secondary hover:underline">
+                      {selected.country_code} {selected.phone}
+                    </a>
                   </p>
                 )}
                 {selected.company && (
@@ -187,6 +201,24 @@ export default function ContactRequests() {
                   {selectedAttribution.referrer && <p className="break-all">Référent : {selectedAttribution.referrer}</p>}
                 </div>
               )}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-5">
+                {selected.email && (
+                  <Button asChild size="sm" className="bg-nexia-primary">
+                    <a href={`mailto:${selected.email}?subject=Votre demande — Nexia Morocco`}>Répondre par email</a>
+                  </Button>
+                )}
+                {selected.phone && (
+                  <Button asChild size="sm" variant="outline">
+                    <a
+                      href={`https://wa.me/${`${selected.country_code ?? ''}${selected.phone}`.replace(/\D/g, '')}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Répondre sur WhatsApp
+                    </a>
+                  </Button>
+                )}
+              </div>
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold">Statut</p>
                 <div className="flex flex-wrap gap-2">

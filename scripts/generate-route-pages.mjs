@@ -40,6 +40,29 @@ function renderRoute(path, seo) {
   html = replaceMeta(html, 'name="twitter:url"', canonical);
   html = replaceMeta(html, 'name="twitter:title"', seo.title);
   html = replaceMeta(html, 'name="twitter:description"', seo.description);
+  if (seo.schemaType === "Service") {
+    const schema = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      name: seo.title.split(" | ")[0],
+      description: seo.description,
+      url: canonical,
+      areaServed: { "@type": "Country", name: "Maroc" },
+      provider: {
+        "@type": "AccountingService",
+        name: "Nexia Morocco",
+        url: siteUrl,
+        telephone: "+212522364377",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: "Beauséjour, Lot Amina, Rue Madiak Toudgha n°43, Hay Essalam",
+          addressLocality: "Casablanca",
+          addressCountry: "MA"
+        }
+      }
+    }).replaceAll("<", "\\u003c");
+    html = html.replace("</head>", `    <script type="application/ld+json">${schema}</script>\n  </head>`);
+  }
   return html;
 }
 

@@ -9,7 +9,8 @@ import { Mail, Phone, User, Building2, MessageSquare, Send, CheckCircle, Chevron
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 import { supabase } from "@/integrations/supabase/client";
 import { serializeLeadAttribution, trackEvent, trackGenerateLead } from "@/lib/analytics";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { useEffect } from "react";
 
 const countryCodes = [
   { code: "+1", country: "États-Unis/Canada", flag: "🇺🇸" },
@@ -224,6 +225,7 @@ export default function ContactForm() {
   const { t } = useSimpleLanguage();
   const { toast } = useToast();
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
   const hasStartedForm = useRef(false);
@@ -240,6 +242,14 @@ export default function ContactForm() {
   });
 
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
+
+  useEffect(() => {
+    const requestedService = searchParams.get("service") || "";
+    const allowedServices = new Set(["audit", "expertise-comptable", "conseil-fiscal", "conseil-juridique", "social-paie", "conseil-gestion", "due-diligence", "evaluation", "restructuration", "consolidation", "ifrs", "formation", "autre"]);
+    if (allowedServices.has(requestedService)) {
+      setFormData((current) => ({ ...current, service: requestedService }));
+    }
+  }, [searchParams]);
 
   const validateForm = () => {
     const newErrors: { [key: string]: string } = {};

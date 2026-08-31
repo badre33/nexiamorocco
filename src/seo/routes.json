@@ -11,6 +11,76 @@
     "robots": "index, follow",
     "type": "website"
   },
+  "/expertise-comptable-audit-casablanca": {
+    "title": "Expertise comptable et audit Casablanca | Nexia",
+    "description": "Comptabilité, audit, fiscalité et reporting à Casablanca. Échangez avec Nexia Morocco pour cadrer votre besoin et recevoir une proposition adaptée.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/commissaire-aux-comptes-maroc": {
+    "title": "Commissaire aux comptes au Maroc | Nexia Morocco",
+    "description": "Audit légal ou contractuel au Maroc : planification, contrôle interne et rapports. Contactez l'équipe Audit & Assurance de Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/conseil-fiscal-maroc": {
+    "title": "Conseil fiscal au Maroc pour entreprises | Nexia",
+    "description": "Sécurisez vos opérations, contrôles et flux internationaux avec les experts fiscalistes de Nexia Morocco. Diagnostic et accompagnement sur mesure.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/externalisation-paie-casablanca": {
+    "title": "Externalisation paie à Casablanca | Nexia Morocco",
+    "description": "Externalisez la paie, les déclarations sociales et le suivi administratif à Casablanca avec un processus contrôlé et un interlocuteur dédié.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/creer-societe-maroc": {
+    "title": "Créer une société au Maroc | Nexia Morocco",
+    "description": "Structure, formalités, fiscalité, comptabilité et paie : Nexia Morocco coordonne votre création d'entreprise ou implantation au Maroc.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/due-diligence-maroc": {
+    "title": "Due diligence financière et fiscale Maroc | Nexia",
+    "description": "Identifiez les risques et ajustements avant une acquisition ou une cession au Maroc. Due diligence financière, fiscale et sociale orientée décision.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/corporate-finance-maroc": {
+    "title": "Corporate finance et M&A au Maroc | Nexia Morocco",
+    "description": "Valorisation, business plan, financement et assistance M&A au Maroc. Des analyses financières robustes pour préparer vos décisions stratégiques.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/externalisation-comptable-maroc": {
+    "title": "Externalisation comptable au Maroc | Nexia Morocco",
+    "description": "Externalisez comptabilité, clôtures, fiscalité et reporting au Maroc avec une équipe locale, un calendrier maîtrisé et des contrôles documentés.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/implantation-filiale-maroc": {
+    "title": "Implantation et gestion de filiale au Maroc | Nexia",
+    "description": "Créez et pilotez votre filiale au Maroc : coordination locale, comptabilité, fiscalité, paie et reporting groupe avec Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/ifrs-consolidation-maroc": {
+    "title": "IFRS et consolidation au Maroc | Nexia Morocco",
+    "description": "Sécurisez consolidation, conversion IFRS, liasses groupe et clôtures au Maroc avec une méthode documentée et adaptée à votre calendrier.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
   "/a-propos": {
     "title": "À propos de Nexia Morocco | Casablanca & Tanger",
     "description": "Découvrez Nexia Morocco, cabinet membre du réseau Nexia International, ses équipes, sa gouvernance et son accompagnement au Maroc.",

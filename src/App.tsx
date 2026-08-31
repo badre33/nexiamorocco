@@ -20,6 +20,7 @@ import Insights from "./pages/Insights";
 import MedicamentArticle from "./pages/MedicamentArticle";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
+import ServiceLanding from "./pages/ServiceLanding";
 
 // Auth pages
 import Login from "./pages/auth/Login";
@@ -57,6 +58,7 @@ const App = () => (
               <Route path="/etudes-de-cas" element={<EtudesDeCas />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/merci" element={<ThankYou />} />
+              <Route path="/:slug" element={<ServiceLanding />} />
 
               {/* Auth */}
               <Route path="/auth/login" element={<Login />} />

@@ -7,6 +7,7 @@ type SeoEntry = {
   description: string;
   robots: string;
   type: string;
+  schemaType?: string;
 };
 
 const SITE_URL = "https://nexiamorocco.com";
@@ -41,7 +42,7 @@ export default function SeoManager() {
 
   useEffect(() => {
     const path = location.pathname.replace(/\/$/, "") || "/";
-    const seo = (routeSeo as Record<string, SeoEntry>)[path] ?? {
+    const seo: SeoEntry = (routeSeo as Record<string, SeoEntry>)[path] ?? {
       title: "Page introuvable | Nexia Morocco",
       description: "La page demandée est introuvable.",
       robots: "noindex, nofollow",
@@ -67,6 +68,23 @@ export default function SeoManager() {
     setLink("alternate", canonical, "fr");
     setLink("alternate", `${canonical}?lang=en`, "en");
     setLink("alternate", canonical, "x-default");
+    const schemaId = "route-structured-data";
+    document.getElementById(schemaId)?.remove();
+    if (seo.schemaType === "Service") {
+      const script = document.createElement("script");
+      script.id = schemaId;
+      script.type = "application/ld+json";
+      script.text = JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Service",
+        name: seo.title.split(" | ")[0],
+        description: seo.description,
+        url: canonical,
+        areaServed: { "@type": "Country", name: "Maroc" },
+        provider: { "@type": "AccountingService", name: "Nexia Morocco", url: SITE_URL, telephone: "+212522364377" },
+      });
+      document.head.appendChild(script);
+    }
   }, [location.pathname, location.search]);
 
   return null;

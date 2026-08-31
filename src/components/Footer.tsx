@@ -51,6 +51,15 @@ export default function Footer() {
             <a href="/externalisation-paie-casablanca" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
               Externalisation de la paie
             </a>
+            <a href="/conseil-fiscal-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Conseil fiscal au Maroc
+            </a>
+            <a href="/due-diligence-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Due diligence au Maroc
+            </a>
+            <a href="/implantation-filiale-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Implantation de filiale
+            </a>
             <a href="/creer-societe-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
               Créer une société au Maroc
             </a>

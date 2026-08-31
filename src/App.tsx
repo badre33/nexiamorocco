@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
+import SeoManager from "@/components/SeoManager";
 
 // Public pages
 import Index from "./pages/Index";
@@ -40,6 +41,7 @@ const App = () => (
           <Toaster />
           <Sonner />
           <BrowserRouter>
+            <SeoManager />
             <Routes>
               {/* Public site */}
               <Route path="/" element={<Index />} />

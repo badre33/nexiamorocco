@@ -8,11 +8,37 @@
 [build.environment]
   NODE_VERSION = "20"
 
-# SPA fallback — every unknown route returns index.html so React Router can handle it
+# Canonical host — all aliases permanently redirect to nexiamorocco.com.
+[[redirects]]
+  from = "https://nexiamorocco.ma/*"
+  to = "https://nexiamorocco.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.nexiamorocco.ma/*"
+  to = "https://nexiamorocco.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.nexiamorocco.com/*"
+  to = "https://nexiamorocco.com/:splat"
+  status = 301
+  force = true
+
+# Keep one public URL for the About page.
+[[redirects]]
+  from = "/about"
+  to = "/a-propos"
+  status = 301
+
+# Public and private React routes receive generated route-level HTML files.
+# Anything else is a real 404 instead of a soft-404 SPA response.
 [[redirects]]
   from = "/*"
-  to = "/index.html"
-  status = 200
+  to = "/404.html"
+  status = 404
 
 # Long-cache for hashed assets produced by Vite
 [[headers]]
@@ -28,3 +54,24 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
     Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Private routes are excluded at both HTTP and HTML levels.
+[[headers]]
+  for = "/auth/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/collaborateurs"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+
+[[headers]]
+  for = "/portail-client"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"

@@ -1,0 +1,98 @@
+{
+  "/": {
+    "title": "Nexia Morocco | Audit & Expertise comptable au Maroc",
+    "description": "Nexia Morocco accompagne les entreprises en audit, expertise comptable, fiscalité et conseil à Casablanca, Tanger et à l'international.",
+    "robots": "index, follow",
+    "type": "website"
+  },
+  "/domaines-expertise": {
+    "title": "Audit, fiscalité et conseil | Expertises Nexia Morocco",
+    "description": "Découvrez les expertises de Nexia Morocco : audit, expertise comptable, fiscalité, corporate finance, externalisation et conseil aux entreprises.",
+    "robots": "index, follow",
+    "type": "website"
+  },
+  "/a-propos": {
+    "title": "À propos de Nexia Morocco | Casablanca & Tanger",
+    "description": "Découvrez Nexia Morocco, cabinet membre du réseau Nexia International, ses équipes, sa gouvernance et son accompagnement au Maroc.",
+    "robots": "index, follow",
+    "type": "website"
+  },
+  "/equipe-dirigeante": {
+    "title": "Équipe dirigeante | Nexia Morocco",
+    "description": "Découvrez les associés et dirigeants de Nexia Morocco, leurs parcours et leurs expertises en audit, comptabilité, fiscalité et conseil.",
+    "robots": "index, follow",
+    "type": "profile"
+  },
+  "/perspectives-mondiales": {
+    "title": "Perspectives et analyses d'experts | Nexia Morocco",
+    "description": "Analyses et publications de Nexia Morocco sur la fiscalité, l'audit, la finance, la réglementation et les enjeux des entreprises.",
+    "robots": "index, follow",
+    "type": "website"
+  },
+  "/perspectives-mondiales/cout-medicaments-maroc": {
+    "title": "Coût des médicaments au Maroc | Analyse Nexia Morocco",
+    "description": "Analyse économique du prix des médicaments au Maroc, de la production locale, de la fiscalité et des réformes nécessaires au secteur.",
+    "robots": "index, follow",
+    "type": "article"
+  },
+  "/etudes-de-cas": {
+    "title": "Études de cas en audit, fiscalité et conseil | Nexia Morocco",
+    "description": "Découvrez comment Nexia accompagne les entreprises dans leurs opérations d'audit, de fiscalité, de due diligence et de conseil stratégique.",
+    "robots": "index, follow",
+    "type": "website"
+  },
+  "/contact": {
+    "title": "Contacter Nexia Morocco | Casablanca & Tanger",
+    "description": "Contactez les experts Nexia Morocco pour vos besoins en audit, expertise comptable, fiscalité et conseil à Casablanca ou Tanger.",
+    "robots": "index, follow",
+    "type": "website"
+  },
+  "/auth/login": {
+    "title": "Connexion | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/auth/signup": {
+    "title": "Créer un compte | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/auth/forgot": {
+    "title": "Réinitialiser le mot de passe | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/admin": {
+    "title": "Administration | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/admin/contacts": {
+    "title": "Demandes de contact | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/admin/linkedin": {
+    "title": "Gestion LinkedIn | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/collaborateurs": {
+    "title": "Espace collaborateurs | Nexia Morocco",
+    "description": "Espace sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  },
+  "/portail-client": {
+    "title": "Portail client | Nexia Morocco",
+    "description": "Espace client sécurisé Nexia Morocco.",
+    "robots": "noindex, nofollow",
+    "type": "website"
+  }
+}

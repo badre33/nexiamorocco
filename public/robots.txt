@@ -14,10 +14,10 @@ User-agent: *
 Allow: /
 
 # Routes privees (back-office, auth) - bloquees pour eviter l'indexation
-Disallow: /admin/
-Disallow: /auth/
+Disallow: /admin
+Disallow: /auth
 Disallow: /collaborateurs
-Disallow: /client/portail
+Disallow: /portail-client
 
 # Sitemap
 Sitemap: https://nexiamorocco.com/sitemap.xml

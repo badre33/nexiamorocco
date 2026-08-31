@@ -6,7 +6,7 @@ export default function OurCapabilities() {
   const { t } = useSimpleLanguage();
   
   return (
-    <section className="nexia-section-padding bg-white">
+    <section className="nexia-section-padding bg-white" data-tracking-section="capabilities">
       <div className="text-center max-w-3xl mx-auto px-4">
           <h2 className="text-3xl md:text-4xl font-bold text-nexia-primary mb-6 font-poppins">
             {t('ourCapabilities.title')}
@@ -15,7 +15,7 @@ export default function OurCapabilities() {
             {t('ourCapabilities.subtitle')}
           </p>
         <Button asChild className="nexia-button font-poppins font-medium px-8 md:px-10 text-base md:text-lg">
-          <Link to="/contact">{t('capabilities.button')}</Link>
+          <Link to="/contact" data-tracking-location="capabilities">{t('capabilities.button')}</Link>
         </Button>
       </div>
     </section>

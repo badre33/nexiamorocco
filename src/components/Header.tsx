@@ -56,6 +56,7 @@ export default function Header() {
             <SimpleLanguageToggle />
             <Link
               to="/contact"
+              data-tracking-location="header"
               className="inline-flex items-center px-5 py-2 rounded-full border border-white/40 text-white text-sm xl:text-base font-poppins font-medium hover:bg-white hover:text-nexia-primary transition-colors duration-200"
             >
               {t('nav.contactCta')}

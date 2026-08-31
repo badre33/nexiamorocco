@@ -3,11 +3,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, MessageSquare, Send, CheckCircle, ChevronDown } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 import { supabase } from "@/integrations/supabase/client";
+import { serializeLeadAttribution, trackEvent, trackGenerateLead } from "@/lib/analytics";
 
 const countryCodes = [
   { code: "+1", country: "États-Unis/Canada", flag: "🇺🇸" },
@@ -223,6 +224,7 @@ export default function ContactForm() {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showCountryDropdown, setShowCountryDropdown] = useState(false);
+  const hasStartedForm = useRef(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -264,6 +266,7 @@ export default function ContactForm() {
 
   const handleSelectChange = (value: string) => {
     setFormData(prev => ({ ...prev, service: value }));
+    trackEvent("service_interest", { service: value, interaction: "contact_form_selection" });
     if (errors.service) {
       setErrors(prev => ({ ...prev, service: "" }));
     }
@@ -274,9 +277,20 @@ export default function ContactForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    if (!validateForm()) return;
+    if (!validateForm()) {
+      trackEvent("form_error", {
+        form_name: "contact",
+        error_type: "validation",
+      });
+      return;
+    }
 
     setIsSubmitting(true);
+    trackEvent("form_submit", {
+      form_name: "contact",
+      status: "attempt",
+      service: formData.service || "non_precise",
+    });
 
     // Persist to Supabase `contact_requests`.
     // RLS allows anonymous INSERT but blocks SELECT for anyone outside the staff roles.
@@ -293,9 +307,15 @@ export default function ContactForm() {
         phone: formData.phone,
         service: formData.service || null,
         message: formData.message,
+        notes: serializeLeadAttribution(),
       });
 
     if (error) {
+      trackEvent("form_error", {
+        form_name: "contact",
+        error_type: "submission",
+        service: formData.service || "non_precise",
+      });
       toast({
         title: "Erreur",
         description: error.message,
@@ -304,6 +324,13 @@ export default function ContactForm() {
       setIsSubmitting(false);
       return;
     }
+
+    trackEvent("form_submit", {
+      form_name: "contact",
+      status: "success",
+      service: formData.service || "non_precise",
+    });
+    trackGenerateLead(formData.service);
 
     toast({
       title: t('contactForm.success'),
@@ -340,7 +367,16 @@ export default function ContactForm() {
 
         {/* Form */}
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 md:p-8 lg:p-12">
-          <form onSubmit={handleSubmit} className="space-y-6">
+          <form
+            onSubmit={handleSubmit}
+            onFocus={() => {
+              if (!hasStartedForm.current) {
+                hasStartedForm.current = true;
+                trackEvent("form_start", { form_name: "contact" });
+              }
+            }}
+            className="space-y-6"
+          >
             {/* Name Fields */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
               <div className="space-y-2">

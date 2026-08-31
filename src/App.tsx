@@ -7,6 +7,7 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { AuthProvider } from "@/contexts/AuthContext";
 import ProtectedRoute from "@/components/auth/ProtectedRoute";
 import SeoManager from "@/components/SeoManager";
+import ConversionTracker from "@/components/ConversionTracker";
 
 // Public pages
 import Index from "./pages/Index";
@@ -42,6 +43,7 @@ const App = () => (
           <Sonner />
           <BrowserRouter>
             <SeoManager />
+            <ConversionTracker />
             <Routes>
               {/* Public site */}
               <Route path="/" element={<Index />} />

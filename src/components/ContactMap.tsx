@@ -17,7 +17,7 @@ export default function ContactMap() {
   const [activeOffice, setActiveOffice] = useState<OfficeKey>("casablanca");
 
   return (
-    <section className="py-16 bg-muted/30">
+    <section className="py-16 bg-muted/30" data-tracking-section="contact_map">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="mb-8 text-center">
           <h2 className="text-3xl font-bold text-nexia-primary mb-4">{t('contactMap.title')}</h2>
@@ -85,13 +85,14 @@ export default function ContactMap() {
                 <p className="text-gray-600 text-sm mb-1">Rue Madiak Toudgha n°43, Hay Essalam</p>
                 <p className="text-gray-600 text-sm mb-3">Casablanca - Maroc</p>
                 <div className="flex flex-col gap-2">
-                  <a href="tel:+212522364377" className="text-nexia-secondary hover:text-nexia-primary font-medium">
+                  <a href="tel:+212522364377" data-tracking-location="contact_map_casablanca" className="text-nexia-secondary hover:text-nexia-primary font-medium">
                     05 22 36 43 77
                   </a>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+Beausejour+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca"
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-tracking-location="contact_map_casablanca"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -119,13 +120,14 @@ export default function ContactMap() {
                 <p className="text-gray-600 text-sm mb-1">Etage 1, N°16</p>
                 <p className="text-gray-600 text-sm mb-3">Tanger - Maroc</p>
                 <div className="flex flex-col gap-2">
-                  <a href="tel:+212531295075" className="text-nexia-secondary hover:text-nexia-primary font-medium">
+                  <a href="tel:+212531295075" data-tracking-location="contact_map_tanger" className="text-nexia-secondary hover:text-nexia-primary font-medium">
                     05 31 29 50 75
                   </a>
                   <a
                     href="https://www.google.com/maps/search/?api=1&query=Nexia+Fiducia+Lotissement+New+Center+Tanger"
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-tracking-location="contact_map_tanger"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
                   >
                     <svg className="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">

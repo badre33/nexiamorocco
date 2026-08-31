@@ -1,5 +1,4 @@
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
-import { trackWhatsAppClick } from "@/lib/analytics";
 
 export default function ContactHero() {
   const { t } = useSimpleLanguage();
@@ -26,10 +25,10 @@ export default function ContactHero() {
           {/* WhatsApp Contact */}
           <div className="inline-block">
             <a 
-              href="https://wa.me/212630300386"
+              href="https://wa.me/212699024526"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => trackWhatsAppClick("contact_hero")}
+              data-tracking-location="contact_hero"
               className="inline-flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-6 py-3 rounded-lg transition-colors duration-200 text-base sm:text-lg font-medium shadow-md"
             >
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">

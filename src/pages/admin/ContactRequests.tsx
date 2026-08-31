@@ -4,6 +4,7 @@ import { supabase } from '@/integrations/supabase/client';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, Building2, Calendar } from 'lucide-react';
+import type { LeadAttribution } from '@/lib/analytics';
 
 interface ContactRequest {
   id: string;
@@ -26,6 +27,16 @@ const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   replied: { label: 'Répondu', color: 'bg-green-100 text-green-700' },
   archived: { label: 'Archivé', color: 'bg-gray-100 text-gray-600' },
 };
+
+function parseAttribution(notes: string | null): LeadAttribution | null {
+  if (!notes) return null;
+  try {
+    const value = JSON.parse(notes) as LeadAttribution;
+    return value.type === 'lead_attribution_v1' ? value : null;
+  } catch {
+    return null;
+  }
+}
 
 export default function ContactRequests() {
   const { toast } = useToast();
@@ -78,6 +89,7 @@ export default function ContactRequests() {
   };
 
   const selected = requests.find((r) => r.id === selectedId);
+  const selectedAttribution = selected ? parseAttribution(selected.notes) : null;
 
   return (
     <BackOfficeLayout title="Demandes de contact">
@@ -166,6 +178,15 @@ export default function ContactRequests() {
               <div className="bg-gray-50 rounded-lg p-3 text-sm text-gray-800 whitespace-pre-wrap mb-4">
                 {selected.message}
               </div>
+              {selectedAttribution && (
+                <div className="bg-blue-50 border border-blue-100 rounded-lg p-3 text-xs text-blue-900 mb-4 space-y-1">
+                  <p className="font-semibold uppercase tracking-wide">Acquisition</p>
+                  <p>Source : <strong>{selectedAttribution.source}</strong> / {selectedAttribution.medium}</p>
+                  {selectedAttribution.campaign && <p>Campagne : {selectedAttribution.campaign}</p>}
+                  <p className="break-all">Page d’entrée : {selectedAttribution.landing_page || 'Non disponible'}</p>
+                  {selectedAttribution.referrer && <p className="break-all">Référent : {selectedAttribution.referrer}</p>}
+                </div>
+              )}
               <div className="space-y-2">
                 <p className="text-xs uppercase tracking-wider text-gray-500 font-semibold">Statut</p>
                 <div className="flex flex-wrap gap-2">

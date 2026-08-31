@@ -6,7 +6,7 @@ export default function HowCanWeHelp() {
   const { t } = useSimpleLanguage();
   
   return (
-    <section className="w-full bg-nexia-secondary min-h-[500px] lg:h-[700px]">
+    <section className="w-full bg-nexia-secondary min-h-[500px] lg:h-[700px]" data-tracking-section="how_can_we_help">
       <div className="h-full flex flex-col lg:flex-row gap-0">
         {/* Image Column */}
         <div className="flex-1 h-[300px] lg:h-full">
@@ -27,7 +27,7 @@ export default function HowCanWeHelp() {
               {t('help.description')}
             </p>
             <Button asChild className="nexia-button-primary font-poppins font-medium px-6 md:px-10">
-              <Link to="/contact">{t('help.button')}</Link>
+              <Link to="/contact" data-tracking-location="how_can_we_help">{t('help.button')}</Link>
             </Button>
             <p className="text-nexia-primary/90 font-poppins text-sm md:text-base pt-2">
               <a href="/expertise-comptable-audit-casablanca" className="underline hover:text-white transition-colors">

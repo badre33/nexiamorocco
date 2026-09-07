@@ -64,7 +64,7 @@ export default function ContactMap() {
             referrerPolicy="no-referrer-when-downgrade"
             title={
               activeOffice === "casablanca"
-                ? "Nexia Morocco, Cabinet d'expertise comptable, Beauséjour, Rue Madiak Toudgha n°43, Hay Essalam, Casablanca"
+                ? "Nexia Morocco, Beauséjour Lot Amina Rue Madiak Toudgha n°43 Hay Essalam Casablanca Maroc"
                 : "Nexia Morocco, Bureau de Tanger, Lotissement New Center"
             }
           />
@@ -81,15 +81,14 @@ export default function ContactMap() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-nexia-primary mb-2">{t('contactMap.office1')}</h3>
-                <p className="text-gray-600 text-sm mb-1">Beauséjour, Lot Amina</p>
-                <p className="text-gray-600 text-sm mb-1">Rue Madiak Toudgha n°43, Hay Essalam</p>
-                <p className="text-gray-600 text-sm mb-3">Casablanca - Maroc</p>
+                <p className="text-gray-600 text-sm mb-1">Beauséjour Lot Amina Rue Madiak Toudgha n°43</p>
+                <p className="text-gray-600 text-sm mb-3">Hay Essalam Casablanca Maroc</p>
                 <div className="flex flex-col gap-2">
                   <a href="tel:+212522364377" data-tracking-location="contact_map_casablanca" className="text-nexia-secondary hover:text-nexia-primary font-medium">
                     05 22 36 43 77
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+Beausejour+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca"
+                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+Beausejour+Lot+Amina+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca+Maroc"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca"

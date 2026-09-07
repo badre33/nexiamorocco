@@ -74,7 +74,7 @@ export default function Footer() {
           <address className="not-italic">
             <h3 className="text-lg font-semibold font-poppins mb-2">Cabinet d'expertise comptable, Casablanca</h3>
             <p className="text-white/90 font-poppins text-sm leading-relaxed">
-              Beauséjour, Lot Amina, Rue Madiak Toudgha n°43, Hay Essalam, Casablanca, Maroc<br />
+              Beauséjour Lot Amina Rue Madiak Toudgha n°43 Hay Essalam Casablanca Maroc<br />
               <a href="tel:+212522364377" className="hover:text-nexia-primary transition-colors">+212 5 22 36 43 77</a>
             </p>
           </address>

@@ -55,7 +55,7 @@ function renderRoute(path, seo) {
         telephone: "+212522364377",
         address: {
           "@type": "PostalAddress",
-          streetAddress: "Beauséjour, Lot Amina, Rue Madiak Toudgha n°43, Hay Essalam",
+          streetAddress: "Beauséjour Lot Amina Rue Madiak Toudgha n°43 Hay Essalam",
           addressLocality: "Casablanca",
           addressCountry: "MA"
         }

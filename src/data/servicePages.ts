@@ -4,6 +4,7 @@ export type ServicePage = {
   title: string;
   intro: string;
   serviceValue: string;
+  clientProfile?: string;
   situations: string[];
   services: string[];
   deliverables: string[];
@@ -123,6 +124,7 @@ export const servicePages: ServicePage[] = [
     title: "Implantation et gestion de filiale au Maroc",
     intro: "Disposez d'un point de coordination local pour créer, structurer et administrer votre filiale marocaine tout en répondant aux attentes du siège.",
     serviceValue: "conseil-gestion",
+    clientProfile: "entreprise-marocaine",
     situations: ["Groupe étranger entrant sur le marché marocain", "Filiale locale sans direction financière complète", "Besoin d'un reporting fiable entre le Maroc et le siège"],
     services: ["Cadrage de l'implantation", "Coordination juridique, fiscale et sociale", "Comptabilité et reporting groupe", "Paie et administration locale", "Appui aux fonctions finance"],
     deliverables: ["Feuille de route d'implantation", "Calendrier de conformité", "Reporting périodique", "Tableau des risques et décisions"],
@@ -142,6 +144,47 @@ export const servicePages: ServicePage[] = [
     process: [{ title: "Référentiel", text: "Identification des écarts, périmètres et exigences de reporting." }, { title: "Données", text: "Collecte, contrôle et rapprochement des informations sources." }, { title: "Retraitements", text: "Calcul, documentation et validation des ajustements." }, { title: "Clôture", text: "Production des livrables et suivi des points d'amélioration." }],
     faq: [{ question: "Pouvez-vous accompagner une première adoption IFRS ?", answer: "Oui, depuis le diagnostic des écarts jusqu'à la documentation et aux données comparatives nécessaires." }, { question: "Intervenez-vous sur une liasse groupe existante ?", answer: "Oui. Nous pouvons assister la filiale dans la production, le contrôle et la justification de sa liasse." }, { question: "Pouvez-vous former les équipes ?", answer: "La mission peut inclure des ateliers ciblés sur les normes et traitements pertinents pour l'entreprise." }],
     related: ["commissaire-aux-comptes-maroc", "externalisation-comptable-maroc", "corporate-finance-maroc"]
+  },
+  {
+    slug: "accompagnement-entreprises-maroc",
+    eyebrow: "Entreprises au Maroc",
+    title: "Accompagnement des entreprises au Maroc",
+    intro: "Un interlocuteur pluridisciplinaire pour sécuriser vos obligations, structurer votre fonction finance et accompagner chaque étape de votre croissance au Maroc.",
+    serviceValue: "conseil-gestion",
+    situations: ["Entreprise marocaine en croissance ou en transformation", "Direction financière souhaitant fiabiliser ses clôtures et son pilotage", "Besoin de coordonner audit, fiscalité, comptabilité, paie et conseil"],
+    services: ["Diagnostic comptable, fiscal et organisationnel", "Audit légal et contractuel", "Externalisation comptable et paie", "Reporting, consolidation et IFRS", "Conseil fiscal, financier et contrôle interne"],
+    deliverables: ["Feuille de route priorisée", "Calendrier de conformité", "Reporting de direction", "Recommandations et responsabilités formalisées"],
+    process: [{ title: "Enjeux", text: "Nous identifions vos priorités, obligations et échéances de décision." }, { title: "Diagnostic", text: "Nous évaluons les processus, données et risques qui conditionnent la mission." }, { title: "Plan d’action", text: "Nous définissons les expertises, livrables et responsables nécessaires." }, { title: "Pilotage", text: "Un interlocuteur coordonne les travaux et les restitutions avec votre direction." }],
+    faq: [{ question: "Pouvez-vous regrouper plusieurs expertises dans une même mission ?", answer: "Oui. Le périmètre peut coordonner comptabilité, fiscalité, paie, audit et conseil autour d'un calendrier commun." }, { question: "Intervenez-vous auprès de PME et de groupes ?", answer: "Oui. L'équipe et les livrables sont dimensionnés selon la taille, l'organisation et les enjeux de l'entreprise." }, { question: "Comment démarre l'accompagnement ?", answer: "Un échange de qualification permet d'identifier les urgences, les interlocuteurs et les informations nécessaires au diagnostic." }],
+    related: ["expertise-comptable-audit-casablanca", "conseil-fiscal-maroc", "externalisation-comptable-maroc"]
+  },
+  {
+    slug: "s-implanter-au-maroc",
+    eyebrow: "Implantation internationale",
+    title: "S’implanter et développer une activité au Maroc",
+    intro: "Nexia Morocco accompagne les groupes, entrepreneurs et investisseurs étrangers depuis le choix de la structure jusqu'au fonctionnement quotidien de leur activité marocaine.",
+    serviceValue: "conseil-juridique",
+    clientProfile: "groupe-etranger",
+    situations: ["Création d'une filiale ou d'une succursale au Maroc", "Reprise d'une structure existante ou démarrage d'une activité locale", "Besoin d'un relais entre les équipes marocaines et le siège étranger"],
+    services: ["Choix et mise en place de la structure", "Coordination juridique, fiscale et sociale", "Comptabilité, paie et obligations locales", "Reporting groupe et assistance IFRS", "Appui aux dirigeants et fonctions support"],
+    deliverables: ["Feuille de route d'implantation", "Comparatif des options de structure", "Calendrier des formalités et obligations", "Organisation du reporting vers le siège"],
+    process: [{ title: "Business model", text: "Nous clarifions l'activité, les flux, l'actionnariat et les objectifs au Maroc." }, { title: "Structure", text: "Nous cadrons les options juridiques, fiscales, sociales et opérationnelles." }, { title: "Installation", text: "Nous coordonnons les formalités et la mise en place des fonctions locales." }, { title: "Exploitation", text: "Nous assurons ou supervisons comptabilité, fiscalité, paie et reporting." }],
+    faq: [{ question: "Can you work with an overseas head office in English?", answer: "Yes. Meetings, project coordination and recurring reporting can be delivered in English for international management teams." }, { question: "Faut-il créer une filiale ou une succursale ?", answer: "La réponse dépend du modèle opérationnel, de la gouvernance, des flux et de la fiscalité. Les options doivent être comparées avant les formalités." }, { question: "Pouvez-vous gérer la comptabilité et la paie après la création ?", answer: "Oui. L'accompagnement peut se poursuivre avec une fonction support locale externalisée et un reporting adapté au siège." }],
+    related: ["creer-societe-maroc", "implantation-filiale-maroc", "externalisation-comptable-maroc"]
+  },
+  {
+    slug: "investir-acquerir-entreprise-maroc",
+    eyebrow: "Investissement & transactions",
+    title: "Investir ou acquérir une entreprise au Maroc",
+    intro: "Évaluez les risques, la performance et les implications fiscales d'une opération au Maroc avec des analyses conçues pour éclairer la décision et la négociation.",
+    serviceValue: "due-diligence",
+    clientProfile: "investisseur",
+    situations: ["Acquisition ou prise de participation dans une société marocaine", "Joint-venture, financement ou partenariat stratégique", "Cession d'une entreprise et préparation de la documentation vendeur"],
+    services: ["Due diligence financière, fiscale et sociale", "Analyse de la qualité des résultats et de la dette", "Valorisation et modélisation financière", "Fiscalité de la transaction", "Assistance à la négociation et au plan post-acquisition"],
+    deliverables: ["Rapport exécutif orienté décision", "Cartographie des risques", "Ajustements de valeur et points de négociation", "Plan d'actions post-transaction"],
+    process: [{ title: "Thèse", text: "Nous identifions les objectifs de l'opération et les risques déterminants." }, { title: "Périmètre", text: "Nous définissons les travaux, seuils, données et délais de la revue." }, { title: "Analyse", text: "Nos équipes examinent la performance, les risques et les hypothèses de valeur." }, { title: "Décision", text: "Nous restituons les constats et accompagnons les arbitrages de la transaction." }],
+    faq: [{ question: "Intervenez-vous pour des investisseurs étrangers ?", answer: "Oui. Les travaux peuvent être menés en coordination avec le siège, les conseils internationaux et les autres intervenants de la transaction." }, { question: "La due diligence couvre-t-elle la fiscalité marocaine ?", answer: "Oui, si elle est incluse dans le périmètre. Les risques fiscaux et sociaux sont alors analysés avec leurs impacts potentiels." }, { question: "Pouvez-vous intervenir côté vendeur ?", answer: "Oui. Nous pouvons préparer la data room, analyser les points sensibles et produire une vendor assistance adaptée au calendrier de cession." }],
+    related: ["due-diligence-maroc", "corporate-finance-maroc", "conseil-fiscal-maroc"]
   }
 ];
 

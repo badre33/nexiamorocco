@@ -7,6 +7,7 @@ import TestimonialsSection from "@/components/TestimonialsSection";
 import ServicesInsights from "@/components/ServicesInsights";
 import HowCanWeHelp from "@/components/HowCanWeHelp";
 import Footer from "@/components/Footer";
+import AcquisitionPaths from "@/components/AcquisitionPaths";
 
 const Services = () => {
   return (
@@ -15,6 +16,7 @@ const Services = () => {
       <main>
         <ServicesHero />
         <OurCapabilities />
+        <AcquisitionPaths />
         <OurServicesMenu />
         <CaseStudySection />
         {/* <TestimonialsSection /> */}

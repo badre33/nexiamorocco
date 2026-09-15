@@ -81,6 +81,27 @@
     "type": "website",
     "schemaType": "Service"
   },
+  "/accompagnement-entreprises-maroc": {
+    "title": "Accompagnement des entreprises au Maroc | Nexia",
+    "description": "Audit, fiscalité, comptabilité, paie et pilotage : Nexia Morocco accompagne les entreprises marocaines dans leur croissance et leur conformité.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/s-implanter-au-maroc": {
+    "title": "S’implanter au Maroc | Accompagnement entreprise",
+    "description": "Créez et gérez votre activité au Maroc avec un partenaire local : structure, fiscalité, comptabilité, paie, conformité et reporting groupe.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/investir-acquerir-entreprise-maroc": {
+    "title": "Investir ou acquérir au Maroc | Nexia Morocco",
+    "description": "Due diligence, fiscalité, valorisation et conseil transactionnel pour sécuriser une acquisition, une participation ou une cession au Maroc.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
   "/a-propos": {
     "title": "À propos de Nexia Morocco | Casablanca & Tanger",
     "description": "Découvrez Nexia Morocco, cabinet membre du réseau Nexia International, ses équipes, sa gouvernance et son accompagnement au Maroc.",

@@ -39,6 +39,15 @@ export default function Footer() {
         <div className="mb-10 border-t border-white/20 pt-8">
           <h3 className="text-lg font-semibold font-poppins mb-3">Nos expertises</h3>
           <nav className="flex flex-wrap gap-x-6 gap-y-2">
+            <a href="/accompagnement-entreprises-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Accompagnement des entreprises au Maroc
+            </a>
+            <a href="/s-implanter-au-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              S’implanter au Maroc
+            </a>
+            <a href="/investir-acquerir-entreprise-maroc" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
+              Investir ou acquérir au Maroc
+            </a>
             <a href="/expertise-comptable-audit-casablanca" className="text-white/90 hover:text-nexia-primary transition-colors font-poppins">
               Expertise comptable &amp; audit à Casablanca
             </a>

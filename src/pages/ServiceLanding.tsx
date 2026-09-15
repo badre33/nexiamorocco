@@ -11,7 +11,9 @@ export default function ServiceLanding() {
   const page = servicePageBySlug[slug];
   if (!page) return <NotFound />;
 
-  const contactUrl = `/contact?service=${encodeURIComponent(page.serviceValue)}&source=${encodeURIComponent(page.slug)}`;
+  const contactParams = new URLSearchParams({ service: page.serviceValue, source: page.slug });
+  if (page.clientProfile) contactParams.set("profile", page.clientProfile);
+  const contactUrl = `/contact?${contactParams.toString()}`;
 
   return (
     <div className="min-h-screen bg-white">

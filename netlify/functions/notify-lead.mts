@@ -6,6 +6,8 @@ type LeadPayload = {
   countryCode?: string;
   phone?: string;
   service?: string;
+  clientProfile?: string;
+  projectStage?: string;
   message: string;
 };
 
@@ -69,6 +71,8 @@ export default async (request: Request) => {
     countryCode: text(input.countryCode, 8),
     phone: text(input.phone, 40),
     service: text(input.service, 80),
+    clientProfile: text(input.clientProfile, 80),
+    projectStage: text(input.projectStage, 80),
     message: text(input.message, 4000),
   };
 
@@ -96,6 +100,8 @@ export default async (request: Request) => {
       <p><strong>Email :</strong> ${escapeHtml(lead.email || "Non renseigné")}</p>
       <p><strong>Téléphone :</strong> ${escapeHtml(`${lead.countryCode || ""} ${lead.phone || "Non renseigné"}`.trim())}</p>
       <p><strong>Service :</strong> ${escapeHtml(lead.service || "À qualifier")}</p>
+      <p><strong>Profil :</strong> ${escapeHtml(lead.clientProfile || "À qualifier")}</p>
+      <p><strong>Avancement :</strong> ${escapeHtml(lead.projectStage || "À qualifier")}</p>
       <p><strong>Message :</strong></p>
       <p>${escapeHtml(lead.message).replaceAll("\n", "<br>")}</p>
       <p><a href="https://nexiamorocco.com/admin/contacts/">Ouvrir le back-office</a></p>

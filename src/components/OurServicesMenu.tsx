@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Target,
@@ -58,6 +59,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.audit.badge',
       descriptionKey: 'expertise.audit.description',
       serviceKeys: ['expertise.audit.service1','expertise.audit.service2','expertise.audit.service3','expertise.audit.service4','expertise.audit.service5'],
+      landingPath: '/commissaire-aux-comptes-maroc',
     },
     {
       id: "comptable",
@@ -67,6 +69,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.comptable.badge',
       descriptionKey: 'expertise.comptable.description',
       serviceKeys: ['expertise.comptable.service1','expertise.comptable.service2','expertise.comptable.service3','expertise.comptable.service4','expertise.comptable.service5'],
+      landingPath: '/expertise-comptable-audit-casablanca',
     },
     {
       id: "fiscalite",
@@ -76,6 +79,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.fiscalite.badge',
       descriptionKey: 'expertise.fiscalite.description',
       serviceKeys: ['expertise.fiscalite.service1','expertise.fiscalite.service2','expertise.fiscalite.service3','expertise.fiscalite.service4','expertise.fiscalite.service5'],
+      landingPath: '/conseil-fiscal-maroc',
     },
     {
       id: "corporate",
@@ -85,6 +89,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.corporate.badge',
       descriptionKey: 'expertise.corporate.description',
       serviceKeys: ['expertise.corporate.service1','expertise.corporate.service2','expertise.corporate.service3','expertise.corporate.service4','expertise.corporate.service5'],
+      landingPath: '/corporate-finance-maroc',
     },
     {
       id: "outsourcing",
@@ -94,6 +99,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.outsourcing.badge',
       descriptionKey: 'expertise.outsourcing.description',
       serviceKeys: ['expertise.outsourcing.service1','expertise.outsourcing.service2','expertise.outsourcing.service3','expertise.outsourcing.service4','expertise.outsourcing.service5'],
+      landingPath: '/externalisation-comptable-maroc',
     },
     {
       id: "digital",
@@ -103,6 +109,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.digital.badge',
       descriptionKey: 'expertise.digital.description',
       serviceKeys: ['expertise.digital.service1','expertise.digital.service2','expertise.digital.service3','expertise.digital.service4','expertise.digital.service5'],
+      landingPath: '/contact?service=autre&profile=entreprise-marocaine',
     },
     {
       id: "international",
@@ -112,6 +119,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.international.badge',
       descriptionKey: 'expertise.international.description',
       serviceKeys: ['expertise.international.service1','expertise.international.service2','expertise.international.service3','expertise.international.service4','expertise.international.service5'],
+      landingPath: '/s-implanter-au-maroc',
     },
     {
       id: "juridique",
@@ -121,6 +129,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.juridique.badge',
       descriptionKey: 'expertise.juridique.description',
       serviceKeys: ['expertise.juridique.service1','expertise.juridique.service2','expertise.juridique.service3','expertise.juridique.service4','expertise.juridique.service5'],
+      landingPath: '/creer-societe-maroc',
     },
     {
       id: "strategie",
@@ -130,6 +139,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.strategie.badge',
       descriptionKey: 'expertise.strategie.description',
       serviceKeys: ['expertise.strategie.service1','expertise.strategie.service2','expertise.strategie.service3','expertise.strategie.service4','expertise.strategie.service5'],
+      landingPath: '/investir-acquerir-entreprise-maroc',
     },
     {
       id: "talent-mobility",
@@ -139,6 +149,7 @@ const getExpertiseDomains = (t: (key: string) => string) => {
       badgeKey: 'expertise.talent.badge',
       descriptionKey: 'expertise.talent.description',
       serviceKeys: ['expertise.talent.service1','expertise.talent.service2','expertise.talent.service3','expertise.talent.service4','expertise.talent.service5','expertise.talent.service6'],
+      landingPath: '/externalisation-paie-casablanca',
     },
   ];
   return raw.map((d, i) => ({
@@ -390,6 +401,15 @@ export default function OurServicesMenu() {
                         ))}
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-6 flex justify-end">
+                    <Link
+                      to={domain.landingPath}
+                      className="inline-flex items-center rounded-md bg-nexia-primary px-6 py-3 font-semibold text-white transition hover:bg-nexia-secondary hover:text-nexia-primary"
+                      data-tracking-location={`expertise_${domain.id}`}
+                    >
+                      Découvrir cette expertise
+                    </Link>
                   </div>
                 </div>
               </TabsContent>

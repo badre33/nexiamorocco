@@ -129,8 +129,8 @@ export function trackGenerateLead(service: string): void {
   });
 }
 
-export function serializeLeadAttribution(): string {
-  return JSON.stringify(getAttribution());
+export function serializeLeadAttribution(qualification: Record<string, string> = {}): string {
+  return JSON.stringify({ ...getAttribution(), qualification });
 }
 
 export {};

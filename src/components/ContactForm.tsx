@@ -237,6 +237,8 @@ export default function ContactForm() {
     countryCode: "+212",
     phone: "",
     service: "",
+    clientProfile: "",
+    projectStage: "",
     message: "",
     website: ""
   });
@@ -245,9 +247,14 @@ export default function ContactForm() {
 
   useEffect(() => {
     const requestedService = searchParams.get("service") || "";
+    const requestedProfile = searchParams.get("profile") || "";
     const allowedServices = new Set(["audit", "expertise-comptable", "conseil-fiscal", "conseil-juridique", "social-paie", "conseil-gestion", "due-diligence", "evaluation", "restructuration", "consolidation", "ifrs", "formation", "autre"]);
     if (allowedServices.has(requestedService)) {
       setFormData((current) => ({ ...current, service: requestedService }));
+    }
+    const allowedProfiles = new Set(["entreprise-marocaine", "groupe-etranger", "investisseur", "autre"]);
+    if (allowedProfiles.has(requestedProfile)) {
+      setFormData((current) => ({ ...current, clientProfile: requestedProfile }));
     }
   }, [searchParams]);
 
@@ -327,7 +334,10 @@ export default function ContactForm() {
         phone: formData.phone,
         service: formData.service || null,
         message: formData.message,
-        notes: serializeLeadAttribution(),
+        notes: serializeLeadAttribution({
+          client_profile: formData.clientProfile || "non_precise",
+          project_stage: formData.projectStage || "non_precise",
+        }),
       });
 
     if (error) {
@@ -360,6 +370,8 @@ export default function ContactForm() {
       countryCode: formData.countryCode,
       phone: formData.phone,
       service: formData.service,
+      clientProfile: formData.clientProfile,
+      projectStage: formData.projectStage,
       message: formData.message,
     };
     void fetch('/api/notify-lead', {
@@ -390,6 +402,8 @@ export default function ContactForm() {
       countryCode: "+212",
       phone: "",
       service: "",
+      clientProfile: "",
+      projectStage: "",
       message: "",
       website: ""
     });
@@ -593,6 +607,38 @@ export default function ContactForm() {
                     <SelectItem value="ifrs" className="hover:bg-nexia-secondary/10">Normes IFRS</SelectItem>
                     <SelectItem value="formation" className="hover:bg-nexia-secondary/10">Formation</SelectItem>
                     <SelectItem value="autre" className="hover:bg-nexia-secondary/10">Autre</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+            </div>
+
+            {/* Lead qualification */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+              <div className="space-y-2">
+                <Label className="text-sm font-semibold text-gray-700">Votre situation</Label>
+                <Select onValueChange={(value) => setFormData((current) => ({ ...current, clientProfile: value }))} value={formData.clientProfile}>
+                  <SelectTrigger className="h-12 border-gray-300 focus:border-nexia-secondary">
+                    <SelectValue placeholder="Sélectionnez votre profil" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border border-gray-200 shadow-xl">
+                    <SelectItem value="entreprise-marocaine">Entreprise implantée au Maroc</SelectItem>
+                    <SelectItem value="groupe-etranger">Groupe étranger / projet d’implantation</SelectItem>
+                    <SelectItem value="investisseur">Investisseur, acquéreur ou cédant</SelectItem>
+                    <SelectItem value="autre">Autre situation</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+              <div className="space-y-2">
+                <Label className="text-sm font-semibold text-gray-700">Avancement du projet</Label>
+                <Select onValueChange={(value) => setFormData((current) => ({ ...current, projectStage: value }))} value={formData.projectStage}>
+                  <SelectTrigger className="h-12 border-gray-300 focus:border-nexia-secondary">
+                    <SelectValue placeholder="À quelle étape êtes-vous ?" />
+                  </SelectTrigger>
+                  <SelectContent className="bg-white border border-gray-200 shadow-xl">
+                    <SelectItem value="exploration">Réflexion / exploration</SelectItem>
+                    <SelectItem value="cadrage">Projet en cours de cadrage</SelectItem>
+                    <SelectItem value="urgent">Besoin immédiat ou échéance proche</SelectItem>
+                    <SelectItem value="recurrent">Accompagnement récurrent</SelectItem>
                   </SelectContent>
                 </Select>
               </div>

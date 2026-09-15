@@ -16,9 +16,10 @@ const escapeHtml = (value) => value
 
 function replaceMeta(html, selector, value) {
   const escaped = escapeHtml(value);
-  const pattern = new RegExp(`(<meta\\s+${selector}=["'][^"']+["']\\s+content=["'])[^"']*(["']\\s*\\/?>)`, "i");
+  const escapedSelector = selector.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const pattern = new RegExp(`<meta\\s+[^>]*${escapedSelector}[^>]*>`, "i");
   return pattern.test(html)
-    ? html.replace(pattern, `$1${escaped}$2`)
+    ? html.replace(pattern, `<meta ${selector} content="${escaped}" />`)
     : html.replace("</head>", `    <meta ${selector} content="${escaped}" />\n  </head>`);
 }
 

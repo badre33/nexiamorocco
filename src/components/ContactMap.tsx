@@ -5,7 +5,7 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 // (q = nom de l'établissement + adresse => affiche le pin de la fiche, pas une simple coordonnée)
 const OFFICE_MAPS = {
   casablanca:
-    "https://www.google.com/maps?q=Nexia+Morocco,+Beausejour,+Rue+Madiak+Toudgha+43,+Hay+Essalam,+Casablanca&z=16&output=embed",
+    "https://www.google.com/maps?q=Nexia+Morocco+Beausejour+Lot+Amina+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca+Maroc&z=16&output=embed",
   tanger:
     "https://www.google.com/maps?q=Nexia+Fiducia,+Lotissement+New+Center,+Tanger&z=16&output=embed",
 } as const;
@@ -99,6 +99,15 @@ export default function ContactMap() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     {t('contactMap.viewOnMaps')}
+                  </a>
+                  <a
+                    href="https://www.waze.com/ul?ll=33.5720521%2C-7.6589182&navigate=yes"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    data-tracking-location="contact_map_casablanca_waze"
+                    className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
+                  >
+                    Itinéraire avec Waze
                   </a>
                 </div>
               </div>

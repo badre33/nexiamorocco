@@ -59,6 +59,11 @@ function renderRoute(path, seo) {
           streetAddress: "Beauséjour Lot Amina Rue Madiak Toudgha n°43 Hay Essalam",
           addressLocality: "Casablanca",
           addressCountry: "MA"
+        },
+        geo: {
+          "@type": "GeoCoordinates",
+          latitude: 33.5720521,
+          longitude: -7.6589182
         }
       }
     }).replaceAll("<", "\\u003c");

@@ -65,8 +65,8 @@ export default function SeoManager() {
     setMeta('meta[name="twitter:description"]', "name", "twitter:description", seo.description);
     setMeta('meta[name="twitter:image"]', "name", "twitter:image", SOCIAL_IMAGE);
     setLink("canonical", canonical);
+    document.head.querySelector('link[rel="alternate"][hreflang="en"]')?.remove();
     setLink("alternate", canonical, "fr");
-    setLink("alternate", `${canonical}?lang=en`, "en");
     setLink("alternate", canonical, "x-default");
     const schemaId = "route-structured-data";
     document.getElementById(schemaId)?.remove();

@@ -139,7 +139,6 @@ function renderRoute(path, seo) {
     .replace(/<title>[^<]*<\/title>/i, `<title>${escapeHtml(seo.title)}</title>`)
     .replace(/<link\s+rel=["']canonical["'][^>]*>/i, `<link rel="canonical" href="${canonical}" />`)
     .replace(/<link\s+rel=["']alternate["'][^>]*hreflang=["']fr["'][^>]*>/i, `<link rel="alternate" hreflang="fr" href="${canonical}" />`)
-    .replace(/<link\s+rel=["']alternate["'][^>]*hreflang=["']en["'][^>]*>/i, `<link rel="alternate" hreflang="en" href="${canonical}?lang=en" />`)
     .replace(/<link\s+rel=["']alternate["'][^>]*hreflang=["']x-default["'][^>]*>/i, `<link rel="alternate" hreflang="x-default" href="${canonical}" />`);
 
   html = replaceMeta(html, 'name="description"', seo.description);

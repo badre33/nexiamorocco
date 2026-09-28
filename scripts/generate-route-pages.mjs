@@ -101,6 +101,38 @@ function replaceMeta(html, selector, value) {
     : html.replace("</head>", `    <meta ${selector} content="${escaped}" />\n  </head>`);
 }
 
+function renderSitemap() {
+  const standaloneRoutes = ["/honoraires-expert-comptable-casablanca"];
+  const indexablePaths = [
+    ...Object.entries(routes)
+      .filter(([, seo]) => seo.robots.startsWith("index"))
+      .map(([path]) => path),
+    ...standaloneRoutes
+  ];
+  const uniquePaths = [...new Set(indexablePaths)].sort((a, b) => {
+    if (a === "/") return -1;
+    if (b === "/") return 1;
+    return a.localeCompare(b, "fr");
+  });
+  const priorityFor = (path) => {
+    if (path === "/") return "1.0";
+    if (servicePageBySlug.has(path.slice(1)) || path === "/honoraires-expert-comptable-casablanca") return "0.9";
+    if (["/domaines-expertise", "/a-propos", "/equipe-dirigeante"].includes(path)) return "0.8";
+    if (path.startsWith("/perspectives-mondiales") || path === "/etudes-de-cas") return "0.7";
+    return "0.6";
+  };
+  const frequencyFor = (path) => {
+    if (path === "/" || path === "/perspectives-mondiales") return "weekly";
+    if (path === "/contact") return "yearly";
+    return "monthly";
+  };
+  const entries = uniquePaths.map((path) => {
+    const loc = path === "/" ? `${siteUrl}/` : `${siteUrl}${path}/`;
+    return `  <url>\n    <loc>${loc}</loc>\n    <changefreq>${frequencyFor(path)}</changefreq>\n    <priority>${priorityFor(path)}</priority>\n  </url>`;
+  }).join("\n");
+  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${entries}\n</urlset>\n`;
+}
+
 function renderRoute(path, seo) {
   const canonical = path === "/" ? `${siteUrl}/` : `${siteUrl}${path}/`;
   let html = template
@@ -195,6 +227,7 @@ const notFound = renderRoute("/404", {
   type: "website",
 });
 await writeFile(join(distRoot, "404.html"), notFound);
+await writeFile(join(distRoot, "sitemap.xml"), renderSitemap());
 
 for (const [path, seo] of Object.entries(routes)) {
   if (!seo.robots.startsWith("index")) continue;
@@ -205,4 +238,4 @@ for (const [path, seo] of Object.entries(routes)) {
   }
 }
 
-console.log(`Generated ${Object.keys(routes).length} route pages and 404.html with crawlable HTML fallbacks`);
+console.log(`Generated ${Object.keys(routes).length} route pages, sitemap.xml and 404.html with crawlable HTML fallbacks`);

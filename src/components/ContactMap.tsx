@@ -100,8 +100,7 @@ export default function ContactMap() {
                     {t('contactMap.viewOnMaps')}
                   </a>
                   <a
-              href="https://www.waze.com/ul?ll=33.567259%2C-7.6498196&navigate=yes"                    target="_blank"
-                    rel="noopener noreferrer"
+              href="https://www.waze.com/ul?ll=33.569477%2C-7.655947&navigate=yes"                    rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca_waze"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
                   >

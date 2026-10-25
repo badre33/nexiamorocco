@@ -87,8 +87,7 @@ export default function ContactMap() {
                     05 22 36 43 77
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+Beausejour+Lot+Amina+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca+Maroc"
-                    target="_blank"
+              href="https://www.google.com/maps?q=33.569462,-7.655947"                    target="_blank"
                     rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"

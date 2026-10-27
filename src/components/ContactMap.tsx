@@ -5,7 +5,7 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 // (q = nom de l'établissement + adresse => affiche le pin de la fiche, pas une simple coordonnée)
 const OFFICE_MAPS = {
   casablanca:
-    "https://www.google.com/maps?q=Nexia+Morocco+Beausejour+Lot+Amina+Rue+Madiak+Toudgha+43+Hay+Essalam+Casablanca+Maroc&z=16&output=embed",
+    "https://www.google.com/maps?q=8+Rue+Ali+Abderrazak+Casablanca+20250+Maroc&z=16&output=embed",
   tanger:
     "https://www.google.com/maps?q=Nexia+Fiducia,+Lotissement+New+Center,+Tanger&z=16&output=embed",
 } as const;
@@ -63,7 +63,7 @@ export default function ContactMap() {
             referrerPolicy="no-referrer-when-downgrade"
             title={
               activeOffice === "casablanca"
-                ? "Nexia Morocco, Beauséjour Lot Amina Rue Madiak Toudgha n°43 Hay Essalam Casablanca Maroc"
+                ? "Nexia Morocco, 8 Rue Ali Abderrazak, Quartier Racine, 20100 Casablanca"
                 : "Nexia Morocco, Bureau de Tanger, Lotissement New Center"
             }
           />
@@ -80,14 +80,14 @@ export default function ContactMap() {
               </div>
               <div>
                 <h3 className="text-lg font-bold text-nexia-primary mb-2">{t('contactMap.office1')}</h3>
-                <p className="text-gray-600 text-sm mb-1">Beauséjour Lot Amina Rue Madiak Toudgha n°43</p>
-                <p className="text-gray-600 text-sm mb-3">Hay Essalam Casablanca Maroc</p>
+                <p className="text-gray-600 text-sm mb-1">8, Rue Ali Abderrazak</p>
+                <p className="text-gray-600 text-sm mb-3">Quartier Racine, 20100 Casablanca</p>
                 <div className="flex flex-col gap-2">
                   <a href="tel:+212522364377" data-tracking-location="contact_map_casablanca" className="text-nexia-secondary hover:text-nexia-primary font-medium">
                     05 22 36 43 77
                   </a>
                   <a
-              href="https://www.google.com/maps?q=33.569462,-7.655947"                    target="_blank"
+              href="https://www.google.com/maps?q=33.5862146,-7.6444273"                    target="_blank"
                     rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
@@ -99,7 +99,7 @@ export default function ContactMap() {
                     {t('contactMap.viewOnMaps')}
                   </a>
                   <a
-              href="https://www.waze.com/ul?ll=33.569477%2C-7.655947&navigate=yes"                    rel="noopener noreferrer"
+              href="https://www.waze.com/ul?ll=33.5862146%2C-7.6444273&navigate=yes"                    rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca_waze"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"
                   >

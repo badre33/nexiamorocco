@@ -269,6 +269,249 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     image: "/uploads/0b2291f3-b8ee-4ac8-bb4b-ca08457d1215.png",
     featured: false,
     source: "https://nexia.com/insights/implementing-esg-best-practices-in-your-supply-chain/"
+  },
+  {
+    id: 10,
+    title: {
+      fr: "Loi de finances 2027 : ce qui change pour les entreprises au 1er janvier",
+      en: "2027 Finance Act: what changes for businesses on 1 January"
+    },
+    description: {
+      fr: "Baisse du barème IR (seuil exonéré porté à 60 000 DH), frais professionnels à 45 %, acompte de 5 % à l'importation, IS à 40 % pour les hydrocarbures : un décryptage opérationnel des mesures qui s'appliquent dès le 1er janvier 2027 et de celles qui restent sous réserve du vote du Parlement.",
+      en: "Lower IR brackets (exempt threshold raised to 60,000 DH), professional expenses at 45%, 5% advance payment on imports, 40% CIT for hydrocarbons: an operational breakdown of measures applying from 1 January 2027 and those still subject to parliamentary vote."
+    },
+    category: {
+      fr: "Fiscalité",
+      en: "Tax"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "5 Novembre 2026",
+      en: "November 5, 2026"
+    },
+    readTime: {
+      fr: "7 min",
+      en: "7 min"
+    },
+    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 11,
+    title: {
+      fr: "Prime TPME : jusqu'à 30 % du coût de votre investissement pris en charge par l'État",
+      en: "SME investment grant: up to 30% of your project cost covered by the State"
+    },
+    description: {
+      fr: "Le décret n° 2.25.342 (BO n° 7454, novembre 2025) ouvre des primes cumulables allant de 5 à 30 % pour les TPME qui investissent entre 1 et 50 M DH. Conditions d'éligibilité, base primable, versement en deux tranches, exemples chiffrés : tout ce que les dirigeants doivent savoir avant de déposer leur dossier.",
+      en: "Decree n° 2.25.342 (OG n° 7454, November 2025) opens up cumulative grants of 5 to 30% for SMEs investing between 1 and 50 MDH. Eligibility conditions, grant base, payment in two instalments, worked examples: everything directors need to know before submitting their file."
+    },
+    category: {
+      fr: "Stratégie d'entreprise",
+      en: "Business Strategy"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "20 Novembre 2026",
+      en: "November 20, 2026"
+    },
+    readTime: {
+      fr: "6 min",
+      en: "6 min"
+    },
+    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 12,
+    title: {
+      fr: "Retards de paiement au Maroc : l'amende va au Trésor, pas à votre fournisseur",
+      en: "Late payments in Morocco: the fine goes to the Treasury, not to your supplier"
+    },
+    description: {
+      fr: "53,2 Md DH de factures hors délai en 2025. L'amende (taux directeur + 0,85 % par mois) n'indemnise pas le fournisseur, elle est non déductible et doit être déclarée trimestriellement. Loi 69-21, sanctions de 5 000 à 250 000 DH, rôle du CAC : mode d'emploi complet pour éviter les pièges.",
+      en: "53.2 billion DH in overdue invoices in 2025. The fine (base rate + 0.85% per month) does not compensate the supplier, is non-deductible and must be declared quarterly. Law 69-21, penalties from 5,000 to 250,000 DH, auditor's role: a complete guide to avoiding the pitfalls."
+    },
+    category: {
+      fr: "Conformité",
+      en: "Compliance"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "10 Décembre 2026",
+      en: "December 10, 2026"
+    },
+    readTime: {
+      fr: "5 min",
+      en: "5 min"
+    },
+    image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 13,
+    title: {
+      fr: "Facturation électronique au Maroc : ce que la loi exige déjà, ce que le décret précisera",
+      en: "E-invoicing in Morocco: what the law already requires, what the decree will clarify"
+    },
+    description: {
+      fr: "La comptabilité sous format électronique est obligatoire depuis la LF 2018. La facturation électronique attend son décret. Entre les deux, des risques concrets : fichier des écritures à remettre en contrôle, mentions obligatoires de la facture, amende de 50 000 DH par exercice. Faire le point avant que le décret arrive.",
+      en: "Electronic accounting has been mandatory since the 2018 Finance Act. E-invoicing is awaiting its implementing decree. In between, there are concrete risks: accounting records to be submitted during audits, mandatory invoice details, fines of 50,000 DH per financial year. Time to take stock before the decree arrives."
+    },
+    category: {
+      fr: "Conformité",
+      en: "Compliance"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "15 Janvier 2027",
+      en: "January 15, 2027"
+    },
+    readTime: {
+      fr: "6 min",
+      en: "6 min"
+    },
+    image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 14,
+    title: {
+      fr: "Prix de transfert au Maroc : l'angle mort fiscal des groupes internationaux",
+      en: "Transfer pricing in Morocco: the tax blind spot for international groups"
+    },
+    description: {
+      fr: "Documentation obligatoire dès 50 M DH de CA ou d'actif brut, 30 jours pour la produire en contrôle, pénalité de 0,5 % du montant des transactions non documentées. Les groupes qui opèrent au Maroc sous-estiment systématiquement ce risque. Comment structurer la documentation et anticiper le contrôle.",
+      en: "Mandatory documentation from 50 MDH in revenue or gross assets, 30 days to produce it during an audit, penalty of 0.5% on undocumented transaction amounts. Groups operating in Morocco systematically underestimate this risk. How to structure documentation and anticipate controls."
+    },
+    category: {
+      fr: "Fiscalité",
+      en: "Tax"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "5 Février 2027",
+      en: "February 5, 2027"
+    },
+    readTime: {
+      fr: "8 min",
+      en: "8 min"
+    },
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 15,
+    title: {
+      fr: "Responsabilité du gérant de SARL : quand la limite de la société ne vous protège plus",
+      en: "Liability of the SARL manager: when the company's liability shield no longer protects you"
+    },
+    description: {
+      fr: "Prêt interdit par la société au gérant, abus de biens sociaux, faute de gestion : la loi n° 5-96 est précise. Action en responsabilité jusqu'à 5 ans après la faute, extension du passif au dirigeant en cas de liquidation. Les situations à risque et les pratiques à corriger avant qu'un contrôle ou une procédure les révèle.",
+      en: "Loans from the company to the manager prohibited, misuse of company assets, management misconduct: Law 5-96 is explicit. Liability action up to 5 years after the fault, extension of liabilities to the director in liquidation. Risky situations and practices to correct before an audit or procedure exposes them."
+    },
+    category: {
+      fr: "Gouvernance",
+      en: "Governance"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "25 Février 2027",
+      en: "February 25, 2027"
+    },
+    readTime: {
+      fr: "7 min",
+      en: "7 min"
+    },
+    image: "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 16,
+    title: {
+      fr: "CBAM et exportateurs marocains : six secteurs, 20 Md USD d'exports, une taxe carbone qui arrive",
+      en: "CBAM and Moroccan exporters: six sectors, USD 20bn in exports, a carbon tax on the way"
+    },
+    description: {
+      fr: "Depuis le 1er janvier 2026, le mécanisme d'ajustement carbone aux frontières de l'UE s'applique à six secteurs. Pour les exportateurs marocains vers l'Europe, cela représente une exposition estimée à 6 Md MAD. Comment anticiper, documenter l'empreinte carbone et intégrer la taxe carbone LF 2026 dans la stratégie.",
+      en: "Since 1 January 2026, the EU's Carbon Border Adjustment Mechanism applies to six sectors. For Moroccan exporters to Europe, this represents estimated exposure of 6 billion MAD. How to anticipate, document carbon footprint and integrate the 2026 Finance Act carbon tax into strategy."
+    },
+    category: {
+      fr: "International",
+      en: "International"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "15 Mars 2027",
+      en: "March 15, 2027"
+    },
+    readTime: {
+      fr: "9 min",
+      en: "9 min"
+    },
+    image: "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 17,
+    title: {
+      fr: "Résilience financière des PME marocaines : les six leviers à activer maintenant",
+      en: "Financial resilience of Moroccan SMEs: the six levers to activate now"
+    },
+    description: {
+      fr: "Délais de paiement, accès au financement, structure de coûts, planification fiscale, reporting et gouvernance : un cadre structuré pour évaluer la solidité financière de votre entreprise et identifier les priorités d'action avant la prochaine phase de croissance ou de turbulence.",
+      en: "Payment terms, access to finance, cost structure, tax planning, reporting and governance: a structured framework for assessing your company's financial strength and identifying priorities before the next phase of growth or turbulence."
+    },
+    category: {
+      fr: "Stratégie d'entreprise",
+      en: "Business Strategy"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "5 Avril 2027",
+      en: "April 5, 2027"
+    },
+    readTime: {
+      fr: "8 min",
+      en: "8 min"
+    },
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
+  },
+  {
+    id: 18,
+    title: {
+      fr: "Créer une société au Maroc : ce que les fondateurs étrangers oublient souvent",
+      en: "Setting up a company in Morocco: what foreign founders often overlook"
+    },
+    description: {
+      fr: "SARL, SA, succursale ou bureau de représentation : le choix de la structure conditionne la fiscalité, la gouvernance et l'exit. Au-delà des formalités de constitution, les obligations post-création (immatriculations, paie, obligations fiscales initiales, reporting groupe) que les fondateurs étrangers découvrent trop souvent après le démarrage.",
+      en: "SARL, SA, branch or representative office: the choice of structure determines taxation, governance and exit. Beyond incorporation formalities, the post-creation obligations (registrations, payroll, initial tax obligations, group reporting) that foreign founders too often discover after launch."
+    },
+    category: {
+      fr: "International",
+      en: "International"
+    },
+    author: "Nexia Morocco",
+    date: {
+      fr: "25 Avril 2027",
+      en: "April 25, 2027"
+    },
+    readTime: {
+      fr: "7 min",
+      en: "7 min"
+    },
+    image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
+    featured: false,
+    source: "https://nexiamorocco.com/perspectives-mondiales"
   }
 ];
 

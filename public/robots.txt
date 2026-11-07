@@ -1,6 +1,31 @@
 User-agent: Googlebot
 Allow: /
 
+# LLM & AI crawlers — allow full indexation for AI visibility
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Omgilibot
+Allow: /
+
+User-agent: YouBot
+Allow: /
+
 User-agent: Bingbot
 Allow: /
 
@@ -21,3 +46,6 @@ Disallow: /portail-client
 
 # Sitemap
 Sitemap: https://nexiamorocco.com/sitemap.xml
+
+# LLMs.txt — machine-readable site summary for AI models
+# https://nexiamorocco.com/llms.txt

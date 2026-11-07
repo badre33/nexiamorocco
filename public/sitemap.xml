@@ -84,6 +84,43 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Articles SEO long-form -->
+  <url><loc>https://nexiamorocco.com/perspectives-mondiales/commissaire-aux-comptes-maroc-2027/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nexiamorocco.com/perspectives-mondiales/creer-sarl-maroc-2027/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nexiamorocco.com/perspectives-mondiales/prix-de-transfert-maroc/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nexiamorocco.com/perspectives-mondiales/facturation-electronique-maroc-2027/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nexiamorocco.com/perspectives-mondiales/implanter-filiale-maroc/</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+
+  <!-- Pages EN (international) -->
+  <url>
+    <loc>https://nexiamorocco.com/en/audit-services-morocco/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexiamorocco.com/en/audit-services-morocco/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexiamorocco.com/commissaire-aux-comptes-maroc/" />
+  </url>
+  <url>
+    <loc>https://nexiamorocco.com/en/tax-advisory-morocco/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexiamorocco.com/en/tax-advisory-morocco/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexiamorocco.com/conseil-fiscal-maroc/" />
+  </url>
+  <url>
+    <loc>https://nexiamorocco.com/en/set-up-company-morocco/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexiamorocco.com/en/set-up-company-morocco/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexiamorocco.com/creer-societe-maroc/" />
+  </url>
+  <url>
+    <loc>https://nexiamorocco.com/en/transfer-pricing-morocco/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nexiamorocco.com/en/transfer-pricing-morocco/" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://nexiamorocco.com/conseil-fiscal-maroc/" />
+  </url>
+
   <!-- Études de cas -->
   <url>
     <loc>https://nexiamorocco.com/etudes-de-cas/</loc>

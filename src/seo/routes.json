@@ -126,6 +126,36 @@
     "robots": "index, follow",
     "type": "article"
   },
+  "/perspectives-mondiales/commissaire-aux-comptes-maroc-2027": {
+    "title": "Commissaire aux comptes au Maroc 2027 : seuils, obligations et honoraires",
+    "description": "Quelles sociétés sont soumises au commissariat aux comptes ? Seuils légaux, missions, honoraires et responsabilités en 2027. Guide complet Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "article"
+  },
+  "/perspectives-mondiales/creer-sarl-maroc-2027": {
+    "title": "Créer une SARL au Maroc en 2027 : guide complet pour investisseurs",
+    "description": "Étapes, coûts, délais, capital minimum, obligations post-création : tout ce qu'il faut savoir pour créer une SARL au Maroc, que vous soyez résident ou investisseur étranger.",
+    "robots": "index, follow",
+    "type": "article"
+  },
+  "/perspectives-mondiales/prix-de-transfert-maroc": {
+    "title": "Prix de transfert au Maroc : documentation obligatoire et risques de contrôle",
+    "description": "Documentation obligatoire dès 50 M MAD de CA ou de bilan, 30 jours pour la produire, pénalité de 0,5 % sur transactions non documentées. Guide Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "article"
+  },
+  "/perspectives-mondiales/facturation-electronique-maroc-2027": {
+    "title": "Facturation électronique au Maroc 2027 : obligations actuelles et décret à venir",
+    "description": "Comptabilité électronique obligatoire depuis 2018, facturation électronique en attente de décret : ce que les entreprises doivent anticiper maintenant.",
+    "robots": "index, follow",
+    "type": "article"
+  },
+  "/perspectives-mondiales/implanter-filiale-maroc": {
+    "title": "Implanter une filiale au Maroc : guide pour investisseurs étrangers",
+    "description": "SARL, SA, succursale ou bureau de représentation : comment choisir la bonne structure, quelles autorisations obtenir et quelles obligations gérer dès l'ouverture.",
+    "robots": "index, follow",
+    "type": "article"
+  },
   "/etudes-de-cas": {
     "title": "Études de cas en audit, fiscalité et conseil | Nexia Morocco",
     "description": "Découvrez comment Nexia accompagne les entreprises dans leurs opérations d'audit, de fiscalité, de due diligence et de conseil stratégique.",

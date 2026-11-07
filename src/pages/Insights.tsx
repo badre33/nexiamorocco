@@ -376,7 +376,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     },
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&q=80",
     featured: false,
-    source: "https://nexiamorocco.com/perspectives-mondiales"
+    source: "https://nexiamorocco.com/perspectives-mondiales/facturation-electronique-maroc-2027"
   },
   {
     id: 14,
@@ -403,7 +403,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
     featured: false,
-    source: "https://nexiamorocco.com/perspectives-mondiales"
+    source: "https://nexiamorocco.com/perspectives-mondiales/prix-de-transfert-maroc"
   },
   {
     id: 15,
@@ -511,7 +511,7 @@ The cost of medicines is both a symptom and a revealer. Behind it lies an essent
     },
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80",
     featured: false,
-    source: "https://nexiamorocco.com/perspectives-mondiales"
+    source: "https://nexiamorocco.com/perspectives-mondiales/implanter-filiale-maroc"
   }
 ];
 

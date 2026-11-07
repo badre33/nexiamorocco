@@ -156,6 +156,34 @@
     "robots": "index, follow",
     "type": "article"
   },
+  "/en/audit-services-morocco": {
+    "title": "Audit Services in Morocco | Nexia Morocco",
+    "description": "Statutory audit, internal control review, and acquisition audit in Morocco. Independent, structured engagements coordinated with your group. Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/en/tax-advisory-morocco": {
+    "title": "Tax Advisory Morocco | Corporate Tax & Transfer Pricing | Nexia",
+    "description": "Corporate tax advice, transfer pricing documentation, and audit assistance in Morocco. Cross-border expertise for investors and multinationals. Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/en/set-up-company-morocco": {
+    "title": "Set Up a Company in Morocco | Nexia Morocco",
+    "description": "Incorporate a SARL, SA, branch or representative office in Morocco. Legal structure, registration, accounting and payroll handled end to end. Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
+  "/en/transfer-pricing-morocco": {
+    "title": "Transfer Pricing Morocco | Documentation & Compliance | Nexia",
+    "description": "Transfer pricing documentation (master file & local file), benchmarking, and audit defence for companies operating in Morocco. Nexia Morocco.",
+    "robots": "index, follow",
+    "type": "website",
+    "schemaType": "Service"
+  },
   "/etudes-de-cas": {
     "title": "Études de cas en audit, fiscalité et conseil | Nexia Morocco",
     "description": "Découvrez comment Nexia accompagne les entreprises dans leurs opérations d'audit, de fiscalité, de due diligence et de conseil stratégique.",

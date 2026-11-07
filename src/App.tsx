@@ -19,6 +19,7 @@ import EtudesDeCas from "./pages/EtudesDeCas";
 import Insights from "./pages/Insights";
 import MedicamentArticle from "./pages/MedicamentArticle";
 import InsightArticle from "./pages/InsightArticle";
+import EnServiceLanding from "./pages/EnServiceLanding";
 import NotFound from "./pages/NotFound";
 import ThankYou from "./pages/ThankYou";
 import ServiceLanding from "./pages/ServiceLanding";
@@ -57,6 +58,7 @@ const App = () => (
               <Route path="/perspectives-mondiales" element={<Insights />} />
               <Route path="/perspectives-mondiales/cout-medicaments-maroc" element={<MedicamentArticle />} />
               <Route path="/perspectives-mondiales/:slug" element={<InsightArticle />} />
+              <Route path="/en/:slug" element={<EnServiceLanding />} />
               <Route path="/etudes-de-cas" element={<EtudesDeCas />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/merci" element={<ThankYou />} />

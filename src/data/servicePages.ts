@@ -188,4 +188,164 @@ export const servicePages: ServicePage[] = [
   }
 ];
 
-export const servicePageBySlug = Object.fromEntries(servicePages.map((page) => [page.slug, page]));
+// ─── English landing pages ───────────────────────────────────────────────────
+export const enServicePages: ServicePage[] = [
+  {
+    slug: "audit-services-morocco",
+    eyebrow: "Audit & Assurance",
+    title: "Audit Services in Morocco",
+    intro: "Independent, structured audit services for companies operating in Morocco — statutory audit, internal control review, and acquisition audit coordinated with your group.",
+    serviceValue: "audit",
+    situations: [
+      "Statutory audit obligation or voluntary appointment",
+      "Mandate renewal or change of auditor",
+      "Pre-transaction financial reliability review",
+      "Foreign subsidiary audit with group reporting requirements"
+    ],
+    services: [
+      "Statutory audit (commissariat aux comptes)",
+      "Contractual audit & agreed-upon procedures",
+      "Internal control review",
+      "Acquisition audit",
+      "Group reporting and consolidation support"
+    ],
+    deliverables: [
+      "Engagement letter and audit plan",
+      "Risk summary and audit findings",
+      "Statutory or contractual audit reports",
+      "Internal control recommendations"
+    ],
+    process: [
+      { title: "Scoping", text: "We assess independence, understand your context, and define the engagement." },
+      { title: "Planning", text: "We perform a risk analysis and design the audit programme." },
+      { title: "Fieldwork", text: "Our team runs tests, liaises with management, and gathers audit evidence." },
+      { title: "Reporting", text: "We deliver clear findings and applicable reports." }
+    ],
+    faq: [
+      { question: "Is statutory audit mandatory in Morocco?", answer: "Yes, for certain legal forms and thresholds. We verify the applicable criteria at the scoping stage and advise on the appointment process." },
+      { question: "Can you audit a Moroccan subsidiary for a foreign group?", answer: "Yes. We can coordinate with the group auditor and deliver findings in the format required by headquarters." },
+      { question: "How long does an audit engagement take?", answer: "The timeline depends on company size, data quality, and governance deadlines. It is agreed upfront during planning." }
+    ],
+    related: ["expertise-comptable-audit-casablanca", "due-diligence-maroc", "ifrs-consolidation-maroc"]
+  },
+  {
+    slug: "tax-advisory-morocco",
+    eyebrow: "Tax Advisory",
+    title: "Tax Advisory Services in Morocco",
+    intro: "Anticipate tax risk, secure your transactions, and make informed decisions with a clear picture of their fiscal consequences in Morocco.",
+    serviceValue: "conseil-fiscal",
+    situations: [
+      "Investment, restructuring, or exceptional transaction",
+      "Tax audit or compliance review",
+      "Cross-border flows and intragroup transactions",
+      "Transfer pricing documentation obligations"
+    ],
+    services: [
+      "Ongoing tax advisory",
+      "Tax health check and risk diagnosis",
+      "Tax audit assistance",
+      "International tax and cross-border structuring",
+      "Transfer pricing — documentation and policy"
+    ],
+    deliverables: [
+      "Tax opinion or structuring memo",
+      "Risk mapping and remediation plan",
+      "Transfer pricing documentation (master file / local file)",
+      "Tax compliance calendar"
+    ],
+    process: [
+      { title: "Briefing", text: "We define the scope, the entity's profile, and the transactions at stake." },
+      { title: "Analysis", text: "We identify applicable rules, risks, and structuring options." },
+      { title: "Recommendations", text: "We deliver a documented opinion with practical action points." },
+      { title: "Follow-up", text: "We support implementation and monitor ongoing compliance." }
+    ],
+    faq: [
+      { question: "Is transfer pricing documentation mandatory in Morocco?", answer: "Yes, for companies with annual revenue or balance sheet above MAD 50 million that have related-party transactions. Documentation must be produced within 30 days of a tax authority request." },
+      { question: "Can you assist during a tax audit?", answer: "Yes. We handle correspondence with the tax authority, analyse the administration's position, and advise on the appropriate response strategy." },
+      { question: "Do you work with foreign-headed groups?", answer: "Yes. We handle the Moroccan leg and can coordinate with your group's tax team or external advisors." }
+    ],
+    related: ["conseil-fiscal-maroc", "prix-de-transfert-maroc", "due-diligence-maroc"]
+  },
+  {
+    slug: "set-up-company-morocco",
+    eyebrow: "Company Formation",
+    title: "Set Up a Company in Morocco",
+    intro: "Structure, incorporate, and operate your Moroccan entity from day one — legal form selection, registration, accounting, payroll, and regulatory compliance handled end to end.",
+    serviceValue: "creation-societe",
+    situations: [
+      "Incorporating a subsidiary, branch, or representative office",
+      "Foreign investor entering the Moroccan market",
+      "Restructuring an existing legal structure",
+      "Post-incorporation compliance setup"
+    ],
+    services: [
+      "Legal structure selection (SARL, SA, branch, rep office)",
+      "Incorporation and CRC registration",
+      "Capital account opening (compte CED for foreign investors)",
+      "Accounting and payroll setup",
+      "Tax registration and ongoing compliance"
+    ],
+    deliverables: [
+      "Incorporation file (statuts, PV, registre du commerce)",
+      "Tax and social registration certificates",
+      "Chart of accounts and accounting setup",
+      "Payroll processing framework"
+    ],
+    process: [
+      { title: "Structuring", text: "We advise on the optimal legal form based on your activity, ownership, and tax profile." },
+      { title: "Incorporation", text: "We coordinate all filings with the CRC, tax authority, and relevant administrations." },
+      { title: "Operational setup", text: "Accounting, payroll, and reporting frameworks are put in place before operations start." },
+      { title: "Ongoing support", text: "Monthly or quarterly compliance handled by a dedicated team." }
+    ],
+    faq: [
+      { question: "What is the minimum share capital for a SARL in Morocco?", answer: "Since 2015, the minimum capital for a SARL is MAD 1. For an SA the minimum is MAD 300,000. Capital requirements vary by regulated sector." },
+      { question: "Can a foreign national be a manager of a Moroccan company?", answer: "Yes. A foreign national may serve as gérant of a SARL or president of an SA, subject to their residence and work-permit situation." },
+      { question: "How long does incorporation take?", answer: "Typically 2 to 4 weeks once all documents are in order. We coordinate the full process and advise on any sector-specific authorisations required." }
+    ],
+    related: ["creer-societe-maroc", "implanter-filiale-maroc", "conseil-fiscal-maroc"]
+  },
+  {
+    slug: "transfer-pricing-morocco",
+    eyebrow: "Transfer Pricing",
+    title: "Transfer Pricing in Morocco",
+    intro: "Meet Moroccan transfer pricing documentation requirements, manage audit risk, and align your intercompany policy with OECD standards and local regulations.",
+    serviceValue: "conseil-fiscal",
+    situations: [
+      "Annual revenue or balance sheet above MAD 50 million",
+      "Significant intercompany transactions (goods, services, IP, financing)",
+      "Tax audit with transfer pricing focus",
+      "New intercompany flows requiring policy documentation"
+    ],
+    services: [
+      "Transfer pricing documentation (master file & local file)",
+      "Intercompany policy design",
+      "Benchmarking and comparability analysis",
+      "Audit defence and tax authority correspondence",
+      "Advance pricing arrangement (APA) support"
+    ],
+    deliverables: [
+      "Master file (documentation groupe)",
+      "Local file (documentation locale)",
+      "Benchmarking study",
+      "Intercompany agreement templates",
+      "Risk assessment memo"
+    ],
+    process: [
+      { title: "Scoping", text: "We map related-party transactions, identify documentation obligations, and assess audit exposure." },
+      { title: "Economic analysis", text: "We select the appropriate OECD method and perform the benchmarking study." },
+      { title: "Documentation", text: "We draft the master file and local file in the format required by Moroccan regulations." },
+      { title: "Review & update", text: "Annual update of the documentation to reflect changes in the group and market conditions." }
+    ],
+    faq: [
+      { question: "What is the documentation threshold in Morocco?", answer: "Companies with annual revenue or balance sheet exceeding MAD 50 million and related-party transactions must maintain transfer pricing documentation. It must be produced within 30 days of a tax authority request." },
+      { question: "What penalty applies for missing documentation?", answer: "A penalty of 0.5% of undocumented transaction value applies, with a minimum of MAD 200,000 and a maximum of MAD 2,000,000 per fiscal year." },
+      { question: "Which transfer pricing methods are accepted in Morocco?", answer: "Morocco follows OECD guidelines. The comparable uncontrolled price (CUP), cost plus, resale minus, TNMM, and profit split methods are all applicable." }
+    ],
+    related: ["conseil-fiscal-maroc", "prix-de-transfert-maroc", "due-diligence-maroc"]
+  }
+];
+
+export const servicePageBySlug = Object.fromEntries([
+  ...servicePages.map((page) => [page.slug, page]),
+  ...enServicePages.map((page) => [page.slug, page])
+]);

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link, Navigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -103,6 +104,40 @@ export default function InsightArticle() {
   }
 
   const article = articleData[slug];
+
+  useEffect(() => {
+    const id = "article-schema";
+    document.getElementById(id)?.remove();
+    const script = document.createElement("script");
+    script.id = id;
+    script.type = "application/ld+json";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.title[lang],
+      description: article.description[lang],
+      image: article.image,
+      datePublished: article.isoDate ?? article.date.fr,
+      author: {
+        "@type": "Person",
+        name: article.author,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "Nexia Morocco",
+        url: "https://nexiamorocco.com",
+        logo: {
+          "@type": "ImageObject",
+          url: "https://nexiamorocco.com/nexia-logo.png",
+        },
+      },
+      inLanguage: lang === "fr" ? "fr-MA" : "en",
+      url: `https://nexiamorocco.com/perspectives-mondiales/${slug}/`,
+    });
+    document.head.appendChild(script);
+    return () => { document.getElementById(id)?.remove(); };
+  }, [slug, lang, article]);
+
   const t = {
     backLink: lang === "fr" ? "Retour aux Perspectives Mondiales" : "Back to Global Perspectives",
     readTime: lang === "fr" ? "de lecture" : "read",

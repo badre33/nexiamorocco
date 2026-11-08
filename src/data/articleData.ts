@@ -14,6 +14,7 @@ export interface ArticleData {
   description: { fr: string; en: string };
   author: string;
   date: { fr: string; en: string };
+  isoDate?: string; // ISO 8601 for schema markup, e.g. "2025-01-15"
   readTime: { fr: string; en: string };
   category: { fr: string; en: string };
   image: string;
@@ -33,6 +34,7 @@ export const articleData: Record<string, ArticleData> = {
     },
     author: "Nexia Morocco",
     date: { fr: "7 Novembre 2026", en: "November 7, 2026" },
+    isoDate: "2026-11-07",
     readTime: { fr: "9 min", en: "9 min" },
     category: { fr: "Audit & Conformité", en: "Audit & Compliance" },
     image: "https://images.unsplash.com/photo-1554224154-26032ffc0d07?w=1200&q=80",
@@ -290,6 +292,7 @@ export const articleData: Record<string, ArticleData> = {
     },
     author: "Nexia Morocco",
     date: { fr: "7 Novembre 2026", en: "November 7, 2026" },
+    isoDate: "2026-11-07",
     readTime: { fr: "10 min", en: "10 min" },
     category: { fr: "Création d'entreprise", en: "Company Formation" },
     image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1200&q=80",
@@ -496,6 +499,7 @@ export const articleData: Record<string, ArticleData> = {
     },
     author: "Nexia Morocco",
     date: { fr: "5 Février 2027", en: "February 5, 2027" },
+    isoDate: "2027-02-05",
     readTime: { fr: "8 min", en: "8 min" },
     category: { fr: "Fiscalité internationale", en: "International Tax" },
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80",
@@ -721,6 +725,7 @@ export const articleData: Record<string, ArticleData> = {
     },
     author: "Nexia Morocco",
     date: { fr: "15 Janvier 2027", en: "January 15, 2027" },
+    isoDate: "2027-01-15",
     readTime: { fr: "6 min", en: "6 min" },
     category: { fr: "Conformité", en: "Compliance" },
     image: "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80",
@@ -884,6 +889,7 @@ export const articleData: Record<string, ArticleData> = {
     },
     author: "Nexia Morocco",
     date: { fr: "25 Avril 2027", en: "April 25, 2027" },
+    isoDate: "2027-04-25",
     readTime: { fr: "10 min", en: "10 min" },
     category: { fr: "International", en: "International" },
     image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=1200&q=80",

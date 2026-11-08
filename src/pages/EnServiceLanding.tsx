@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { ArrowRight, Check, ChevronRight, Clock3, MessageCircle, ShieldCheck } from "lucide-react";
 import { Link, useParams } from "react-router-dom";
 import Header from "@/components/Header";
@@ -9,6 +10,27 @@ import NotFound from "@/pages/NotFound";
 export default function EnServiceLanding() {
   const { slug = "" } = useParams();
   const page = servicePageBySlug[slug];
+
+  useEffect(() => {
+    if (!page) return;
+    const id = "faq-schema";
+    document.getElementById(id)?.remove();
+    const script = document.createElement("script");
+    script.id = id;
+    script.type = "application/ld+json";
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: page.faq.map((item) => ({
+        "@type": "Question",
+        name: item.question,
+        acceptedAnswer: { "@type": "Answer", text: item.answer },
+      })),
+    });
+    document.head.appendChild(script);
+    return () => { document.getElementById(id)?.remove(); };
+  }, [page]);
+
   if (!page) return <NotFound />;
 
   const contactParams = new URLSearchParams({ service: page.serviceValue, source: `en-${page.slug}` });

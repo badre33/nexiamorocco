@@ -5,7 +5,7 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 // (q = nom de l'établissement + adresse => affiche le pin de la fiche, pas une simple coordonnée)
 const OFFICE_MAPS = {
   casablanca:
-    "https://www.google.com/maps?q=33.5720521,-7.6589182&z=16&output=embed",
+    "https://www.google.com/maps?q=33.569462,-7.655947&z=16&output=embed",
   tanger:
     "https://www.google.com/maps?q=Nexia+Fiducia,+Lotissement+New+Center,+Tanger&z=16&output=embed",
 } as const;
@@ -87,7 +87,7 @@ export default function ContactMap() {
                     05 22 36 43 77
                   </a>
                   <a
-              href="https://www.google.com/maps?q=33.5720521,-7.6589182"
+              href="https://www.google.com/maps?q=33.569462,-7.655947"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca"
@@ -100,7 +100,7 @@ export default function ContactMap() {
                     {t('contactMap.viewOnMaps')}
                   </a>
                   <a
-              href="https://www.waze.com/ul?ll=33.5720521%2C-7.6589182&navigate=yes"
+              href="https://www.waze.com/ul?ll=33.569462%2C-7.655947&navigate=yes"
                     rel="noopener noreferrer"
                     data-tracking-location="contact_map_casablanca_waze"
                     className="inline-flex items-center text-sm text-nexia-secondary hover:text-nexia-primary transition-colors"

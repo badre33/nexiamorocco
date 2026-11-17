@@ -7,7 +7,6 @@ import { useRef, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, User, Building2, MessageSquare, Send, CheckCircle, ChevronDown } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
-import { supabase } from "@/integrations/supabase/client";
 import { serializeLeadAttribution, trackEvent, trackGenerateLead } from "@/lib/analytics";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import { useEffect } from "react";
@@ -319,28 +318,39 @@ export default function ContactForm() {
       service: formData.service || "non_precise",
     });
 
-    // Persist to Supabase `contact_requests`.
-    // RLS allows anonymous INSERT but blocks SELECT for anyone outside the staff roles.
-    const { error } = await (supabase as unknown as {
-      from: (t: string) => { insert: (v: object) => Promise<{ error: { message: string } | null }> };
-    })
-      .from("contact_requests")
-      .insert({
-        first_name: formData.firstName,
-        last_name: formData.lastName,
-        email: formData.email,
-        company: formData.company || null,
-        country_code: formData.countryCode,
-        phone: formData.phone,
-        service: formData.service || null,
-        message: formData.message,
-        notes: serializeLeadAttribution({
-          client_profile: formData.clientProfile || "non_precise",
-          project_stage: formData.projectStage || "non_precise",
-        }),
-      });
+    const notificationPayload = {
+      firstName: formData.firstName,
+      lastName: formData.lastName,
+      email: formData.email,
+      company: formData.company,
+      countryCode: formData.countryCode,
+      phone: formData.phone,
+      service: formData.service,
+      clientProfile: formData.clientProfile,
+      projectStage: formData.projectStage,
+      message: formData.message,
+      notes: serializeLeadAttribution({
+        client_profile: formData.clientProfile || "non_precise",
+        project_stage: formData.projectStage || "non_precise",
+      }),
+    };
 
-    if (error) {
+    let submitOk = false;
+    try {
+      const response = await fetch('/api/notify-lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(notificationPayload),
+      });
+      submitOk = response.ok;
+      trackEvent(response.ok ? 'lead_notification_sent' : 'lead_notification_error', {
+        notification_channel: 'email',
+      });
+    } catch {
+      trackEvent('lead_notification_error', { notification_channel: 'email' });
+    }
+
+    if (!submitOk) {
       trackEvent("form_error", {
         form_name: "contact",
         error_type: "submission",
@@ -348,7 +358,7 @@ export default function ContactForm() {
       });
       toast({
         title: "Erreur",
-        description: error.message,
+        description: "Votre demande n'a pas pu être envoyée. Veuillez réessayer ou nous contacter directement par email.",
         variant: "destructive",
       });
       setIsSubmitting(false);
@@ -361,31 +371,6 @@ export default function ContactForm() {
       service: formData.service || "non_precise",
     });
     trackGenerateLead(formData.service);
-
-    const notificationPayload = {
-      firstName: formData.firstName,
-      lastName: formData.lastName,
-      email: formData.email,
-      company: formData.company,
-      countryCode: formData.countryCode,
-      phone: formData.phone,
-      service: formData.service,
-      clientProfile: formData.clientProfile,
-      projectStage: formData.projectStage,
-      message: formData.message,
-    };
-    void fetch('/api/notify-lead', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(notificationPayload),
-      keepalive: true,
-    }).then((response) => {
-      trackEvent(response.ok ? 'lead_notification_sent' : 'lead_notification_error', {
-        notification_channel: 'email',
-      });
-    }).catch(() => {
-      trackEvent('lead_notification_error', { notification_channel: 'email' });
-    });
 
     toast({
       title: t('contactForm.success'),

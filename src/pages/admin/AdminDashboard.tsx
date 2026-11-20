@@ -1,114 +1,96 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import BackOfficeLayout from '@/components/back-office/BackOfficeLayout';
-import { supabase } from '@/integrations/supabase/client';
-import { Inbox, FolderOpen, Users, Clock } from 'lucide-react';
+import { adminApi, type Lead, type LinkedInState } from '@/lib/adminApi';
+import { Inbox, Clock, CalendarDays, Linkedin } from 'lucide-react';
 
-interface Stats {
-  newContacts: number;
-  totalContacts: number;
-  internalDocs: number;
-  totalUsers: number;
+function sourceOf(lead: Lead) {
+  try {
+    const a = JSON.parse(lead.notes) as { source?: string; medium?: string };
+    return a.source ? `${a.source} / ${a.medium ?? ''}`.trim() : 'direct';
+  } catch {
+    return 'direct';
+  }
 }
 
 export default function AdminDashboard() {
-  const [stats, setStats] = useState<Stats | null>(null);
+  const [leads, setLeads] = useState<Lead[]>([]);
+  const [linkedin, setLinkedin] = useState<LinkedInState | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const load = async () => {
-      const supa = supabase as unknown as {
-        from: (t: string) => {
-          select: (cols: string, opts?: { count?: 'exact'; head?: boolean }) => Promise<{
-            count: number | null;
-          }>;
-        };
-      };
-      try {
-        const [newC, totalC, docs, users] = await Promise.all([
-          supa.from('contact_requests').select('id', { count: 'exact', head: true }),
-          supa.from('contact_requests').select('id', { count: 'exact', head: true }),
-          supa.from('internal_documents').select('id', { count: 'exact', head: true }),
-          supa.from('profiles').select('id', { count: 'exact', head: true }),
-        ]);
-        setStats({
-          newContacts: newC.count ?? 0,
-          totalContacts: totalC.count ?? 0,
-          internalDocs: docs.count ?? 0,
-          totalUsers: users.count ?? 0,
-        });
-      } catch (e) {
-        // eslint-disable-next-line no-console
-        console.error('[admin] stats load failed', e);
-      } finally {
-        setLoading(false);
-      }
-    };
-    void load();
+    Promise.all([adminApi.leads(), adminApi.linkedin()])
+      .then(([l, li]) => {
+        setLeads(l);
+        setLinkedin(li);
+      })
+      .catch(() => undefined)
+      .finally(() => setLoading(false));
   }, []);
+
+  const since30 = Date.now() - 30 * 86_400_000;
+  const recent = leads.filter((l) => new Date(l.created_at).getTime() > since30);
+  const fresh = leads.filter((l) => l.status === 'new');
+  const sources = Object.entries(
+    recent.reduce<Record<string, number>>((acc, l) => {
+      const k = sourceOf(l);
+      acc[k] = (acc[k] ?? 0) + 1;
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
+  const services = Object.entries(
+    recent.reduce<Record<string, number>>((acc, l) => {
+      const k = l.service || 'À qualifier';
+      acc[k] = (acc[k] ?? 0) + 1;
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
 
   return (
     <BackOfficeLayout title="Tableau de bord">
       {loading ? (
         <div className="text-gray-500">Chargement…</div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <StatCard
-            label="Nouvelles demandes"
-            value={stats?.newContacts ?? 0}
-            icon={<Clock className="w-5 h-5" />}
-            to="/admin/contacts"
-          />
-          <StatCard
-            label="Demandes (total)"
-            value={stats?.totalContacts ?? 0}
-            icon={<Inbox className="w-5 h-5" />}
-            to="/admin/contacts"
-          />
-          <StatCard
-            label="Documents internes"
-            value={stats?.internalDocs ?? 0}
-            icon={<FolderOpen className="w-5 h-5" />}
-            to="/collaborateurs"
-          />
-          <StatCard
-            label="Utilisateurs"
-            value={stats?.totalUsers ?? 0}
-            icon={<Users className="w-5 h-5" />}
-            to="/admin/users"
-          />
-        </div>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            <StatCard label="Leads à traiter" value={fresh.length} icon={<Clock className="w-5 h-5" />} to="/admin/contacts" />
+            <StatCard label="Leads (30 jours)" value={recent.length} icon={<CalendarDays className="w-5 h-5" />} to="/admin/contacts" />
+            <StatCard label="Leads (total)" value={leads.length} icon={<Inbox className="w-5 h-5" />} to="/admin/contacts" />
+            <StatCard label="Posts LinkedIn affichés" value={linkedin?.posts.length ?? 0} icon={<Linkedin className="w-5 h-5" />} to="/admin/linkedin" />
+          </div>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+            <Breakdown title="Sources des leads (30 jours)" rows={sources} />
+            <Breakdown title="Services demandés (30 jours)" rows={services} />
+          </div>
+        </>
       )}
-
-      <div className="mt-10 bg-white rounded-xl border border-gray-200 p-6">
-        <h3 className="font-semibold text-gray-900 mb-2">Premiers pas</h3>
-        <ol className="text-sm text-gray-700 space-y-2 list-decimal pl-5">
-          <li>Promouvoir votre compte au rôle <code className="bg-gray-100 px-1 rounded">admin</code> via Supabase SQL Editor.</li>
-          <li>Importer les premiers documents internes (RH, procédures…).</li>
-          <li>Créer les comptes clients (ou les laisser s'inscrire eux-mêmes).</li>
-          <li>Vérifier les demandes de contact reçues depuis le formulaire public.</li>
-        </ol>
-      </div>
     </BackOfficeLayout>
   );
 }
 
-function StatCard({
-  label,
-  value,
-  icon,
-  to,
-}: {
-  label: string;
-  value: number;
-  icon: React.ReactNode;
-  to: string;
-}) {
+function Breakdown({ title, rows }: { title: string; rows: [string, number][] }) {
   return (
-    <Link
-      to={to}
-      className="bg-white rounded-xl border border-gray-200 p-5 hover:border-nexia-secondary hover:shadow-sm transition-all"
-    >
+    <div className="bg-white rounded-xl border border-gray-200 p-6">
+      <h3 className="font-semibold text-gray-900 mb-4">{title}</h3>
+      {rows.length === 0 ? (
+        <p className="text-sm text-gray-500">Aucune donnée pour le moment.</p>
+      ) : (
+        <ul className="space-y-2 text-sm">
+          {rows.map(([k, v]) => (
+            <li key={k} className="flex justify-between gap-4">
+              <span className="text-gray-700 truncate">{k}</span>
+              <strong className="text-nexia-primary">{v}</strong>
+            </li>
+          ))}
+        </ul>
+      )}
+    </div>
+  );
+}
+
+function StatCard({ label, value, icon, to }: { label: string; value: number; icon: React.ReactNode; to: string }) {
+  return (
+    <Link to={to} className="bg-white rounded-xl border border-gray-200 p-5 hover:border-nexia-secondary hover:shadow-sm transition-all">
       <div className="flex items-center justify-between text-gray-500 mb-2">
         <span className="text-xs uppercase tracking-wider font-semibold">{label}</span>
         <span className="text-nexia-secondary">{icon}</span>

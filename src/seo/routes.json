@@ -208,18 +208,6 @@
     "robots": "noindex, nofollow",
     "type": "website"
   },
-  "/auth/signup": {
-    "title": "Créer un compte | Nexia Morocco",
-    "description": "Espace sécurisé Nexia Morocco.",
-    "robots": "noindex, nofollow",
-    "type": "website"
-  },
-  "/auth/forgot": {
-    "title": "Réinitialiser le mot de passe | Nexia Morocco",
-    "description": "Espace sécurisé Nexia Morocco.",
-    "robots": "noindex, nofollow",
-    "type": "website"
-  },
   "/admin": {
     "title": "Administration | Nexia Morocco",
     "description": "Espace sécurisé Nexia Morocco.",
@@ -238,15 +226,9 @@
     "robots": "noindex, nofollow",
     "type": "website"
   },
-  "/collaborateurs": {
-    "title": "Espace collaborateurs | Nexia Morocco",
+  "/admin/login": {
+    "title": "Connexion | Nexia Morocco",
     "description": "Espace sécurisé Nexia Morocco.",
-    "robots": "noindex, nofollow",
-    "type": "website"
-  },
-  "/portail-client": {
-    "title": "Portail client | Nexia Morocco",
-    "description": "Espace client sécurisé Nexia Morocco.",
     "robots": "noindex, nofollow",
     "type": "website"
   }

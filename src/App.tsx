@@ -2,10 +2,9 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import { AuthProvider } from "@/contexts/AuthContext";
-import ProtectedRoute from "@/components/auth/ProtectedRoute";
+import AdminRoute from "@/components/auth/AdminRoute";
 import SeoManager from "@/components/SeoManager";
 import ConversionTracker from "@/components/ConversionTracker";
 
@@ -26,21 +25,16 @@ import ServiceLanding from "./pages/ServiceLanding";
 
 // Auth pages
 import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
-import ForgotPassword from "./pages/auth/ForgotPassword";
 
 // Back-office pages
 import AdminDashboard from "./pages/admin/AdminDashboard";
 import ContactRequests from "./pages/admin/ContactRequests";
 import LinkedInManager from "./pages/admin/LinkedInManager";
-import Collaborateurs from "./pages/collaborateurs/Collaborateurs";
-import PortailClient from "./pages/client/PortailClient";
 
 const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <AuthProvider>
       <LanguageProvider>
         <TooltipProvider>
           <Toaster />
@@ -64,54 +58,14 @@ const App = () => (
               <Route path="/merci" element={<ThankYou />} />
               <Route path="/:slug" element={<ServiceLanding />} />
 
-              {/* Auth */}
-              <Route path="/auth/login" element={<Login />} />
-              <Route path="/auth/signup" element={<Signup />} />
-              <Route path="/auth/forgot" element={<ForgotPassword />} />
-
-              {/* Admin + Collaborator area */}
-              <Route
-                path="/admin"
-                element={
-                  <ProtectedRoute allowedRoles={['admin', 'collaborator']}>
-                    <AdminDashboard />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/admin/contacts"
-                element={
-                  <ProtectedRoute allowedRoles={['admin', 'collaborator']}>
-                    <ContactRequests />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/admin/linkedin"
-                element={
-                  <ProtectedRoute allowedRoles={['admin', 'collaborator']}>
-                    <LinkedInManager />
-                  </ProtectedRoute>
-                }
-              />
-              <Route
-                path="/collaborateurs"
-                element={
-                  <ProtectedRoute allowedRoles={['admin', 'collaborator']}>
-                    <Collaborateurs />
-                  </ProtectedRoute>
-                }
-              />
-
-              {/* Client portal */}
-              <Route
-                path="/portail-client"
-                element={
-                  <ProtectedRoute allowedRoles={['client', 'admin', 'collaborator']}>
-                    <PortailClient />
-                  </ProtectedRoute>
-                }
-              />
+              {/* Back-office (Netlify Functions + Blobs, mono-utilisateur) */}
+              <Route path="/admin/login" element={<Login />} />
+              <Route path="/auth/login" element={<Navigate to="/admin/login" replace />} />
+              <Route path="/admin" element={<AdminRoute><AdminDashboard /></AdminRoute>} />
+              <Route path="/admin/contacts" element={<AdminRoute><ContactRequests /></AdminRoute>} />
+              <Route path="/admin/linkedin" element={<AdminRoute><LinkedInManager /></AdminRoute>} />
+              <Route path="/collaborateurs" element={<Navigate to="/admin" replace />} />
+              <Route path="/portail-client" element={<Navigate to="/admin" replace />} />
 
               {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
               <Route path="*" element={<NotFound />} />
@@ -119,7 +73,6 @@ const App = () => (
           </BrowserRouter>
         </TooltipProvider>
       </LanguageProvider>
-    </AuthProvider>
   </QueryClientProvider>
 );
 

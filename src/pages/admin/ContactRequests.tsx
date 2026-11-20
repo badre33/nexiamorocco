@@ -1,25 +1,12 @@
 import { useEffect, useState } from 'react';
 import BackOfficeLayout from '@/components/back-office/BackOfficeLayout';
-import { supabase } from '@/integrations/supabase/client';
+import { adminApi, type Lead } from '@/lib/adminApi';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
 import { Mail, Phone, Building2, Calendar } from 'lucide-react';
 import type { LeadAttribution } from '@/lib/analytics';
 
-interface ContactRequest {
-  id: string;
-  first_name: string;
-  last_name: string;
-  email: string;
-  company: string | null;
-  country_code: string | null;
-  phone: string | null;
-  service: string | null;
-  message: string;
-  status: string;
-  notes: string | null;
-  created_at: string;
-}
+type ContactRequest = Lead;
 
 const STATUS_LABELS: Record<string, { label: string; color: string }> = {
   new: { label: 'Nouveau', color: 'bg-blue-100 text-blue-700' },
@@ -57,23 +44,10 @@ export default function ContactRequests() {
 
   const load = async () => {
     setLoading(true);
-    const { data, error } = await (supabase as unknown as {
-      from: (t: string) => {
-        select: (c: string) => {
-          order: (c: string, o: { ascending: boolean }) => Promise<{
-            data: ContactRequest[] | null;
-            error: { message: string } | null;
-          }>;
-        };
-      };
-    })
-      .from('contact_requests')
-      .select('*')
-      .order('created_at', { ascending: false });
-    if (error) {
-      toast({ title: 'Erreur de chargement', description: error.message, variant: 'destructive' });
-    } else {
-      setRequests(data ?? []);
+    try {
+      setRequests(await adminApi.leads());
+    } catch (error) {
+      toast({ title: 'Erreur de chargement', description: error instanceof Error ? error.message : '', variant: 'destructive' });
     }
     setLoading(false);
   };
@@ -82,20 +56,13 @@ export default function ContactRequests() {
     void load();
   }, []);
 
-  const updateStatus = async (id: string, status: string) => {
-    const { error } = await (supabase as unknown as {
-      from: (t: string) => {
-        update: (v: object) => { eq: (c: string, v: string) => Promise<{ error: { message: string } | null }> };
-      };
-    })
-      .from('contact_requests')
-      .update({ status })
-      .eq('id', id);
-    if (error) {
-      toast({ title: 'Erreur', description: error.message, variant: 'destructive' });
-    } else {
+  const updateStatus = async (id: string, status: ContactRequest['status']) => {
+    try {
+      const updated = await adminApi.setLeadStatus(id, status);
+      setRequests((prev) => prev.map((r) => (r.id === id ? updated : r)));
       toast({ title: 'Mis à jour', description: 'Statut modifié.' });
-      void load();
+    } catch (error) {
+      toast({ title: 'Erreur', description: error instanceof Error ? error.message : '', variant: 'destructive' });
     }
   };
 
@@ -188,6 +155,16 @@ export default function ContactRequests() {
                     Service&nbsp;: <strong className="text-gray-900">{selected.service}</strong>
                   </p>
                 )}
+                {selected.client_profile && (
+                  <p className="text-xs">
+                    Profil&nbsp;: <strong className="text-gray-900">{selected.client_profile}</strong>
+                  </p>
+                )}
+                {selected.project_stage && (
+                  <p className="text-xs">
+                    Avancement&nbsp;: <strong className="text-gray-900">{selected.project_stage}</strong>
+                  </p>
+                )}
               </div>
               <div className="bg-gray-50 rounded-lg p-3 text-sm text-gray-800 whitespace-pre-wrap mb-4">
                 {selected.message}
@@ -227,7 +204,7 @@ export default function ContactRequests() {
                       key={key}
                       size="sm"
                       variant={selected.status === key ? 'default' : 'outline'}
-                      onClick={() => updateStatus(selected.id, key)}
+                      onClick={() => updateStatus(selected.id, key as ContactRequest['status'])}
                       className={selected.status === key ? 'bg-nexia-primary' : ''}
                     >
                       {val.label}

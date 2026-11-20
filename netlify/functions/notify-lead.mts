@@ -1,3 +1,6 @@
+import { randomUUID } from "node:crypto";
+import { saveLead } from "../lib/leads.mts";
+
 type LeadPayload = {
   firstName: string;
   lastName: string;
@@ -75,16 +78,44 @@ export default async (request: Request) => {
     projectStage: text(input.projectStage, 80),
     message: text(input.message, 4000),
   };
+  const notes = text(input.notes, 4000);
 
   if (!lead.firstName || !lead.lastName || !lead.message || (!lead.email && !lead.phone)) {
     return Response.json({ error: "Missing required fields" }, { status: 422 });
+  }
+
+  // 1. Le lead est d'abord enregistré (back-office), l'e-mail n'est qu'une notification.
+  let stored = false;
+  try {
+    const createdAt = new Date().toISOString();
+    await saveLead({
+      id: `${createdAt.replace(/[:.]/g, "-")}_${randomUUID().slice(0, 8)}`,
+      created_at: createdAt,
+      status: "new",
+      first_name: lead.firstName,
+      last_name: lead.lastName,
+      email: lead.email || "",
+      company: lead.company || "",
+      country_code: lead.countryCode || "",
+      phone: lead.phone || "",
+      service: lead.service || "",
+      client_profile: lead.clientProfile || "",
+      project_stage: lead.projectStage || "",
+      message: lead.message,
+      notes,
+    });
+    stored = true;
+  } catch (error) {
+    console.error("[notify-lead] stockage impossible", error);
   }
 
   const apiKey = Netlify.env.get("RESEND_API_KEY");
   const recipient = Netlify.env.get("LEAD_NOTIFICATION_EMAIL");
   const from = Netlify.env.get("LEAD_FROM_EMAIL");
   if (!apiKey || !recipient || !from) {
-    return Response.json({ error: "Email notifications are not configured" }, { status: 503 });
+    return stored
+      ? Response.json({ stored, notified: false })
+      : Response.json({ error: "Email notifications are not configured" }, { status: 503 });
   }
 
   const fullName = `${lead.firstName} ${lead.lastName}`;
@@ -108,7 +139,7 @@ export default async (request: Request) => {
     `,
   });
 
-  if (!internal.ok) {
+  if (!internal.ok && !stored) {
     return Response.json({ error: "Notification provider rejected the request" }, { status: 502 });
   }
 
@@ -127,7 +158,7 @@ export default async (request: Request) => {
     autoReplySent = reply.ok;
   }
 
-  return Response.json({ notified: true, autoReplySent });
+  return Response.json({ stored, notified: internal.ok, autoReplySent });
 };
 
 export const config = {

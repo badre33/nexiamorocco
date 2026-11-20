@@ -7,7 +7,7 @@ const OFFICE_MAPS = {
   casablanca:
     "https://www.google.com/maps?q=33.569462,-7.655947&z=16&output=embed",
   tanger:
-    "https://www.google.com/maps?q=Nexia+Fiducia,+Lotissement+New+Center,+Tanger&z=16&output=embed",
+    "https://www.google.com/maps?q=Nexia+Morocco,+Lotissement+New+Center,+Tanger&z=16&output=embed",
 } as const;
 type OfficeKey = keyof typeof OFFICE_MAPS;
 
@@ -130,7 +130,7 @@ export default function ContactMap() {
                     05 31 29 50 75
                   </a>
                   <a
-                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Fiducia+Lotissement+New+Center+Tanger"
+                    href="https://www.google.com/maps/search/?api=1&query=Nexia+Morocco+Lotissement+New+Center+Tanger"
                     target="_blank"
                     rel="noopener noreferrer"
                     data-tracking-location="contact_map_tanger"

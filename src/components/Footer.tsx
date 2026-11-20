@@ -118,7 +118,7 @@ export default function Footer() {
           {/* Social Icons and WhatsApp */}
           <div className="flex space-x-4 lg:justify-end">
             <a
-              href="https://www.linkedin.com/company/nexia-fiducia-maroc/"
+              href="https://www.linkedin.com/company/nexiamorocco/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Suivre Nexia Morocco sur LinkedIn"

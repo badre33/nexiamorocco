@@ -42,7 +42,7 @@ const articleContent = {
   en: {
     backLink: "Back to Global Perspectives",
     title: "The cost of medicines in Morocco: a persistent economic and strategic challenge",
-    author: "Nexia Fiducia Morocco",
+    author: "Nexia Morocco",
     date: "August 28, 2025",
     readTime: "12 min read",
     content: {

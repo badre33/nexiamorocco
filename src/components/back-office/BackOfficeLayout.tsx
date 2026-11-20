@@ -45,7 +45,7 @@ export default function BackOfficeLayout({ title, children }: BackOfficeLayoutPr
         <div className="px-6 py-5 border-b border-gray-200">
           <Link to="/" className="block">
             <h1 className="text-lg font-bold text-nexia-primary leading-tight">
-              Nexia Fiducia
+              Nexia Morocco
             </h1>
             <p className="text-xs text-gray-500">Espace privé</p>
           </Link>

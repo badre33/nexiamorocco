@@ -15,23 +15,22 @@ interface LinkedInPost {
  * Source primaire : table `linkedin_posts` de Supabase (gérée depuis /admin/linkedin).
  * Fallback : `FALLBACK_POSTS` ci-dessous — utilisés si Supabase est indisponible.
  *
- * Les IDs FALLBACK ont été récupérés le 31/05/2026 depuis la page LinkedIn
- * officielle Nexia Morocco (slug historique de l'URL conservé), top 7
- * publications visibles dans l'admin dashboard.
+ * Les IDs FALLBACK ont été récupérés le 20/11/2026 depuis la page LinkedIn
+ * Nexia Morocco : les 7 dernières publications.
  *
  * Pour gérer la liste : /admin/linkedin (rôle admin ou collaborator).
  */
 const FALLBACK_POSTS: LinkedInPost[] = [
-  { post_id: "7466437471824842752", post_type: "activity", height: 600 }, // 30/05/2026
-  { post_id: "7465069243475111936", post_type: "activity", height: 600 }, // Aïd Moubarak 27/05
-  { post_id: "7463694222467014656", post_type: "activity", height: 600 }, // ESAM 19/05
-  { post_id: "7462920445588119552", post_type: "activity", height: 600 },
-  { post_id: "7462562036485517312", post_type: "activity", height: 600 },
-  { post_id: "7466102416086614017", post_type: "activity", height: 600 },
-  { post_id: "7465801572917374977", post_type: "activity", height: 600 },
+  { post_id: "7529578769154662400", post_type: "activity", height: 600 }, // Investisseur étranger, 20/11
+  { post_id: "7528751392338132992", post_type: "activity", height: 600 }, // Fête de l'Indépendance, 18/11
+  { post_id: "7528450797660176384", post_type: "activity", height: 600 }, // Capital étranger ép. 2, 17/11
+  { post_id: "7527052923646812161", post_type: "activity", height: 600 }, // Subventions ép. 2, 13/11
+  { post_id: "7526258409000828928", post_type: "activity", height: 600 }, // Capital étranger ép. 1
+  { post_id: "7524822484727283713", post_type: "activity", height: 600 }, // Subventions ép. 1
+  { post_id: "7524161821503655936", post_type: "activity", height: 600 }, // Marche Verte, 06/11
 ];
 
-const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/company/nexia-fiducia-maroc/";
+const LINKEDIN_PROFILE_URL = "https://www.linkedin.com/company/nexiamorocco/";
 
 export default function LinkedInPosts() {
   const { t } = useSimpleLanguage();

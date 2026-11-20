@@ -71,7 +71,7 @@ const translations = {
     
     // Hero Section
     'hero.title': 'Your trusted partner for premier accounting and financial expertise',
-    'hero.subtitle': 'Nexia Fiducia Morocco supports companies in their development with tailor-made solutions, recognized expertise and exceptional customer service.',
+    'hero.subtitle': 'Nexia Morocco supports companies in their development with tailor-made solutions, recognized expertise and exceptional customer service.',
     'hero.cta': 'Discover our services',
     'hero.contact': 'Contact us',
     
@@ -99,7 +99,7 @@ const translations = {
     
     // About
     'about.title': 'Who are we?',
-    'about.subtitle': 'Nexia Fiducia Morocco is a recognized accounting and consulting firm, member of the Nexia international network.',
+    'about.subtitle': 'Nexia Morocco is a recognized accounting and consulting firm, member of the Nexia international network.',
     
     // Contact
     'contact.title': 'Contact us',
@@ -109,7 +109,7 @@ const translations = {
     'common.readMore': 'Learn more',
     'common.contact': 'Contact us',
     'common.minutes': 'min',
-    'common.author': 'Nexia Fiducia Morocco',
+    'common.author': 'Nexia Morocco',
   }
 };
 

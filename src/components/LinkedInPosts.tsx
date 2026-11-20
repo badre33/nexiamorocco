@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Linkedin, ExternalLink } from "lucide-react";
 import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
-import { supabase } from "@/integrations/supabase/client";
 
 interface LinkedInPost {
   post_id: string;
@@ -12,8 +11,10 @@ interface LinkedInPost {
 /**
  * Liste des posts LinkedIn affichés sur le site.
  *
- * Source primaire : table `linkedin_posts` de Supabase (gérée depuis /admin/linkedin).
- * Fallback : `FALLBACK_POSTS` ci-dessous — utilisés si Supabase est indisponible.
+ * Source primaire : /api/linkedin-posts (fonction Netlify), alimentée chaque heure
+ * par l'API LinkedIn (netlify/functions/linkedin-sync.mts).
+ * Fallback : `FALLBACK_POSTS` ci-dessous, utilisés tant que la synchronisation
+ * n'a rien enregistré.
  *
  * Les IDs FALLBACK ont été récupérés le 20/11/2026 depuis la page LinkedIn
  * Nexia Morocco : les 7 dernières publications.
@@ -37,32 +38,14 @@ export default function LinkedInPosts() {
   const [posts, setPosts] = useState<LinkedInPost[]>(FALLBACK_POSTS);
 
   useEffect(() => {
-    const load = async () => {
-      try {
-        const { data, error } = await (supabase as unknown as {
-          from: (t: string) => {
-            select: (c: string) => {
-              eq: (col: string, val: boolean) => {
-                order: (c: string, o: { ascending: boolean }) => Promise<{
-                  data: LinkedInPost[] | null;
-                  error: { message: string } | null;
-                }>;
-              };
-            };
-          };
-        })
-          .from("linkedin_posts")
-          .select("post_id, post_type, height")
-          .eq("is_visible", true)
-          .order("display_order", { ascending: true });
-        if (!error && data && data.length > 0) {
-          setPosts(data);
-        }
-      } catch {
+    fetch("/api/linkedin-posts")
+      .then((r) => (r.ok ? r.json() : []))
+      .then((data: LinkedInPost[]) => {
+        if (Array.isArray(data) && data.length > 0) setPosts(data);
+      })
+      .catch(() => {
         // fallback
-      }
-    };
-    void load();
+      });
   }, []);
 
   return (

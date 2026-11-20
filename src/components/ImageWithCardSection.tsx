@@ -7,18 +7,10 @@ const documents = [
   {
     id: 1,
     category: "PRÉSENTATION",
-    title: "Nexia Morocco 2025",
+    title: "Nexia Morocco 2026",
     description: "Notre présentation institutionnelle détaillant nos services, notre expertise et notre vision pour accompagner votre croissance.",
-    downloadUrl: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//Presentation%20Nexia%202025.pdf",
+    downloadUrl: "/documents/presentation-nexia-morocco-2026.pdf",
     buttonText: "Télécharger la présentation"
-  },
-  {
-    id: 2,
-    category: "PRÉSENTATION",
-    title: "Nexia Morocco 2025 (English Version)",
-    description: "Our institutional presentation in English detailing our services, expertise and vision to support your growth internationally.",
-    downloadUrl: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//Nexia%202025%20Presentation%20(English%20Version).pdf",
-    buttonText: "Download presentation"
   }
 ];
 
@@ -79,6 +71,7 @@ export default function ImageWithCardSection() {
             </div>
 
             {/* Navigation Controls */}
+            {documents.length > 1 && (
             <div className="flex items-center space-x-4 mt-8 lg:mt-0">
               <Button
                 variant="ghost"
@@ -100,6 +93,7 @@ export default function ImageWithCardSection() {
                 {currentSlide + 1}/{documents.length}
               </span>
             </div>
+            )}
           </div>
         </div>
       </div>

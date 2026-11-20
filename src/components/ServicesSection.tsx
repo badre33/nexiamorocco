@@ -3,15 +3,15 @@ import { useSimpleLanguage } from "@/hooks/useSimpleLanguage";
 const publications = [
   {
     id: 1,
-    title: "Présentation Nexia Morocco 2025",
+    title: "Présentation Nexia Morocco 2026",
     description: "Découvrez notre cabinet, nos services et notre expertise à travers cette présentation complète.",
     category: "Présentation",
     author: "Nexia Morocco",
-    date: "2025",
+    date: "2026",
     readTime: "10 min",
     image: "/uploads/nexia-morocco-logo.png",
-    excerpt: "Présentation officielle de Nexia Morocco pour l'année 2025...",
-    link: "https://fltpndxdtovgjuqarfsh.supabase.co/storage/v1/object/public/nexia-files//Presentation%20Nexia%202025.pdf"
+    excerpt: "Présentation officielle de Nexia Morocco pour l'année 2026...",
+    link: "/documents/presentation-nexia-morocco-2026.pdf"
   },
   {
     id: 2,
